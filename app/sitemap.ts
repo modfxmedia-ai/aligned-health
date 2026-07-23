@@ -11,7 +11,7 @@ const ROUTE_META: Record<
   Route,
   { changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }
 > = {
-  "/home": { changeFrequency: "weekly", priority: 1.0 },
+  "/": { changeFrequency: "weekly", priority: 1.0 },
   "/about": { changeFrequency: "monthly", priority: 0.8 },
   "/our-team": { changeFrequency: "monthly", priority: 0.8 },
   "/services": { changeFrequency: "monthly", priority: 0.9 },

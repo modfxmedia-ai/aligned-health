@@ -11,16 +11,6 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "picsum.photos" },
     ],
   },
-  async redirects() {
-    return [
-      {
-        // Preserve the legacy canonical: root traffic lands on `/home`.
-        source: "/",
-        destination: "/home",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default nextConfig;

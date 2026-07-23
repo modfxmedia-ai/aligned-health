@@ -174,6 +174,18 @@ export function SiteFooter() {
  <li className="text-linen/40">
  Crafted with care in <span className="italic text-tan">Southern California.</span>
  </li>
+ <li className="hidden text-linen/30 sm:inline">·</li>
+ <li className="text-linen/40">
+ Powered by{" "}
+ <a
+ href="https://modfxmedia.com"
+ target="_blank"
+ rel="noopener noreferrer"
+ className="italic text-tan underline decoration-tan/60 underline-offset-4 transition-colors hover:text-linen hover:decoration-tan"
+ >
+ ModFX Media
+ </a>
+ </li>
  </ul>
  </div>
  </div>
@@ -186,7 +198,7 @@ export function SiteFooter() {
 function FooterWordmark() {
  return (
  <Link
- href="/home"
+      href="/"
  aria-label={`${CLINIC.name}, home`}
  className="group inline-flex w-fit items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 focus-visible:ring-offset-espresso"
  >

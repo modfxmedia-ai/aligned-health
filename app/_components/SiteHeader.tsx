@@ -212,7 +212,7 @@ function isActive(pathname: string | null, href: string): boolean {
 function Wordmark({ onClick }: { onClick: () => void }) {
  return (
  <Link
- href="/home"
+ href="/"
  onClick={onClick}
  aria-label="Aligned Health, home"
  className="group inline-flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 focus-visible:ring-offset-espresso"

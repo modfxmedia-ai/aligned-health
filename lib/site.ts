@@ -28,10 +28,10 @@ export const CLINIC = {
 
 /**
  * Canonical route slugs. The order here also drives the sitemap ordering.
- * `/` is intentionally excluded because it 308-redirects to `/home`.
+ * The homepage lives at `/` (site root); no separate `/home` alias.
  */
 export const ROUTES = [
-  "/home",
+  "/",
   "/about",
   "/our-team",
   "/services",

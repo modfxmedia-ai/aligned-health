@@ -75,7 +75,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
  provider: {
  "@type": "MedicalClinic",
  name: "Aligned Health",
- url: `${SITE_URL}/home`,
+      url: `${SITE_URL}/`,
  },
  availableService: service.indications.map((ind) => ({
  "@type": "MedicalIndication",

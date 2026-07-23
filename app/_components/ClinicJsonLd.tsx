@@ -8,7 +8,7 @@ import { CLINIC, SITE_URL, absoluteUrl } from "@/lib/site";
  * customizes the `url` field so per-page schema stays canonical.
  */
 export interface ClinicJsonLdProps {
-  /** Route path for this page (e.g. "/home", "/contact-us"). Defaults to site root. */
+  /** Route path for this page (e.g. "/", "/contact-us"). Defaults to site root. */
   pagePath?: string;
   /** Optional stable `@id` override. Defaults to `${SITE_URL}#clinic`. */
   id?: string;
