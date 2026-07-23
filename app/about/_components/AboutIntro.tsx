@@ -1,0 +1,355 @@
+"use client";
+
+import Image from "next/image";
+import {
+ motion,
+ useReducedMotion,
+ useScroll,
+ useTransform,
+ type Variants,
+} from "motion/react";
+import { useRef } from "react";
+
+/**
+ * /about, full-bleed interior photo hero, a wave-shaped divider that
+ * transitions into a cream content section carrying the "Prevent. Recover.
+ * Compete." heading and the two supporting paragraphs.
+ *
+ * Copy is verbatim from the live site's /about page.
+ * Photo is the actual interior office photograph pulled from the same page.
+ *
+ * Motion (respects `prefers-reduced-motion`):
+ * - Bg photo scroll parallax + slow "breathing" scale
+ * - Warm bottom gradient fading into the wave divider
+ * - Wave path draws in on mount
+ * - Word-by-word reveal on "Prevent. Recover. Compete." with an italic
+ * mocha accent on "Recover."
+ * - Paragraph staggered fade-up
+ * - Bottom hairline + eyebrow tags fade in
+ */
+
+const HERO_PHOTO =
+ "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/6a6eb945-7def-4b74-9fd4-6b0d586466d1/IMG_7093.jpeg";
+
+interface Word {
+ text: string;
+ accent?: boolean;
+}
+const HEADING_WORDS: readonly Word[] = [
+ { text: "Prevent." },
+ { text: "Recover.", accent: true },
+ { text: "Compete." },
+];
+
+// Container-level variants for the h1: a single `whileInView` observer on
+// the parent triggers the cascade so each word reveals reliably.
+const HEADING_CONTAINER = {
+ hidden: {},
+ visible: { transition: { staggerChildren: 0.14, delayChildren: 0.1 } },
+};
+
+export function AboutIntro() {
+ const reduce = useReducedMotion();
+ const heroRef = useRef<HTMLDivElement>(null);
+
+ const { scrollYProgress } = useScroll({
+ target: heroRef,
+ offset: ["start start", "end start"],
+ });
+ const photoY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+ const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
+ const overlay = useTransform(scrollYProgress, [0, 1], [0.4, 0.75]);
+
+ return (
+ <>
+ {/* --- Full-bleed hero --- */}
+ <section
+ ref={heroRef}
+ className="relative h-[80vh] min-h-[560px] w-full overflow-hidden bg-espresso"
+ >
+ {/* Photo with parallax + slow breathing scale */}
+ <motion.div
+ style={reduce ? undefined : { y: photoY, scale: photoScale }}
+ className="absolute inset-0"
+ >
+ <Image
+ src={HERO_PHOTO}
+ alt="Aligned Health interior office in Laguna Hills"
+ fill
+ priority
+ sizes="100vw"
+ className="object-cover"
+ />
+ </motion.div>
+
+ {/* Dark bottom-anchored gradient, keeps text/wave transition legible */}
+ <motion.div
+ aria-hidden="true"
+ style={reduce ? undefined : { opacity: overlay }}
+ className="absolute inset-0 bg-gradient-to-b from-espresso/40 via-espresso/20 to-espresso/80"
+ />
+
+ {/* Warm tan radial glow, top-left */}
+ <div
+ aria-hidden="true"
+ className="pointer-events-none absolute inset-0"
+ style={{
+ background:
+ "radial-gradient(50% 45% at 15% 25%, rgba(185,165,144,0.16) 0%, rgba(54,48,42,0) 60%)",
+ }}
+ />
+
+ {/* Top-left eyebrow tag */}
+ <motion.div
+ initial={reduce ? false : { opacity: 0, y: -8 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+ className="container-shell relative z-10 flex items-center gap-3 pt-24 text-linen md:pt-32"
+ >
+ <span
+ aria-hidden="true"
+ className="relative inline-flex h-2 w-2"
+ >
+ <motion.span
+ animate={
+ reduce
+ ? undefined
+ : { scale: [1, 2.5, 1], opacity: [0.7, 0, 0.7] }
+ }
+ transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+ className="absolute inset-0 rounded-full bg-tan"
+ />
+ <span className="relative h-2 w-2 rounded-full bg-tan" />
+ </span>
+ <p className="text-[0.7rem] uppercase tracking-[0.28em] text-linen/85">
+ About Aligned Health
+ </p>
+ </motion.div>
+
+ {/* Wave-shaped divider transitioning into cream content section */}
+ <WaveDivider />
+ </section>
+
+ {/* --- Cream content section --- */}
+ <section className="section-cream section relative overflow-hidden">
+ <BackgroundFlourish />
+
+ <div className="container-shell relative z-10">
+ <div className="mx-auto max-w-4xl">
+ {/* Small eyebrow above heading */}
+ <motion.div
+ initial={reduce ? false : { opacity: 0, y: 10 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+ transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+ className="flex items-center gap-3"
+ >
+ <span aria-hidden="true" className="block h-px w-10 bg-tan" />
+ <p className="eyebrow !text-mocha">Our mission</p>
+ </motion.div>
+
+ {/* Heading, three commanding words with mask reveal.
+ Uses container-level `whileInView` + child variants so a
+ single observer fires and all words respond (per-word
+ observers on tiny inline motion.spans are unreliable). */}
+ <motion.h1
+ variants={HEADING_CONTAINER}
+ initial="hidden"
+ whileInView="visible"
+ viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+ className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight text-espresso md:text-6xl lg:text-7xl"
+ >
+ {HEADING_WORDS.map((word, index) => (
+ <HeadingWord
+ key={word.text}
+ word={word}
+ index={index}
+ reduce={!!reduce}
+ />
+ ))}
+ </motion.h1>
+
+ {/* Supporting paragraphs, verbatim from the source */}
+ <motion.p
+ initial={reduce ? false : { opacity: 0, y: 14 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+ transition={{
+ duration: 0.75,
+ delay: 0.6,
+ ease: [0.16, 1, 0.3, 1],
+ }}
+ className="mt-8 text-lg leading-relaxed text-mocha md:text-xl"
+ >
+ Whether it&rsquo;s preventing injuries or healing existing ones,
+ Aligned Health doctors will help every patient achieve their
+ maximum level of performance.
+ </motion.p>
+
+ <motion.p
+ initial={reduce ? false : { opacity: 0, y: 14 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+ transition={{
+ duration: 0.75,
+ delay: 0.8,
+ ease: [0.16, 1, 0.3, 1],
+ }}
+ className="mt-6 text-lg leading-relaxed text-mocha md:text-xl"
+ >
+ At Aligned Health you will find doctors you can trust. Our team
+ has one goal in mind:{" "}
+ <span className="italic text-espresso">
+ get our patients back to doing what they love.
+ </span>
+ </motion.p>
+
+ {/* Signature strip: hairline + small tracked caps */}
+ <motion.div
+ initial={reduce ? false : { opacity: 0, y: 12 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+ transition={{
+ duration: 0.7,
+ delay: 1,
+ ease: [0.16, 1, 0.3, 1],
+ }}
+ className="mt-10 flex items-center gap-4"
+ >
+ <span aria-hidden="true" className="block h-px w-16 bg-tan" />
+ <span className="text-[0.65rem] uppercase tracking-[0.28em] text-mocha/70">
+ Aligned Health · Laguna Hills, CA
+ </span>
+ </motion.div>
+ </div>
+ </div>
+ </section>
+ </>
+ );
+}
+
+/* ---------------------------------------------------------------------- */
+/* Sub-components */
+/* ---------------------------------------------------------------------- */
+
+function HeadingWord({
+ word,
+ index,
+ reduce,
+}: {
+ word: Word;
+ index: number;
+ reduce: boolean;
+}) {
+ // Variant that responds to the parent h1's `whileInView` trigger. The
+ // parent's stagger orchestrates delay per child, so no per-word delays.
+ const wordVariant = {
+ hidden: reduce ? { y: 0 } : { y: "110%" as const },
+ visible: {
+ y: 0,
+ transition: {
+ duration: 0.85,
+ ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+ },
+ },
+ };
+ return (
+ <>
+ {index > 0 ? " " : null}
+ <span className="inline-flex overflow-hidden pb-[0.1em] pr-[0.05em] align-top">
+ <motion.span
+ variants={wordVariant}
+ className={`inline-block ${word.accent ? "italic text-mocha" : ""}`}
+ >
+ {word.text}
+ </motion.span>
+ </span>
+ </>
+ );
+}
+
+/**
+ * Wave-shaped divider at the bottom of the hero. The cream shape "eats" up
+ * into the hero photo, providing a soft, organic transition into the cream
+ * content section below (which uses the same fill color).
+ */
+function WaveDivider() {
+ const reduce = useReducedMotion();
+ return (
+ <div
+ aria-hidden="true"
+ className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
+ >
+ <svg
+ viewBox="0 0 1440 140"
+ preserveAspectRatio="none"
+ className="block h-[80px] w-full text-cream md:h-[120px]"
+ >
+ {/* Faint tan outline that draws in first */}
+ <motion.path
+ d="M0 60 C 240 110, 480 20, 720 60 S 1200 110, 1440 60"
+ fill="none"
+ stroke="#B9A590"
+ strokeWidth="1"
+ strokeOpacity="0.4"
+ initial={reduce ? { pathLength: 1 } : { pathLength: 0 }}
+ animate={{ pathLength: 1 }}
+ transition={{
+ duration: 2,
+ delay: 0.6,
+ ease: "easeOut" as const,
+ }}
+ />
+
+ {/* Cream fill wave that transitions into the section below */}
+ <motion.path
+ d="M0 60 C 240 110, 480 20, 720 60 S 1200 110, 1440 60 L1440 140 L0 140 Z"
+ fill="currentColor"
+ initial={reduce ? { y: 0 } : { y: 40 }}
+ animate={{ y: 0 }}
+ transition={{
+ duration: 1.2,
+ delay: 0.35,
+ ease: [0.16, 1, 0.3, 1],
+ }}
+ />
+ </svg>
+ </div>
+ );
+}
+
+function BackgroundFlourish() {
+ const reduce = useReducedMotion();
+ const draw = (delay: number) => ({
+ initial: reduce
+ ? { pathLength: 1, opacity: 0.2 }
+ : { pathLength: 0, opacity: 0 },
+ whileInView: { pathLength: 1, opacity: 0.2 },
+ viewport: { once: true, margin: "0px 0px -100px 0px" },
+ transition: {
+ pathLength: { duration: 2.6, delay, ease: "easeOut" as const },
+ opacity: { duration: 0.5, delay },
+ },
+ });
+ return (
+ <svg
+ aria-hidden="true"
+ viewBox="0 0 1400 900"
+ preserveAspectRatio="none"
+ className="pointer-events-none absolute inset-0 h-full w-full text-tan"
+ fill="none"
+ stroke="currentColor"
+ strokeWidth="1"
+ >
+ <motion.path
+ d="M -40 720 C 260 620, 460 500, 720 420 S 1180 260, 1440 140"
+ {...draw(0.2)}
+ />
+ <motion.path
+ d="M -40 800 C 260 700, 460 580, 720 500 S 1180 340, 1440 220"
+ strokeWidth="0.6"
+ {...draw(0.5)}
+ />
+ </svg>
+ );
+}

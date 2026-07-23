@@ -1,26 +1,241 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* -----------------------------------------------------------------------------
+ * Aligned Health — Design tokens
+ *
+ * We intentionally reset Tailwind's default `--color-*` and `--font-*` scales
+ * so only the approved brand palette and typefaces are reachable via utility
+ * classes (e.g. `bg-red-500` will simply not exist).
+ * -------------------------------------------------------------------------- */
+@theme {
+  /* Reset default palettes so the brand is enforced by construction. */
+  --color-*: initial;
+  --font-*: initial;
+
+  /* Universally useful non-brand colors kept for utility (borders, overlays). */
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Brand palette — the only permitted colors. */
+  --color-espresso: #36302a; /* primary dark: header/footer/dark sections */
+  --color-mocha: #574c3f; /* secondary dark section background */
+  --color-tan: #b9a590; /* accent: buttons, dividers, highlights */
+  --color-cream: #ece4da; /* main section background */
+  --color-linen: #f6f3ec; /* soft light background / on-dark text */
+
+  /* Typography — expressive display serif for headings, clean sans for body. */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, Cambria,
+    "Times New Roman", Times, serif;
+
+  /* Elevation — tinted with the espresso brown for warmth. */
+  --shadow-card: 0 8px 24px -12px rgba(54, 48, 42, 0.18),
+    0 2px 6px -2px rgba(54, 48, 42, 0.08);
+  --shadow-card-hover: 0 24px 48px -20px rgba(54, 48, 42, 0.28),
+    0 6px 14px -4px rgba(54, 48, 42, 0.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* -----------------------------------------------------------------------------
+ * Base
+ * -------------------------------------------------------------------------- */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-espresso);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv02";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+    /* Color intentionally inherits so headings work on any section background. */
+  }
+
+  ::selection {
+    background-color: var(--color-tan);
+    color: var(--color-espresso);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-tan);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* -----------------------------------------------------------------------------
+ * Components
+ *
+ * Registered as `@utility` (Tailwind v4) so they can be safely `@apply`-ed
+ * from other component classes (e.g. `.btn-primary` extends `.btn`).
+ * Compose these in JSX (`className="btn-primary btn-lg"`).
+ * -------------------------------------------------------------------------- */
+
+/* ---- Layout shells ---------------------------------------------------- */
+@utility container-shell {
+  @apply mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-12;
+}
+
+@utility section {
+  @apply py-20 md:py-28;
+}
+
+@utility section-cream {
+  @apply bg-cream text-espresso;
+}
+@utility section-linen {
+  @apply bg-linen text-espresso;
+}
+@utility section-espresso {
+  @apply bg-espresso text-linen;
+}
+@utility section-mocha {
+  @apply bg-mocha text-linen;
+}
+
+/* ---- Typography helpers ---------------------------------------------- */
+@utility eyebrow {
+  @apply font-serif italic text-tan text-xs md:text-sm tracking-[0.22em] uppercase;
+}
+
+@utility heading-display {
+  @apply font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight;
+}
+
+@utility heading-section {
+  @apply font-serif text-3xl md:text-4xl leading-[1.1] tracking-tight;
+}
+
+@utility heading-card {
+  @apply font-serif text-xl md:text-2xl leading-snug tracking-tight;
+}
+
+@utility body-lead {
+  @apply text-lg md:text-xl leading-relaxed;
+}
+
+@utility link-underline {
+  @apply underline underline-offset-4 decoration-tan hover:decoration-current transition-colors;
+}
+
+/* ---- Dividers -------------------------------------------------------- */
+@utility divider-hairline {
+  @apply block h-px w-full bg-tan/40;
+}
+
+@utility divider-hairline-strong {
+  @apply block h-px w-full bg-tan;
+}
+
+/* ---- Utility bar (slim strip above main nav) ------------------------- */
+@utility utility-bar {
+  @apply bg-espresso text-linen text-xs md:text-sm;
+}
+@utility utility-bar-inner {
+  @apply container-shell flex items-center justify-between gap-6 py-2.5;
+}
+
+/* ---- Nav shell ------------------------------------------------------- */
+@utility nav-shell {
+  @apply bg-linen text-espresso border-b border-tan/30;
+}
+@utility nav-inner {
+  @apply container-shell flex items-center justify-between gap-8 py-5;
+}
+@utility nav-link {
+  @apply text-sm font-medium tracking-wide text-espresso/80 hover:text-espresso transition-colors;
+}
+
+/* ---- Buttons (all pill-shaped) --------------------------------------- */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
+         text-sm font-medium tracking-wide leading-none whitespace-nowrap
+         transition-all duration-200 ease-out
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2
+         disabled:pointer-events-none disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-espresso text-linen hover:bg-mocha;
+}
+@utility btn-accent {
+  @apply btn bg-tan text-espresso hover:bg-espresso hover:text-linen;
+}
+/* Tan CTA sized for use *on* dark espresso surfaces (header, footer, dark sections).
+ * Hover swaps to the linen background so the pill stays visible against espresso. */
+@utility btn-cta-onDark {
+  @apply btn bg-tan text-espresso hover:bg-linen hover:text-espresso
+         focus-visible:ring-linen focus-visible:ring-offset-espresso;
+}
+@utility btn-outline {
+  @apply btn border border-espresso text-espresso hover:bg-espresso hover:text-linen;
+}
+@utility btn-outline-invert {
+  @apply btn border border-linen text-linen hover:bg-linen hover:text-espresso;
+}
+@utility btn-ghost {
+  @apply btn text-espresso hover:bg-espresso/5;
+}
+@utility btn-sm {
+  @apply px-4 py-2 text-xs;
+}
+@utility btn-lg {
+  @apply px-8 py-4 text-base;
+}
+
+/* ---- Cards ----------------------------------------------------------- */
+@utility card {
+  @apply rounded-3xl bg-linen p-8 shadow-card
+         transition-all duration-300 ease-out
+         hover:-translate-y-1 hover:shadow-card-hover;
+}
+
+@utility card-flat {
+  @apply rounded-3xl bg-linen p-8 border border-tan/30;
+}
+
+/* Image-forward card with hover lift + gentle zoom on the media. */
+@utility card-image {
+  @apply relative overflow-hidden rounded-3xl bg-linen shadow-card
+         transition-all duration-300 ease-out
+         hover:-translate-y-1 hover:shadow-card-hover;
+
+  /* Scale the media child on parent hover without needing the `group` marker. */
+  &:hover .card-image-media {
+    @apply scale-[1.04];
+  }
+}
+@utility card-image-media {
+  @apply block h-full w-full object-cover transition-transform duration-[600ms] ease-out;
+}
+@utility card-image-body {
+  @apply p-6 md:p-8;
+}
+
+/* ---- Stats / trust strip -------------------------------------------- */
+@utility stats-strip {
+  @apply grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12;
+}
+@utility stat {
+  @apply flex flex-col items-start gap-2;
+}
+@utility stat-value {
+  @apply font-serif text-4xl md:text-5xl leading-none;
+}
+@utility stat-label {
+  @apply text-xs md:text-sm uppercase tracking-[0.18em] opacity-80;
 }

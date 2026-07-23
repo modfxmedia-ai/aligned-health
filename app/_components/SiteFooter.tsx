@@ -1,0 +1,204 @@
+import Image from "next/image";
+import Link from "next/link";
+import { CLINIC } from "@/lib/site";
+
+/**
+ * Modern multi-column footer.
+ *
+ * Layout at `md+`: 4 columns, Brand · Explore · Visit · Book.
+ * Stacks vertically on mobile. Bottom bar carries copyright and legal links.
+ *
+ * Kept as a Server Component (no client JS): hover states are handled by
+ * plain CSS transitions, the year is computed at build time, and the maps
+ * deep-link is a plain anchor.
+ */
+
+const YEAR = new Date().getFullYear();
+const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
+const FULL_ADDRESS = `${CLINIC.address.street}, ${CLINIC.address.city}, ${CLINIC.address.region} ${CLINIC.address.postalCode}`;
+const MAP_LINK = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+ FULL_ADDRESS
+)}`;
+
+const EXPLORE_LINKS = [
+ { label: "About", href: "/about" },
+ { label: "Our Team", href: "/our-team" },
+ { label: "Services", href: "/services" },
+ { label: "Blog", href: "/blog" },
+ { label: "Appointments", href: "/appointments" },
+ { label: "Contact Us", href: "/contact-us" },
+] as const;
+
+export function SiteFooter() {
+ return (
+ <footer className="relative overflow-hidden bg-espresso text-linen">
+ {/* Warm radial glow behind the top-right for depth */}
+ <div
+ aria-hidden="true"
+ className="pointer-events-none absolute inset-0"
+ style={{
+ background:
+ "radial-gradient(55% 60% at 85% 0%, rgba(185,165,144,0.14) 0%, rgba(54,48,42,0) 60%), radial-gradient(45% 55% at 10% 100%, rgba(87,76,63,0.35) 0%, rgba(54,48,42,0) 55%)",
+ }}
+ />
+
+ {/* Top hairline */}
+ <span
+ aria-hidden="true"
+ className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-tan/40 to-transparent"
+ />
+
+ <div className="container-shell relative z-10 pt-16 pb-8 md:pt-20 md:pb-10">
+ {/* Top: 12-col grid, 4 content sections */}
+ <div className="grid gap-12 md:grid-cols-12 md:gap-10">
+ {/* --- Brand --- */}
+ <div className="md:col-span-5 lg:col-span-4">
+ <FooterWordmark />
+ <p className="mt-6 max-w-sm text-sm leading-relaxed text-linen/70">
+ A highly qualified team helping the Southern California community
+ relieve pain, recover from surgery, and rebuild strength, with
+ same-day or next-day appointments.
+ </p>
+
+ {/* Big phone as a signature call to action */}
+ <a
+ href={`tel:${PHONE_TEL}`}
+ className="mt-8 inline-flex flex-col gap-1 text-linen transition-colors hover:text-tan"
+ >
+ <span className="eyebrow">Call the clinic</span>
+ <span className="font-serif text-3xl tracking-tight md:text-4xl">
+ {CLINIC.phoneDisplay}
+ </span>
+ </a>
+ </div>
+
+ {/* --- Explore nav --- */}
+ <nav
+ aria-label="Footer navigation"
+ className="md:col-span-3 lg:col-span-2"
+ >
+ <p className="eyebrow">Explore</p>
+ <ul className="mt-5 flex flex-col gap-3">
+ {EXPLORE_LINKS.map((item) => (
+ <li key={item.href}>
+ <Link
+ href={item.href}
+ className="text-sm text-linen/85 transition-colors hover:text-tan"
+ >
+ {item.label}
+ </Link>
+ </li>
+ ))}
+ </ul>
+ </nav>
+
+ {/* --- Visit --- */}
+ <div className="md:col-span-4 lg:col-span-3">
+ <p className="eyebrow">Visit</p>
+ <address className="mt-5 flex flex-col gap-2 text-sm not-italic leading-relaxed text-linen/85">
+ <span>{CLINIC.address.street}</span>
+ <span>
+ {CLINIC.address.city}, {CLINIC.address.region}{" "}
+ {CLINIC.address.postalCode}
+ </span>
+ <a
+ href={MAP_LINK}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="mt-2 inline-flex w-fit items-center gap-1 text-[0.7rem] uppercase tracking-[0.2em] text-tan underline decoration-tan/60 underline-offset-4 hover:decoration-tan"
+ >
+ Get directions <span aria-hidden="true">↗</span>
+ </a>
+ <a
+ href={`mailto:${CLINIC.email}`}
+ className="mt-4 w-fit text-sm text-linen/85 underline decoration-tan/60 underline-offset-4 transition-colors hover:text-linen hover:decoration-tan"
+ >
+ {CLINIC.email}
+ </a>
+ </address>
+ </div>
+
+ {/* --- Book / Hours --- */}
+ <div className="md:col-span-12 lg:col-span-3">
+ <p className="eyebrow">Book a visit</p>
+ <div className="mt-5 rounded-3xl border border-linen/15 bg-linen/[0.05] p-6 backdrop-blur-sm">
+ <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.2em] text-tan">
+ <span aria-hidden="true" className="relative inline-flex h-2 w-2">
+ <span className="absolute inset-0 rounded-full bg-tan opacity-70 blur-[2px]" />
+ <span className="relative h-2 w-2 rounded-full bg-tan" />
+ </span>
+ Same-day availability
+ </div>
+ <p className="mt-3 text-sm leading-relaxed text-linen/85">
+ By appointment · Patients typically booked within 1–2 days.
+ </p>
+ <Link
+ href="https://alignedhealthoc.janeapp.com/"
+ target="_blank"
+ rel="noopener noreferrer"
+ className="btn-cta-onDark btn-sm mt-5 inline-flex w-full items-center justify-center gap-2"
+ >
+ Book an Appointment
+ <span aria-hidden="true">→</span>
+ </Link>
+ </div>
+ </div>
+ </div>
+
+ {/* Divider */}
+ <span className="divider-hairline mt-14 block" />
+
+ {/* Bottom bar */}
+ <div className="mt-6 flex flex-col-reverse items-start gap-4 text-xs text-linen/50 md:mt-8 md:flex-row md:items-center md:justify-between">
+ <p>
+ © {YEAR} {CLINIC.name}. All rights reserved. · Laguna Hills, CA
+ </p>
+ <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+ <li>
+ <Link
+ href="/privacy-policy"
+ className="text-linen/60 transition-colors hover:text-linen"
+ >
+ Privacy Policy
+ </Link>
+ </li>
+ <li>
+ <a
+ href="/sitemap.xml"
+ className="text-linen/60 transition-colors hover:text-linen"
+ >
+ Sitemap
+ </a>
+ </li>
+ <li className="hidden text-linen/30 sm:inline">·</li>
+ <li className="text-linen/40">
+ Crafted with care in <span className="italic text-tan">Southern California.</span>
+ </li>
+ </ul>
+ </div>
+ </div>
+ </footer>
+ );
+}
+
+/* ---------------------------------------------------------------------- */
+
+function FooterWordmark() {
+ return (
+ <Link
+ href="/home"
+ aria-label={`${CLINIC.name}, home`}
+ className="group inline-flex w-fit items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 focus-visible:ring-offset-espresso"
+ >
+ <Image
+ src="/logos/aligned-health-light.png"
+ alt={CLINIC.name}
+ width={1129}
+ height={355}
+ className="h-11 w-auto md:h-12"
+ />
+ </Link>
+ );
+}
+
+export default SiteFooter;
