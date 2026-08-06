@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
  motion,
  useReducedMotion,
@@ -9,6 +10,8 @@ import {
  type Variants,
 } from "motion/react";
 import { useRef, type ReactNode } from "react";
+
+const JANE_APP_URL = "https://alignedhealthoc.janeapp.com/";
 
 /**
  * "Why Aligned Health", merged header + full-width photo band + a horizontal
@@ -45,9 +48,9 @@ interface Step {
 const STEPS: readonly Step[] = [
  {
  index: "01",
- title: "Prompt Scheduling",
- body: "Waiting lists are rarely used. Patients can typically book same day or within 1–2 days of their preferred time.",
- highlight: "Same day or 1–2 day booking",
+ title: "Schedule",
+ body: "Patients can typically book same day or within 1–2 days of their preferred time.",
+ highlight: "Schedule now",
  Icon: ClockIcon,
  },
  {
@@ -303,7 +306,20 @@ function TimelineStep({ step, index }: { step: Step; index: number }) {
  <step.Icon className="h-4 w-4" />
  </span>
  <div className="min-w-0 flex-1">
- <h3 className="heading-card">{step.title}</h3>
+ <h3 className="heading-card">
+ {index === 0 ? (
+ <Link
+ href={JANE_APP_URL}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="link-underline"
+ >
+ {step.title}
+ </Link>
+ ) : (
+ step.title
+ )}
+ </h3>
  <p className="mt-3 text-sm leading-relaxed text-mocha md:text-base">
  {step.body}
  </p>

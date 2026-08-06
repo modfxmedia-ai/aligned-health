@@ -58,14 +58,14 @@ export function AboutIntro() {
  });
  const photoY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
  const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
- const overlay = useTransform(scrollYProgress, [0, 1], [0.4, 0.75]);
+ const overlay = useTransform(scrollYProgress, [0, 1], [0.7, 0.92]);
 
  return (
  <>
  {/* --- Full-bleed hero --- */}
  <section
  ref={heroRef}
- className="relative h-[80vh] min-h-[560px] w-full overflow-hidden bg-espresso"
+ className="relative flex h-[80vh] min-h-[560px] w-full items-center justify-center overflow-hidden bg-espresso"
  >
  {/* Photo with parallax + slow breathing scale */}
  <motion.div
@@ -82,11 +82,17 @@ export function AboutIntro() {
  />
  </motion.div>
 
+ {/* Flat base darkening, keeps the centered heading legible regardless of scroll position */}
+ <div
+ aria-hidden="true"
+ className="pointer-events-none absolute inset-0 bg-espresso/45"
+ />
+
  {/* Dark bottom-anchored gradient, keeps text/wave transition legible */}
  <motion.div
  aria-hidden="true"
  style={reduce ? undefined : { opacity: overlay }}
- className="absolute inset-0 bg-gradient-to-b from-espresso/40 via-espresso/20 to-espresso/80"
+ className="absolute inset-0 bg-gradient-to-b from-espresso/80 via-espresso/70 to-espresso/95"
  />
 
  {/* Warm tan radial glow, top-left */}
@@ -99,32 +105,15 @@ export function AboutIntro() {
  }}
  />
 
- {/* Top-left eyebrow tag */}
- <motion.div
- initial={reduce ? false : { opacity: 0, y: -8 }}
+ {/* Banner heading */}
+ <motion.h1
+ initial={reduce ? false : { opacity: 0, y: 16 }}
  animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
- className="container-shell relative z-10 flex items-center gap-3 pt-24 text-linen md:pt-32"
+ transition={{ duration: 0.75, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+ className="container-shell relative z-10 text-center font-serif text-4xl leading-[1.05] tracking-tight text-linen md:text-5xl lg:text-6xl"
  >
- <span
- aria-hidden="true"
- className="relative inline-flex h-2 w-2"
- >
- <motion.span
- animate={
- reduce
- ? undefined
- : { scale: [1, 2.5, 1], opacity: [0.7, 0, 0.7] }
- }
- transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
- className="absolute inset-0 rounded-full bg-tan"
- />
- <span className="relative h-2 w-2 rounded-full bg-tan" />
- </span>
- <p className="text-[0.7rem] uppercase tracking-[0.28em] text-linen/85">
- About Aligned Health
- </p>
- </motion.div>
+ About Aligned Health.
+ </motion.h1>
 
  {/* Wave-shaped divider transitioning into cream content section */}
  <WaveDivider />
@@ -152,7 +141,7 @@ export function AboutIntro() {
  Uses container-level `whileInView` + child variants so a
  single observer fires and all words respond (per-word
  observers on tiny inline motion.spans are unreliable). */}
- <motion.h1
+ <motion.h2
  variants={HEADING_CONTAINER}
  initial="hidden"
  whileInView="visible"
@@ -167,7 +156,7 @@ export function AboutIntro() {
  reduce={!!reduce}
  />
  ))}
- </motion.h1>
+ </motion.h2>
 
  {/* Supporting paragraphs, verbatim from the source */}
  <motion.p

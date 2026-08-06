@@ -48,10 +48,6 @@ const HEADING_CONTAINER: Variants = {
 
 const REASSURANCE = [
  {
- label: "Same day booking",
- detail: "Book online or by phone, no waiting lists.",
- },
- {
  label: "Insurance verified first",
  detail: "We confirm your PPO benefits before you book.",
  },
@@ -335,23 +331,14 @@ function ReassuranceGrid({ reduce }: { reduce: boolean }) {
  initial="hidden"
  whileInView="visible"
  viewport={{ once: true, margin: "0px 0px -60px 0px" }}
- className="mt-6 grid gap-6 md:grid-cols-3 md:gap-8"
+ className="mt-6 grid gap-6 md:grid-cols-2 md:gap-8"
  >
- {REASSURANCE.map((r, idx) => (
+ {REASSURANCE.map((r) => (
  <motion.li
  key={r.label}
  variants={item}
  className="flex flex-col gap-2"
  >
- <div className="flex items-center gap-3">
- <span className="font-serif text-2xl text-tan md:text-3xl">
- 0{idx + 1}
- </span>
- <span
- aria-hidden="true"
- className="block h-px w-6 bg-tan/60"
- />
- </div>
  <p className="text-sm font-medium tracking-wide text-espresso md:text-base">
  {r.label}
  </p>

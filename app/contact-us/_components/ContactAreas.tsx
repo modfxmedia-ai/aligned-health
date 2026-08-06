@@ -112,8 +112,8 @@ export function ContactAreas() {
  className="mt-5 text-base leading-relaxed text-linen/80 md:text-lg"
  >
  Our Laguna Hills clinic is a short drive from most of South OC.
- Patients regularly come to us from the neighborhoods below,
- with same day booking.
+ Patients regularly come to us from the neighborhoods below.
+ Schedule now.
  </motion.p>
  </div>
 

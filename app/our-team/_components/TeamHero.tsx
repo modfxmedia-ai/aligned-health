@@ -72,7 +72,7 @@ export function TeamHero() {
  >
  A highly qualified team helping patients across Laguna Hills and
  Southern California relieve pain, recover mobility, and get back to
- doing what they love, with same day booking.
+ doing what they love. Schedule now.
  </motion.p>
  </div>
  </div>

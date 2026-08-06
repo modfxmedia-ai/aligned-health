@@ -57,8 +57,8 @@ export function SiteFooter() {
  <FooterWordmark />
  <p className="mt-6 max-w-sm text-sm leading-relaxed text-linen/70">
  A highly qualified team helping the Southern California community
- relieve pain, recover from surgery, and rebuild strength, with
- same day booking.
+                relieve pain, recover from surgery, and rebuild strength.
+                Schedule now.
  </p>
 
  {/* Big phone as a signature call to action */}
@@ -127,10 +127,10 @@ export function SiteFooter() {
  <span className="absolute inset-0 rounded-full bg-tan opacity-70 blur-[2px]" />
  <span className="relative h-2 w-2 rounded-full bg-tan" />
  </span>
- Same day booking
+ Schedule now
  </div>
  <p className="mt-3 text-sm leading-relaxed text-linen/85">
- By appointment · Book same day, no waiting lists.
+ By appointment · Schedule now.
  </p>
  <Link
  href="https://alignedhealthoc.janeapp.com/"

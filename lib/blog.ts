@@ -149,7 +149,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Ready to see if it&rsquo;s the right fit?" },
  {
  type: "p",
- text: "If you&rsquo;re in Laguna Hills, Mission Viejo, Lake Forest, Aliso Viejo, or anywhere in South Orange County, we offer same day booking. Come see what a truly *aligned* recovery feels like.",
+ text: "If you&rsquo;re in Laguna Hills, Mission Viejo, Lake Forest, Aliso Viejo, or anywhere in South Orange County, you can schedule now. Come see what a truly *aligned* recovery feels like.",
  },
  ],
  relatedServiceSlugs: [
@@ -248,7 +248,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Book a recovery session" },
  {
  type: "p",
- text: "If you&rsquo;re training hard, coming back from an injury, or just tired of feeling wound up, a single well-run recovery session can reset your baseline. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach, and we offer same day booking.",
+ text: "If you&rsquo;re training hard, coming back from an injury, or just tired of feeling wound up, a single well-run recovery session can reset your baseline. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach, and you can schedule now.",
  },
  ],
  relatedServiceSlugs: [

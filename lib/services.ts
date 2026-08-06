@@ -42,7 +42,7 @@ export interface Service {
  eyebrow: string;
  /** Editorial tagline shown under the H1. */
  tagline: string;
- stat: { value: string; label: string };
+ stat?: { value: string; label: string };
  };
  intro: {
  lead: string;
@@ -85,7 +85,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Chiropractic Adjustments in Laguna Hills, CA · Aligned Health",
  metaDescription:
- "Precise Diversified-technique chiropractic adjustments in Laguna Hills, CA. Same day booking, most PPO plans accepted. Serving South Orange County.",
+ "Precise Diversified-technique chiropractic adjustments in Laguna Hills, CA. Schedule now, most PPO plans accepted. Serving South Orange County.",
  keywords: [
  "chiropractic adjustment laguna hills",
  "chiropractor near me",
@@ -101,7 +101,6 @@ export const SERVICES: readonly Service[] = [
  eyebrow: "Core service",
  tagline:
  "Precise, hands-on spinal manipulation that restores motion and calms the nerves passing through your joints.",
- stat: { value: "<1s", label: "per thrust" },
  },
  intro: {
  lead:
@@ -189,7 +188,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Non-Surgical Spinal Decompression in Laguna Hills · Aligned Health",
  metaDescription:
- "Non-surgical spinal decompression for herniated discs, sciatica, and chronic low-back pain in Laguna Hills, CA. Same day booking, most PPO plans accepted.",
+ "Non-surgical spinal decompression for herniated discs, sciatica, and chronic low-back pain in Laguna Hills, CA. Schedule now, most PPO plans accepted.",
  keywords: [
  "spinal decompression laguna hills",
  "non surgical spinal decompression",
@@ -293,7 +292,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Electromuscular Stimulation (E-Stim) in Laguna Hills · Aligned Health",
  metaDescription:
- "Electromuscular stimulation (e-stim / TENS) at Aligned Health in Laguna Hills to relax muscle spasm and reduce pain during recovery. Same day booking, PPO plans accepted.",
+ "Electromuscular stimulation (e-stim / TENS) at Aligned Health in Laguna Hills to relax muscle spasm and reduce pain during recovery. Schedule now, PPO plans accepted.",
  keywords: [
  "electromuscular stimulation laguna hills",
  "e-stim therapy orange county",
@@ -393,7 +392,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Percussion Therapy in Laguna Hills · Muscle Recovery at Aligned Health",
  metaDescription:
- "Percussion therapy at Aligned Health in Laguna Hills, CA, deep-muscle recovery for athletes, weekend warriors, and desk workers. Same day booking, PPO plans accepted.",
+ "Percussion therapy at Aligned Health in Laguna Hills, CA, deep-muscle recovery for athletes, weekend warriors, and desk workers. Schedule now, PPO plans accepted.",
  keywords: [
  "percussion therapy laguna hills",
  "massage gun therapy orange county",
@@ -493,7 +492,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "PEMF Therapy in Laguna Hills · Pulsed Electromagnetic Field · Aligned Health",
  metaDescription:
- "PEMF (Pulsed Electromagnetic Field) therapy at Aligned Health in Laguna Hills, CA, supports cellular recovery and reduces inflammation. Same day booking, PPO plans accepted.",
+ "PEMF (Pulsed Electromagnetic Field) therapy at Aligned Health in Laguna Hills, CA, supports cellular recovery and reduces inflammation. Schedule now, PPO plans accepted.",
  keywords: [
  "pemf therapy laguna hills",
  "pulsed electromagnetic field therapy",
@@ -593,7 +592,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Game Ready Ice Compression Therapy in Laguna Hills · Aligned Health",
  metaDescription:
- "Game Ready cold + intermittent compression therapy at Aligned Health in Laguna Hills, CA, the gold standard for acute-injury recovery. Same day booking, PPO plans accepted.",
+ "Game Ready cold + intermittent compression therapy at Aligned Health in Laguna Hills, CA, the gold standard for acute-injury recovery. Schedule now, PPO plans accepted.",
  keywords: [
  "game ready therapy laguna hills",
  "cold compression therapy orange county",
@@ -693,7 +692,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Myofascial Scraping (IASTM) in Laguna Hills · Aligned Health",
  metaDescription:
- "Instrument-assisted myofascial scraping at Aligned Health in Laguna Hills, CA, releases fascial restrictions and restores mobility. Same day booking, PPO plans accepted.",
+ "Instrument-assisted myofascial scraping at Aligned Health in Laguna Hills, CA, releases fascial restrictions and restores mobility. Schedule now, PPO plans accepted.",
  keywords: [
  "myofascial scraping laguna hills",
  "iastm therapy orange county",
@@ -788,7 +787,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Red Light Therapy in Laguna Hills · Photobiomodulation · Aligned Health",
  metaDescription:
- "Red light therapy (photobiomodulation) at Aligned Health in Laguna Hills, CA, supports tissue recovery and calms inflammation. Same day booking, PPO plans accepted.",
+ "Red light therapy (photobiomodulation) at Aligned Health in Laguna Hills, CA, supports tissue recovery and calms inflammation. Schedule now, PPO plans accepted.",
  keywords: [
  "red light therapy laguna hills",
  "photobiomodulation orange county",
@@ -887,7 +886,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Pneumatic Compression Boots in Laguna Hills · Aligned Health",
  metaDescription:
- "Sequential pneumatic compression boots at Aligned Health in Laguna Hills, CA, spa-like recovery for legs and arms. Same day booking, PPO plans accepted.",
+ "Sequential pneumatic compression boots at Aligned Health in Laguna Hills, CA, spa-like recovery for legs and arms. Schedule now, PPO plans accepted.",
  keywords: [
  "pneumatic compression laguna hills",
  "compression boots orange county",
@@ -987,7 +986,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Intersegmental Distraction (Roller Table) in Laguna Hills · Aligned Health",
  metaDescription:
- "Intersegmental distraction roller-table therapy at Aligned Health in Laguna Hills, CA, gentle spinal mobilization for stiff backs. Same day booking, PPO plans accepted.",
+ "Intersegmental distraction roller-table therapy at Aligned Health in Laguna Hills, CA, gentle spinal mobilization for stiff backs. Schedule now, PPO plans accepted.",
  keywords: [
  "roller table therapy laguna hills",
  "intersegmental traction",
@@ -1086,7 +1085,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Assisted Stretching in Laguna Hills · One-on-One Sessions · Aligned Health",
  metaDescription:
- "One-on-one assisted stretching at Aligned Health in Laguna Hills, CA, restores flexibility, mobility, and balance. Same day booking, PPO plans accepted.",
+ "One-on-one assisted stretching at Aligned Health in Laguna Hills, CA, restores flexibility, mobility, and balance. Schedule now, PPO plans accepted.",
  keywords: [
  "assisted stretching laguna hills",
  "stretch therapy orange county",
@@ -1179,7 +1178,7 @@ export const SERVICES: readonly Service[] = [
  short: "Fascial suction therapy",
  metaTitle: "Cupping Therapy in Laguna Hills · Aligned Health",
  metaDescription:
- "Cupping therapy at Aligned Health in Laguna Hills, CA, suction that lifts fascia to improve circulation and release tension. Same day booking, PPO plans accepted.",
+ "Cupping therapy at Aligned Health in Laguna Hills, CA, suction that lifts fascia to improve circulation and release tension. Schedule now, PPO plans accepted.",
  keywords: [
  "cupping therapy laguna hills",
  "cupping orange county",
@@ -1278,7 +1277,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Therapeutic Ultrasound in Laguna Hills · Aligned Health",
  metaDescription:
- "Therapeutic ultrasound at Aligned Health in Laguna Hills, CA, deep-tissue sound waves that reduce inflammation and speed healing. Same day booking, PPO plans accepted.",
+ "Therapeutic ultrasound at Aligned Health in Laguna Hills, CA, deep-tissue sound waves that reduce inflammation and speed healing. Schedule now, PPO plans accepted.",
  keywords: [
  "therapeutic ultrasound laguna hills",
  "ultrasound therapy orange county",
@@ -1379,7 +1378,7 @@ export const SERVICES: readonly Service[] = [
   metaTitle:
    "Auto Accident & Personal Injury Chiropractor in Laguna Hills · Aligned Health",
   metaDescription:
-   "Post-accident chiropractic care for whiplash, neck, and back injuries in Laguna Hills, CA. Same day booking, auto insurance and attorney lien accepted. Serving South Orange County.",
+   "Post-accident chiropractic care for whiplash, neck, and back injuries in Laguna Hills, CA. Schedule now, auto insurance and attorney lien accepted. Serving South Orange County.",
   keywords: [
    "auto accident chiropractor laguna hills",
    "personal injury chiropractor laguna hills",

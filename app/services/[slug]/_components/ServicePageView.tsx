@@ -167,6 +167,7 @@ export function ServicePageView({
  }}
  className="mt-10 flex flex-col items-start gap-5 md:flex-row md:items-center"
  >
+ {service.hero.stat ? (
  <div className="inline-flex items-center gap-4 rounded-2xl border border-linen/20 bg-espresso/40 px-5 py-3 backdrop-blur-sm">
  <span className="font-serif text-3xl leading-none text-linen">
  {service.hero.stat.value}
@@ -175,6 +176,7 @@ export function ServicePageView({
  {service.hero.stat.label}
  </span>
  </div>
+ ) : null}
  <MagneticLink
  href="https://alignedhealthoc.janeapp.com/"
  external
@@ -554,7 +556,7 @@ export function ServicePageView({
  <span className="italic text-tan">aligned.</span>
  </h2>
  <p className="mt-6 text-base leading-relaxed text-linen/80 md:text-lg">
- Same day booking. Most PPO plans accepted.
+ Schedule now. Most PPO plans accepted.
  </p>
  <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
  <MagneticLink

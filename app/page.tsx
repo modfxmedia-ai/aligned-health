@@ -18,7 +18,7 @@ const PATH = "/";
 export const metadata: Metadata = {
   title: "Chiropractic Care in Laguna Hills, CA",
   description:
-    "Aligned Health's Laguna Hills chiropractic team helps patients relieve pain, recover from surgery, and rebuild strength, balance, and mobility, with same day booking.",
+    "Aligned Health's Laguna Hills chiropractic team helps patients relieve pain, recover from surgery, and rebuild strength, balance, and mobility. Schedule now.",
   alternates: { canonical: PATH },
 };
 

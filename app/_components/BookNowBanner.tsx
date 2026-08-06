@@ -115,7 +115,7 @@ export function BookNowBanner() {
               </span>
               <div className="min-w-0">
                 <p className="truncate text-sm font-medium text-linen sm:text-base">
-                  Same day booking.
+                  Schedule now.
                 </p>
                 <p className="hidden text-[0.7rem] uppercase tracking-[0.2em] text-linen/70 sm:block">
                   Most PPO plans accepted ·{" "}

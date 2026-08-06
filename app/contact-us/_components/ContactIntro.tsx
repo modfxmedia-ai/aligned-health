@@ -531,7 +531,7 @@ function ContactSidebar() {
  <div className="rounded-3xl border border-linen/25 bg-espresso p-6 text-linen md:p-7">
  <p className="eyebrow">Prefer to book directly?</p>
  <p className="mt-3 text-sm leading-relaxed text-linen/85">
- Same day booking. Secure scheduling through Jane App.
+ Schedule now. Secure scheduling through Jane App.
  </p>
  <Link
  href="https://alignedhealthoc.janeapp.com/"

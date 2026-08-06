@@ -296,8 +296,7 @@ export function ServicesIntro() {
  <p className="eyebrow !text-mocha">Not sure which service?</p>
  <p className="mt-3 text-base leading-relaxed text-mocha md:text-lg">
  We&rsquo;ll verify your benefits and help match you to the
- right combination of therapies. Same day booking, no
- waiting lists.
+ right combination of therapies. Schedule now.
  </p>
  </div>
  <div className="flex flex-wrap items-center gap-4">

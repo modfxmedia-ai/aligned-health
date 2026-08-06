@@ -183,8 +183,8 @@ export function Hero() {
  className="body-lead mt-10 max-w-xl text-linen/75"
  >
  A highly qualified team helping patients relieve pain, recover
- from surgery, and rebuild strength, balance, and mobility, with
- same day booking.
+ from surgery, and rebuild strength, balance, and mobility.
+ Schedule now.
  </motion.p>
 
  <motion.div
@@ -301,7 +301,7 @@ export function Hero() {
  <CornerFrames />
  </motion.div>
 
- {/* Floating "same day booking" badge */}
+ {/* Floating testimonial badge */}
  <motion.div
  initial={reduce ? false : { opacity: 0, y: 24 }}
  animate={{ opacity: 1, y: 0 }}
@@ -332,25 +332,23 @@ export function Hero() {
  />
  <svg
  viewBox="0 0 24 24"
- fill="none"
- stroke="currentColor"
- strokeWidth="1.75"
+ fill="currentColor"
  className="relative h-4 w-4"
  >
- <path
- strokeLinecap="round"
- strokeLinejoin="round"
- d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
- />
+ <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21Z" />
  </svg>
  </span>
  <div>
  <p className="text-[0.65rem] uppercase tracking-[0.22em] text-tan">
- Same day booking
+ 5-star review
  </p>
  <p className="mt-1.5 text-sm leading-snug text-linen/90">
- Waiting lists are rarely used, as patients can
- typically book same day or within 1–2 days.
+ &ldquo;I had an amazing experience! Dr. Dustin was incredibly
+ accommodating, and his adjustment and treatment were
+ absolutely top-notch. I highly recommend him!&rdquo;
+ </p>
+ <p className="mt-2 text-[0.65rem] uppercase tracking-[0.2em] text-linen/60">
+ &mdash; Nick, Google review
  </p>
  </div>
  </div>

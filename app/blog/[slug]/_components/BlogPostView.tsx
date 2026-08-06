@@ -256,7 +256,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
               <span className="italic text-tan">aligned.</span>
             </h2>
             <p className="mt-6 text-base leading-relaxed text-linen/80 md:text-lg">
-              Same day booking. Most PPO plans accepted.
+              Schedule now. Most PPO plans accepted.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <MagneticLink
