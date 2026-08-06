@@ -162,10 +162,10 @@ export function PhotoBand() {
  />
  <div className="absolute inset-x-0 bottom-0 p-4">
  <p className="font-serif text-2xl leading-none text-linen">
- Same-day
+ Same day
  </p>
  <p className="mt-1.5 text-[0.65rem] uppercase tracking-[0.24em] text-linen/80">
- Availability, typically
+ Booking
  </p>
  </div>
  </motion.figure>

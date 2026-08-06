@@ -7,6 +7,7 @@ import {
 import { useState, type FormEvent } from "react";
 import { Marquee } from "@/app/_components/motion/Marquee";
 import { CLINIC } from "@/lib/site";
+import { EmailLink } from "@/app/_components/EmailLink";
 
 /**
  * "Visit us", location + contact form + areas-served marquee.
@@ -393,12 +394,13 @@ function ContactForm() {
  >
  {CLINIC.phoneDisplay}
  </a>{" "}
- · <a
- href={`mailto:${CLINIC.email}`}
+ · <EmailLink
+ email={CLINIC.email}
  className="underline decoration-tan underline-offset-4 hover:text-espresso"
+ copiedClassName="text-mocha"
  >
  email us
- </a>
+ </EmailLink>
  </p>
  )}
  </div>

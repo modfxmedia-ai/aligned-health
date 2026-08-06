@@ -48,8 +48,8 @@ const HEADING_CONTAINER: Variants = {
 
 const REASSURANCE = [
  {
- label: "Same-day availability",
- detail: "Patients typically booked within 1–2 days.",
+ label: "Same day booking",
+ detail: "Book online or by phone, no waiting lists.",
  },
  {
  label: "Insurance verified first",

@@ -79,8 +79,8 @@ const POSTS: readonly BlogPost[] = [
  role: "Chiropractor · Aligned Health",
  },
  hero: {
- src: "/images/blog/chirorpactic-care.webp",
- alt: "Chiropractic adjustment in progress at Aligned Health in Laguna Hills",
+ src: "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/3dd5634c-1569-4b59-9138-2caf3eb46524/IMG_8324.jpg",
+ alt: "Chiropractor performing a diversified adjustment on a clothed patient at Aligned Health in Laguna Hills",
  },
  body: [
  {
@@ -90,11 +90,11 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "What a chiropractic adjustment actually is" },
  {
  type: "p",
- text: "A chiropractic adjustment, also called *spinal manipulation*, is a controlled, high-velocity, low-amplitude thrust applied to a specific joint of your spine. The goal is to restore normal motion to segments that have become stiff, guarded, or misaligned. When a joint moves freely again, the surrounding muscles relax, the nerves that pass through the area calm down, and pain typically follows suit.",
+ text: "A chiropractic adjustment, also called *spinal manipulation*, is a controlled, high-velocity, low-amplitude thrust applied to a specific joint of your body. The goal is to restore normal motion to segments that have become stiff, guarded, or restricted. When a joint moves freely again, the surrounding muscles relax, the nerves that pass through the area calm down, and pain typically follows suit.",
  },
  {
  type: "p",
- text: "At Aligned Health we lean primarily on the **Diversified technique**, the most widely taught and evidence-supported manual adjusting approach in the profession. It&rsquo;s precise, it&rsquo;s hands-on, and it lets us tailor the direction and depth of each thrust to your specific spine on the specific day you walk in.",
+ text: "At Aligned Health we lean primarily on the **Diversified technique**, the most widely taught and evidence-supported manual adjusting approach in the profession. It&rsquo;s precise, it&rsquo;s hands-on, and it lets us tailor the direction and depth of each thrust to your specific joint on the specific day you walk in.",
  },
  { type: "h2", text: "The kinds of lower back pain we see most" },
  {
@@ -119,7 +119,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "What your first visit looks like" },
  {
  type: "p",
- text: "New patients get about **45 minutes** of one-on-one time. We walk through your history, the mechanics of your pain, and what you&rsquo;re trying to get back to, whether that&rsquo;s deadlifting again, sleeping through the night, or picking up your kids without wincing.",
+ text: "New patients get about **60 minutes** of one-on-one time. We walk through your history, the mechanics of your pain, and what you&rsquo;re trying to get back to, whether that&rsquo;s deadlifting again, sleeping through the night, or picking up your kids without wincing.",
  },
  {
  type: "ol",
@@ -149,7 +149,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Ready to see if it&rsquo;s the right fit?" },
  {
  type: "p",
- text: "If you&rsquo;re in Laguna Hills, Mission Viejo, Lake Forest, Aliso Viejo, or anywhere in South Orange County, we can usually get you in same day or next day. Come see what a truly *aligned* recovery feels like.",
+ text: "If you&rsquo;re in Laguna Hills, Mission Viejo, Lake Forest, Aliso Viejo, or anywhere in South Orange County, we offer same day booking. Come see what a truly *aligned* recovery feels like.",
  },
  ],
  relatedServiceSlugs: [
@@ -178,7 +178,7 @@ const POSTS: readonly BlogPost[] = [
  datePublished: "2026-07-15",
  readingTime: 5,
  author: {
- name: "Dr. Tara Hadden, D.C.",
+ name: "Dr. Dustin Hack, D.C.",
  role: "Chiropractor · Aligned Health",
  },
  hero: {
@@ -237,8 +237,8 @@ const POSTS: readonly BlogPost[] = [
  },
  {
  type: "quote",
- text: "Percussion is a wonderful assistant and a lousy replacement. Use it to unlock a session, not to substitute for one.",
- attribution: "Dr. Tara Hadden, D.C.",
+ text: "Percussion is a wonderful assistant and adjunct to manual hands on work. Use it to unlock a session.",
+ attribution: "Dr. Dustin Hack, D.C.",
  },
  { type: "h2", text: "How to combine it with the rest of our toolkit" },
  {
@@ -248,7 +248,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Book a recovery session" },
  {
  type: "p",
- text: "If you&rsquo;re training hard, coming back from an injury, or just tired of feeling wound up, a single well-run recovery session can reset your baseline. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach, and we can usually get you in same day.",
+ text: "If you&rsquo;re training hard, coming back from an injury, or just tired of feeling wound up, a single well-run recovery session can reset your baseline. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach, and we offer same day booking.",
  },
  ],
  relatedServiceSlugs: [
@@ -317,12 +317,12 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "What a session actually feels like" },
  {
  type: "p",
- text: "You&rsquo;re **fully clothed**, lying face-up or face-down depending on what we&rsquo;re treating. A padded harness cradles your hips (or head, for cervical work) and the table applies the traction in gentle pulses. Sessions last **20–30 minutes**. Most patients describe it as one of the most relaxing parts of their treatment, several fall asleep on the table.",
+ text: "You&rsquo;re **fully clothed**, lying face-up or face-down depending on what we&rsquo;re treating. A padded harness cradles your hips (or head, for cervical work) and the table applies the traction in gentle pulses. Sessions last **20–40 minutes**. Most patients describe it as one of the most relaxing parts of their treatment, several fall asleep on the table.",
  },
  { type: "h2", text: "How many sessions does it take?" },
  {
  type: "p",
- text: "There&rsquo;s no honest one-size-fits-all answer, but a realistic frame: most patients feel a shift in the first **3–5 sessions** and complete a full protocol in **12–20 visits** over 6–10 weeks. We reassess constantly, if it&rsquo;s not working after the first few sessions, we don&rsquo;t just keep going. We change the plan.",
+ text: "There&rsquo;s no honest one-size-fits-all answer, but a realistic frame: most patients feel a shift in the first **3–5 sessions** and complete a full protocol in **12–24 visits** over 6–12 weeks. We reassess constantly, if it&rsquo;s not working after the first few sessions, we don&rsquo;t just keep going. We change the plan.",
  },
  {
  type: "quote",

@@ -85,7 +85,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Chiropractic Adjustments in Laguna Hills, CA · Aligned Health",
  metaDescription:
- "Precise Diversified-technique chiropractic adjustments in Laguna Hills, CA. Same-day appointments, most PPO plans accepted. Serving South Orange County.",
+ "Precise Diversified-technique chiropractic adjustments in Laguna Hills, CA. Same day booking, most PPO plans accepted. Serving South Orange County.",
  keywords: [
  "chiropractic adjustment laguna hills",
  "chiropractor near me",
@@ -189,7 +189,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Non-Surgical Spinal Decompression in Laguna Hills · Aligned Health",
  metaDescription:
- "Non-surgical spinal decompression for herniated discs, sciatica, and chronic low-back pain in Laguna Hills, CA. Same-day appointments, most PPO plans accepted.",
+ "Non-surgical spinal decompression for herniated discs, sciatica, and chronic low-back pain in Laguna Hills, CA. Same day booking, most PPO plans accepted.",
  keywords: [
  "spinal decompression laguna hills",
  "non surgical spinal decompression",
@@ -204,8 +204,8 @@ export const SERVICES: readonly Service[] = [
  hero: {
  eyebrow: "Disc & sciatica care",
  tagline:
- "Motorized traction that creates space where your spine has lost it, often the fourth option after &lsquo;manage / inject / operate.&rsquo;",
- stat: { value: "20-30", label: "min per session" },
+ "Motorized traction that creates space where your spine has lost it.",
+ stat: { value: "20-40", label: "min per session" },
  },
  intro: {
  lead:
@@ -216,7 +216,7 @@ export const SERVICES: readonly Service[] = [
  {
  title: "Precise segmental setup",
  description:
- "We position the table to target the specific spinal segment causing your symptoms, lumbar or cervical.",
+ "We position the table to target the specific spinal segment causing your symptoms, in the cervical or lumbar spine.",
  },
  {
  title: "Cyclical traction",
@@ -255,10 +255,10 @@ export const SERVICES: readonly Service[] = [
  "Pregnancy",
  ],
  whatToExpect: {
- duration: "20-30 min per session",
+ duration: "20-40 min per session",
  frequency: "2-3 sessions per week in an active protocol",
  prep: "Wear comfortable clothing, no need to change.",
- body: "Most patients feel a shift in the first three to five sessions and complete a full protocol in twelve to twenty visits over six to ten weeks. We reassess constantly, if it&rsquo;s not working we don&rsquo;t just keep going, we change the plan.",
+ body: "Most patients feel a shift in the first three to five sessions and complete a full protocol in twelve to twenty-four visits over six to twelve weeks. We reassess constantly, if it&rsquo;s not working we don&rsquo;t just keep going, we change the plan.",
  },
  faqs: [
  {
@@ -293,7 +293,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Electromuscular Stimulation (E-Stim) in Laguna Hills · Aligned Health",
  metaDescription:
- "Electromuscular stimulation (e-stim / TENS) at Aligned Health in Laguna Hills to relax muscle spasm and reduce pain during recovery. Same-day appointments, PPO plans accepted.",
+ "Electromuscular stimulation (e-stim / TENS) at Aligned Health in Laguna Hills to relax muscle spasm and reduce pain during recovery. Same day booking, PPO plans accepted.",
  keywords: [
  "electromuscular stimulation laguna hills",
  "e-stim therapy orange county",
@@ -393,7 +393,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Percussion Therapy in Laguna Hills · Muscle Recovery at Aligned Health",
  metaDescription:
- "Percussion therapy at Aligned Health in Laguna Hills, CA, deep-muscle recovery for athletes, weekend warriors, and desk workers. Same-day appointments, PPO plans accepted.",
+ "Percussion therapy at Aligned Health in Laguna Hills, CA, deep-muscle recovery for athletes, weekend warriors, and desk workers. Same day booking, PPO plans accepted.",
  keywords: [
  "percussion therapy laguna hills",
  "massage gun therapy orange county",
@@ -493,7 +493,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "PEMF Therapy in Laguna Hills · Pulsed Electromagnetic Field · Aligned Health",
  metaDescription:
- "PEMF (Pulsed Electromagnetic Field) therapy at Aligned Health in Laguna Hills, CA, supports cellular recovery and reduces inflammation. Same-day appointments, PPO plans accepted.",
+ "PEMF (Pulsed Electromagnetic Field) therapy at Aligned Health in Laguna Hills, CA, supports cellular recovery and reduces inflammation. Same day booking, PPO plans accepted.",
  keywords: [
  "pemf therapy laguna hills",
  "pulsed electromagnetic field therapy",
@@ -593,7 +593,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Game Ready Ice Compression Therapy in Laguna Hills · Aligned Health",
  metaDescription:
- "Game Ready cold + intermittent compression therapy at Aligned Health in Laguna Hills, CA, the gold standard for acute-injury recovery. Same-day appointments, PPO plans accepted.",
+ "Game Ready cold + intermittent compression therapy at Aligned Health in Laguna Hills, CA, the gold standard for acute-injury recovery. Same day booking, PPO plans accepted.",
  keywords: [
  "game ready therapy laguna hills",
  "cold compression therapy orange county",
@@ -693,7 +693,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Myofascial Scraping (IASTM) in Laguna Hills · Aligned Health",
  metaDescription:
- "Instrument-assisted myofascial scraping at Aligned Health in Laguna Hills, CA, releases fascial restrictions and restores mobility. Same-day appointments, PPO plans accepted.",
+ "Instrument-assisted myofascial scraping at Aligned Health in Laguna Hills, CA, releases fascial restrictions and restores mobility. Same day booking, PPO plans accepted.",
  keywords: [
  "myofascial scraping laguna hills",
  "iastm therapy orange county",
@@ -788,7 +788,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Red Light Therapy in Laguna Hills · Photobiomodulation · Aligned Health",
  metaDescription:
- "Red light therapy (photobiomodulation) at Aligned Health in Laguna Hills, CA, supports tissue recovery and calms inflammation. Same-day appointments, PPO plans accepted.",
+ "Red light therapy (photobiomodulation) at Aligned Health in Laguna Hills, CA, supports tissue recovery and calms inflammation. Same day booking, PPO plans accepted.",
  keywords: [
  "red light therapy laguna hills",
  "photobiomodulation orange county",
@@ -887,7 +887,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Pneumatic Compression Boots in Laguna Hills · Aligned Health",
  metaDescription:
- "Sequential pneumatic compression boots at Aligned Health in Laguna Hills, CA, spa-like recovery for legs and arms. Same-day appointments, PPO plans accepted.",
+ "Sequential pneumatic compression boots at Aligned Health in Laguna Hills, CA, spa-like recovery for legs and arms. Same day booking, PPO plans accepted.",
  keywords: [
  "pneumatic compression laguna hills",
  "compression boots orange county",
@@ -987,7 +987,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Intersegmental Distraction (Roller Table) in Laguna Hills · Aligned Health",
  metaDescription:
- "Intersegmental distraction roller-table therapy at Aligned Health in Laguna Hills, CA, gentle spinal mobilization for stiff backs. Same-day appointments, PPO plans accepted.",
+ "Intersegmental distraction roller-table therapy at Aligned Health in Laguna Hills, CA, gentle spinal mobilization for stiff backs. Same day booking, PPO plans accepted.",
  keywords: [
  "roller table therapy laguna hills",
  "intersegmental traction",
@@ -1086,7 +1086,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Assisted Stretching in Laguna Hills · One-on-One Sessions · Aligned Health",
  metaDescription:
- "One-on-one assisted stretching at Aligned Health in Laguna Hills, CA, restores flexibility, mobility, and balance. Same-day appointments, PPO plans accepted.",
+ "One-on-one assisted stretching at Aligned Health in Laguna Hills, CA, restores flexibility, mobility, and balance. Same day booking, PPO plans accepted.",
  keywords: [
  "assisted stretching laguna hills",
  "stretch therapy orange county",
@@ -1179,7 +1179,7 @@ export const SERVICES: readonly Service[] = [
  short: "Fascial suction therapy",
  metaTitle: "Cupping Therapy in Laguna Hills · Aligned Health",
  metaDescription:
- "Cupping therapy at Aligned Health in Laguna Hills, CA, suction that lifts fascia to improve circulation and release tension. Same-day appointments, PPO plans accepted.",
+ "Cupping therapy at Aligned Health in Laguna Hills, CA, suction that lifts fascia to improve circulation and release tension. Same day booking, PPO plans accepted.",
  keywords: [
  "cupping therapy laguna hills",
  "cupping orange county",
@@ -1278,7 +1278,7 @@ export const SERVICES: readonly Service[] = [
  metaTitle:
  "Therapeutic Ultrasound in Laguna Hills · Aligned Health",
  metaDescription:
- "Therapeutic ultrasound at Aligned Health in Laguna Hills, CA, deep-tissue sound waves that reduce inflammation and speed healing. Same-day appointments, PPO plans accepted.",
+ "Therapeutic ultrasound at Aligned Health in Laguna Hills, CA, deep-tissue sound waves that reduce inflammation and speed healing. Same day booking, PPO plans accepted.",
  keywords: [
  "therapeutic ultrasound laguna hills",
  "ultrasound therapy orange county",
@@ -1370,10 +1370,125 @@ export const SERVICES: readonly Service[] = [
  "electromuscular-stimulation",
  ],
  },
+
+ /* ------------------ 14. Auto / Personal Injury --------------------- */
+ {
+  slug: "auto-personal-injury",
+  label: "Auto/Personal Injury",
+  short: "Crash & injury recovery care",
+  metaTitle:
+   "Auto Accident & Personal Injury Chiropractor in Laguna Hills · Aligned Health",
+  metaDescription:
+   "Post-accident chiropractic care for whiplash, neck, and back injuries in Laguna Hills, CA. Same day booking, auto insurance and attorney lien accepted. Serving South Orange County.",
+  keywords: [
+   "auto accident chiropractor laguna hills",
+   "personal injury chiropractor laguna hills",
+   "car accident chiropractor near me",
+   "whiplash treatment laguna hills",
+   "post accident chiropractic care orange county",
+   "chiropractor for car accident injuries",
+   "personal injury doctor laguna hills",
+   "attorney lien chiropractor orange county",
+  ],
+  // NOTE: reusing the chiropractic-adjustment photo until a dedicated
+  // auto/PI hero image is provided. Swap `imageSrc` when new imagery
+  // is available; keep the Squarespace CDN allow-list entry in
+  // next.config.ts intact.
+  imageSrc: `${IMG_BASE}/3dd5634c-1569-4b59-9138-2caf3eb46524/IMG_8324.jpg`,
+  imageAlt:
+   "Chiropractic care for auto accident and personal injury patients at Aligned Health in Laguna Hills",
+  hero: {
+   eyebrow: "Post-accident care",
+   tagline:
+    "Whiplash, neck, and back injury care after a car accident or workplace incident, documented, insurance-friendly, and built to get you back to normal.",
+   stat: { value: "72hr", label: "ideal care window" },
+  },
+  intro: {
+   lead:
+    "If you&rsquo;ve been in a car accident or suffered a personal injury, prompt chiropractic care can be the difference between a clean recovery and lingering pain months later.",
+   body: "We treat auto accident and personal injury patients across South Orange County. Every case starts with a full injury workup, whiplash screen, spinal and neurologic exam, then a documented treatment plan matched to what we find. We bill your auto insurance directly (MedPay / PIP) when available and treat many patients on an attorney lien so the paperwork side of your recovery is handled while you focus on healing.",
+  },
+  howItWorks: [
+   {
+    title: "Comprehensive injury assessment",
+    description:
+     "Full orthopedic and neurologic exam, imaging referral when indicated, and a written report that documents your injuries from day one.",
+   },
+   {
+    title: "Personalized treatment plan",
+    description:
+     "Adjustments, spinal decompression, soft-tissue work, and recovery modalities matched to the specific injuries revealed by your exam.",
+   },
+   {
+    title: "Insurance & attorney coordination",
+    description:
+     "We bill auto insurance directly and, when appropriate, treat on an attorney lien so you have zero out-of-pocket cost during care.",
+   },
+   {
+    title: "Documented recovery",
+    description:
+     "Every visit is charted with objective findings so your attorney and insurance carrier have the clinical record they need for your claim.",
+   },
+  ],
+  benefits: [
+   "See a chiropractor within the ideal 72-hour post-accident window",
+   "Non-drug, non-surgical relief for whiplash and back injuries",
+   "Detailed injury documentation for your insurance or PI claim",
+   "Direct billing to auto insurance (MedPay / PIP) where available",
+   "Attorney lien-based treatment available, zero upfront cost",
+   "Coordinated care with your PI attorney and primary physician",
+  ],
+  indications: [
+   "Whiplash and cervical soft-tissue injury after a rear-end collision",
+   "Neck pain, headaches, or dizziness that started after a crash",
+   "Mid-back and low-back pain following an auto accident",
+   "Herniated or bulging disc from accident-related trauma",
+   "Shoulder, hip, or knee soft-tissue injury from a fall or slip",
+   "Delayed-onset symptoms 24-72 hours after an impact",
+  ],
+  contraindications: [
+   "Suspected fracture, internal bleeding, or head injury (go to the ER first)",
+   "Progressive neurologic deficits requiring immediate imaging",
+   "Loss of consciousness during the incident without prior evaluation",
+  ],
+  whatToExpect: {
+   duration: "60 min first visit · 20-30 min follow-ups",
+   frequency: "2-3 visits per week during the acute phase",
+   prep: "Bring your police report, insurance information, and attorney details if you have them.",
+   body: "Your first visit is a full injury workup: history of the accident, orthopedic and neurologic exam, and a written treatment plan you can share with your attorney or claims adjuster. We&rsquo;ll explain what we found, what we recommend, and what recovery typically looks like for your injury pattern before you start care.",
+  },
+  faqs: [
+   {
+    q: "How soon after a car accident should I see a chiropractor?",
+    a: "As soon as possible, ideally within 72 hours. Adrenaline and inflammation can mask whiplash and spinal injuries for days after a crash. Early care speeds recovery and creates a medical record that supports your insurance or personal injury claim.",
+   },
+   {
+    q: "Do you accept auto insurance or work on an attorney lien?",
+    a: "Yes to both. We bill auto insurance directly when MedPay or PIP is available, and we treat many patients on an attorney lien, which means zero out-of-pocket cost during your care. Payment is handled from your settlement.",
+   },
+   {
+    q: "What injuries do you treat after an accident?",
+    a: "Whiplash, neck and back pain, headaches, herniated or bulging discs, sacroiliac dysfunction, shoulder and knee soft-tissue injuries, and delayed-onset symptoms that appear days after the impact.",
+   },
+   {
+    q: "How many visits will I need?",
+    a: "Minor whiplash often resolves in 6-12 visits over 4-6 weeks. More significant spinal injuries can take 3-6 months of care. We reassess constantly and share updates with your attorney or adjuster as your case progresses.",
+   },
+   {
+    q: "Do I need a personal injury attorney?",
+    a: "Not always. If your case is straightforward and the other driver&rsquo;s insurance is cooperating, you may not need one. If liability is disputed or your injuries are significant, we&rsquo;re happy to refer you to trusted local PI attorneys we work with regularly.",
+   },
+  ],
+  relatedSlugs: [
+   "chiropractic-adjustments",
+   "spinal-decompression",
+   "electromuscular-stimulation",
+  ],
+ },
 ];
 
 /* ---------------------------------------------------------------------- */
-/* Nav-specific projection */
+/* Nav-specific projection                                                 */
 /* ---------------------------------------------------------------------- */
 
 export interface ServiceNavItem {

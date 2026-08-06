@@ -7,12 +7,12 @@ const PATH = "/appointments";
 export const metadata: Metadata = {
  title: "Book an Appointment · Aligned Health Chiropractic in Laguna Hills",
  description:
- "Book your chiropractic appointment at Aligned Health in Laguna Hills, CA. Same-day availability, most PPO plans accepted, and secure online booking via Jane App.",
+ "Book your chiropractic appointment at Aligned Health in Laguna Hills, CA. Same day booking, most PPO plans accepted, and secure online scheduling via Jane App.",
  alternates: { canonical: PATH },
  openGraph: {
  title: "Book an Appointment · Aligned Health Chiropractic in Laguna Hills",
  description:
- "Come in and experience the Aligned Health difference. Book online through Jane App or call the clinic, same-day availability typical.",
+ "Come in and experience the Aligned Health difference. Book online through Jane App or call the clinic, same day booking.",
  url: PATH,
  type: "website",
  },

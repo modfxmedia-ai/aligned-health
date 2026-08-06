@@ -184,7 +184,7 @@ export function Hero() {
  >
  A highly qualified team helping patients relieve pain, recover
  from surgery, and rebuild strength, balance, and mobility, with
- same-day or next-day appointments.
+ same day booking.
  </motion.p>
 
  <motion.div
@@ -227,7 +227,7 @@ export function Hero() {
  >
  <HeroStat value={6} suffix="+" label="PPO plans accepted" />
  <HeroStat value={3} label="Signature therapies" />
- <HeroStat value={48} suffix="h" label="Typical booking window" />
+ <HeroStat value={30} suffix="-60" label="Minute sessions" />
  </motion.div>
  </div>
 
@@ -301,7 +301,7 @@ export function Hero() {
  <CornerFrames />
  </motion.div>
 
- {/* Floating "same-day availability" badge */}
+ {/* Floating "same day booking" badge */}
  <motion.div
  initial={reduce ? false : { opacity: 0, y: 24 }}
  animate={{ opacity: 1, y: 0 }}
@@ -346,11 +346,11 @@ export function Hero() {
  </span>
  <div>
  <p className="text-[0.65rem] uppercase tracking-[0.22em] text-tan">
- Same-day availability
+ Same day booking
  </p>
  <p className="mt-1.5 text-sm leading-snug text-linen/90">
- Waiting lists are rarely used, patients usually book
- within 1–2 days.
+ Waiting lists are rarely used, as patients can
+ typically book same day or within 1–2 days.
  </p>
  </div>
  </div>
@@ -368,7 +368,7 @@ export function Hero() {
  className="absolute -right-4 top-8 hidden rounded-full border border-linen/15 bg-espresso/90 px-4 py-2 backdrop-blur-sm md:inline-flex lg:-right-6"
  >
  <span className="text-[0.65rem] uppercase tracking-[0.24em] text-tan">
- Laguna Hills · Est. Care
+ Laguna Hills · Est. 2020
  </span>
  </motion.div>
  </div>

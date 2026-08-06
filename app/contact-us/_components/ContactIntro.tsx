@@ -11,6 +11,7 @@ import {
 } from "motion/react";
 import { useRef, useState, type FormEvent } from "react";
 import { CLINIC } from "@/lib/site";
+import { EmailLink } from "@/app/_components/EmailLink";
 
 /**
  * /contact-us, full-bleed hero photo + wave divider + two-column content
@@ -339,12 +340,11 @@ function ContactForm() {
 
  <p className="text-xs leading-relaxed text-mocha/70">
  Or email us at{" "}
- <a
- href={`mailto:${CLINIC.email}`}
+ <EmailLink
+ email={CLINIC.email}
  className="underline decoration-tan underline-offset-4 hover:text-espresso"
- >
- {CLINIC.email}
- </a>
+ copiedClassName="text-mocha"
+ />
  .
  </p>
  </div>
@@ -501,9 +501,6 @@ function ContactSidebar() {
  >
  {CLINIC.phoneDisplay}
  </a>
- <p className="mt-2 text-xs leading-relaxed text-mocha/70">
- We&rsquo;ll pick up during clinic hours.
- </p>
  </div>
  </div>
  </div>
@@ -516,12 +513,13 @@ function ContactSidebar() {
  </IconChip>
  <div className="min-w-0 flex-1">
  <p className="eyebrow !text-mocha">Email us</p>
- <a
- href={`mailto:${CLINIC.email}`}
- className="mt-2 block break-all text-sm text-espresso underline decoration-tan underline-offset-4 hover:text-mocha md:text-base"
- >
- {CLINIC.email}
- </a>
+ <div className="mt-2 flex flex-wrap items-baseline gap-x-1">
+ <EmailLink
+ email={CLINIC.email}
+ className="block break-all text-sm text-espresso underline decoration-tan underline-offset-4 hover:text-mocha md:text-base"
+ copiedClassName="text-mocha"
+ />
+ </div>
  <p className="mt-2 text-xs leading-relaxed text-mocha/70">
  General response time is one business day.
  </p>
@@ -533,7 +531,7 @@ function ContactSidebar() {
  <div className="rounded-3xl border border-linen/25 bg-espresso p-6 text-linen md:p-7">
  <p className="eyebrow">Prefer to book directly?</p>
  <p className="mt-3 text-sm leading-relaxed text-linen/85">
- Same-day availability typical. Secure booking through Jane App.
+ Same day booking. Secure scheduling through Jane App.
  </p>
  <Link
  href="https://alignedhealthoc.janeapp.com/"

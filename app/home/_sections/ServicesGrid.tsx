@@ -44,7 +44,7 @@ const SERVICES: readonly Service[] = [
  index: "01",
  title: "Chiropractic Adjustments",
  description:
- "Precise thrusts that restore spinal alignment and range of motion.",
+ "Precise thrusts that restore spine and extremity joint mobility.",
  imageSrc:
  "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/3dd5634c-1569-4b59-9138-2caf3eb46524/IMG_8324.jpg",
  span: "feature",

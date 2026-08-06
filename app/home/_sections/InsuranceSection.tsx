@@ -8,6 +8,7 @@ import {
  useTransform,
  type Variants,
 } from "motion/react";
+import { EmailLink } from "@/app/_components/EmailLink";
 import { useRef } from "react";
 import { MagneticLink } from "@/app/_components/motion/MagneticLink";
 import { RevealHeading } from "@/app/_components/motion/RevealHeading";
@@ -235,7 +236,7 @@ export function InsuranceSection() {
  }}
  className="mt-6 max-w-2xl text-xs leading-relaxed text-linen/55"
  >
- <strong className="text-linen/75">* Important</strong> 
+ <strong className="text-linen/75">* Important.</strong>{" "}
  Please note that some of the above insurance plans may be
  processed out-of-network and deductibles/copays may vary. But
  don&rsquo;t worry we&rsquo;ll always check your benefits
@@ -323,12 +324,11 @@ export function InsuranceSection() {
  {CLINIC.address.city}, {CLINIC.address.region}{" "}
  {CLINIC.address.postalCode}
  </span>
- <a
- href={`mailto:${CLINIC.email}`}
+ <EmailLink
+ email={CLINIC.email}
  className="mt-2 w-fit underline decoration-tan underline-offset-4 hover:text-linen"
- >
- {CLINIC.email}
- </a>
+ copiedClassName="text-linen/70"
+ />
  <a
  href={`tel:${PHONE_TEL}`}
  className="w-fit underline decoration-tan underline-offset-4 hover:text-linen"

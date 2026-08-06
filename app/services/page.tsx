@@ -7,12 +7,12 @@ const PATH = "/services";
 export const metadata: Metadata = {
  title: "Chiropractic Services · Aligned Health in Laguna Hills, CA",
  description:
- "Explore all 13 services at Aligned Health, chiropractic adjustments, spinal decompression, PEMF, cupping, red light therapy, pneumatic compressions, and more, in Laguna Hills, CA.",
+ "Explore all 14 services at Aligned Health, chiropractic adjustments, spinal decompression, PEMF, cupping, red light therapy, pneumatic compressions, auto and personal injury care, and more, in Laguna Hills, CA.",
  alternates: { canonical: PATH },
  openGraph: {
  title: "Chiropractic Services · Aligned Health in Laguna Hills, CA",
  description:
- "13 advanced treatment and therapeutic modalities offered at Aligned Health, from Diversified adjusting and spinal decompression to PEMF, red light, and pneumatic compressions.",
+ "14 advanced treatment and therapeutic modalities offered at Aligned Health, from Diversified adjusting and spinal decompression to PEMF, red light, and auto/personal injury care.",
  url: PATH,
  type: "website",
  },

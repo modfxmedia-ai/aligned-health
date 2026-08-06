@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  openGraph: {
  title: "Contact Aligned Health · Chiropractic in Laguna Hills, CA",
  description:
- "Call, email, or message us. Same-day availability, most PPO plans accepted.",
+ "Call, email, or message us. Same day booking, most PPO plans accepted.",
  url: PATH,
  type: "website",
  },

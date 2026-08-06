@@ -21,7 +21,7 @@ const PRACTICES: readonly Practice[] = [
   {
     title: "Diversified Adjusting",
     description:
-      "A diversified adjustment is characterized by a high-velocity, low amplitude thrust. The objective of a diversified adjustment is to restore proper movement and alignment of the spine. The thrust delivered by the chiropractor usually results in the popping noise associated with a chiropractic adjustment.",
+      "A diversified adjustment is characterized by a high-velocity, low amplitude thrust. The objective of a diversified adjustment is to restore proper joint mobility and range of motion. The thrust delivered by the chiropractor usually results in the popping noise associated with a chiropractic adjustment.",
     imageSeed: "aligned-diversified",
     imageAlt: "Chiropractor performing a diversified spinal adjustment",
   },
@@ -33,9 +33,9 @@ const PRACTICES: readonly Practice[] = [
     imageAlt: "Percussive therapy being applied to a patient's muscle",
   },
   {
-    title: "Air Relax",
+    title: "Pneumatic Compression",
     description:
-      "The Air Relax is an air compression device with multiple chambers that compress in succession. Our system increases blood flow through your muscles, which has been shown to aid with sports and other recovery, similar to the effects of a professional massage.",
+      "Pneumatic compression uses an air-driven device with multiple chambers that compress in succession. Our system increases blood flow through your muscles, which has been shown to aid with sports and other recovery, similar to the effects of a professional massage.",
     imageSeed: "aligned-airrelax",
     imageAlt: "Air compression recovery boots on a patient's legs",
   },

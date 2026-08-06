@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CLINIC } from "@/lib/site";
+import { EmailLink } from "@/app/_components/EmailLink";
 
 /**
  * Modern multi-column footer.
@@ -57,7 +58,7 @@ export function SiteFooter() {
  <p className="mt-6 max-w-sm text-sm leading-relaxed text-linen/70">
  A highly qualified team helping the Southern California community
  relieve pain, recover from surgery, and rebuild strength, with
- same-day or next-day appointments.
+ same day booking.
  </p>
 
  {/* Big phone as a signature call to action */}
@@ -109,12 +110,11 @@ export function SiteFooter() {
  >
  Get directions <span aria-hidden="true">↗</span>
  </a>
- <a
- href={`mailto:${CLINIC.email}`}
+ <EmailLink
+ email={CLINIC.email}
  className="mt-4 w-fit text-sm text-linen/85 underline decoration-tan/60 underline-offset-4 transition-colors hover:text-linen hover:decoration-tan"
- >
- {CLINIC.email}
- </a>
+ copiedClassName="text-linen/70"
+ />
  </address>
  </div>
 
@@ -127,10 +127,10 @@ export function SiteFooter() {
  <span className="absolute inset-0 rounded-full bg-tan opacity-70 blur-[2px]" />
  <span className="relative h-2 w-2 rounded-full bg-tan" />
  </span>
- Same-day availability
+ Same day booking
  </div>
  <p className="mt-3 text-sm leading-relaxed text-linen/85">
- By appointment · Patients typically booked within 1–2 days.
+ By appointment · Book same day, no waiting lists.
  </p>
  <Link
  href="https://alignedhealthoc.janeapp.com/"

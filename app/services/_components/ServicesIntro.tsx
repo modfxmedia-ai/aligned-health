@@ -9,12 +9,12 @@ import {
 } from "motion/react";
 
 /**
- * /services, hero + 13-card grid.
+ * /services, hero + 14-card grid.
  *
  * Copy verbatim from the live /services page:
  * Intro: "At Aligned Health we provide some of the most advanced treatment
  * and therapeutic modalities."
- * Titles: the exact 13 service names.
+ * Titles: the exact 13 legacy service names, plus Auto/Personal Injury.
  *
  * Descriptions are added here (the live page lists titles only). They're
  * short, factual descriptions of each modality.
@@ -38,7 +38,7 @@ const SERVICES: readonly Service[] = [
  slug: "chiropractic-adjustments",
  title: "Chiropractic Adjustments",
  description:
- "Precise thrusts that restore spinal alignment and range of motion, the foundation of every treatment plan.",
+ "Precise thrusts that restore spine and extremity joint mobility, the foundation of every treatment plan.",
  imageSrc:
  "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/3dd5634c-1569-4b59-9138-2caf3eb46524/IMG_8324.jpg",
  },
@@ -137,6 +137,14 @@ const SERVICES: readonly Service[] = [
  "High-frequency sound waves that penetrate deep into soft tissue to reduce inflammation and speed healing.",
  imageSrc:
  "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/db97a98a-50f3-426a-90a9-a18061ff7558/74AA8CFA-75BD-4EBC-A7DE-A7E803253B34_1_105_c.jpeg",
+ },
+ {
+ slug: "auto-personal-injury",
+ title: "Auto/Personal Injury",
+ description:
+ "Post-accident chiropractic care for whiplash and injury recovery, with auto insurance and attorney lien coordination.",
+ imageSrc:
+ "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/3dd5634c-1569-4b59-9138-2caf3eb46524/IMG_8324.jpg",
  },
 ];
 
@@ -241,7 +249,7 @@ export function ServicesIntro() {
  </div>
  </section>
 
- {/* --- 13-card grid --- */}
+ {/* --- 14-card grid --- */}
  <section className="section-linen section relative overflow-hidden">
  <div className="container-shell relative z-10">
  <div className="flex items-center gap-4">
@@ -288,8 +296,8 @@ export function ServicesIntro() {
  <p className="eyebrow !text-mocha">Not sure which service?</p>
  <p className="mt-3 text-base leading-relaxed text-mocha md:text-lg">
  We&rsquo;ll verify your benefits and help match you to the
- right combination of therapies. Same-day availability is
- typical.
+ right combination of therapies. Same day booking, no
+ waiting lists.
  </p>
  </div>
  <div className="flex flex-wrap items-center gap-4">

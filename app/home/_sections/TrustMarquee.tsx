@@ -7,7 +7,7 @@ import { Marquee } from "@/app/_components/motion/Marquee";
  */
 
 const ITEMS = [
-  "Same-day appointments",
+  "Same day booking",
   "6+ PPO plans accepted",
   "HSA · FSA · HRA welcome",
   "New patients welcome",

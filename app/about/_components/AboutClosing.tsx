@@ -66,8 +66,8 @@ export function AboutClosing() {
  }}
  className="body-lead mt-8 text-linen/85"
  >
- Same-day availability, most PPO plans accepted, and no waiting lists.
- Reach out and we&rsquo;ll get you scheduled within one to two days.
+ Same day booking, most PPO plans accepted, and HSA and FSA accepted.
+ Reach out and we&rsquo;ll get you scheduled same day or within 1–2 days.
  </motion.p>
 
  <motion.div

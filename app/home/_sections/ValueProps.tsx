@@ -45,9 +45,9 @@ interface Step {
 const STEPS: readonly Step[] = [
  {
  index: "01",
- title: "Same-Day Scheduling",
- body: "Waiting lists are rarely used. Patients are generally scheduled same day or within 1–2 days of their preferred time.",
- highlight: "1–2 day typical booking",
+ title: "Prompt Scheduling",
+ body: "Waiting lists are rarely used. Patients can typically book same day or within 1–2 days of their preferred time.",
+ highlight: "Same day or 1–2 day booking",
  Icon: ClockIcon,
  },
  {
@@ -60,7 +60,7 @@ const STEPS: readonly Step[] = [
  {
  index: "03",
  title: "Whole-Person Care",
- body: "Diversified adjusting, percussion therapy, and Air Relax compression combined to restore mobility.",
+ body: "Diversified adjusting, percussion therapy, and pneumatic compression combined to restore mobility.",
  highlight: "3 signature therapies",
  Icon: OrbitIcon,
  },

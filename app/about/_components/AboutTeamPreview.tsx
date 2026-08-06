@@ -123,7 +123,7 @@ export function AboutTeamPreview() {
  href={`/our-team#${doctor.slug}`}
  className="group flex h-full flex-col overflow-hidden rounded-3xl bg-cream shadow-card ring-1 ring-tan/25 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-card-hover"
  >
- <div className="relative aspect-[16/10] w-full overflow-hidden md:aspect-[3/2]">
+ <div className="relative aspect-[4/5] w-full overflow-hidden">
  <Image
  src={doctor.photo}
  alt={doctor.photoAlt}

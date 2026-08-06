@@ -90,7 +90,7 @@ export function SiteHeader() {
  aria-hidden="true"
  className="inline-block h-1.5 w-1.5 rounded-full bg-tan"
  />
- By appointment · Same-day availability · Laguna Hills, CA
+ By appointment · Same day booking · Laguna Hills, CA
  </span>
  <a
  href={`tel:${PHONE_TEL}`}
@@ -425,7 +425,7 @@ function ServicesDropdown({
  every service in the dropdown. */}
  <div className="flex flex-col items-stretch gap-3 border-t border-tan/20 bg-cream px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
  <p className="text-[0.7rem] uppercase tracking-[0.22em] text-mocha">
- Same-day appointments typical.
+ Same day booking.
  </p>
  <Link
  href={CTA.href}

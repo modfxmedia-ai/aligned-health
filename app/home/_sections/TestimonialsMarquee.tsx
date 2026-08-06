@@ -1,20 +1,21 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { Marquee } from "@/app/_components/motion/Marquee";
 
 /**
- * "What our patients say", Google-style reviews rendered as a horizontal
- * marquee of glass cards. Two counter-scrolling rows create movement.
+ * "What our patients say", real 5-star Google reviews rendered as a
+ * horizontal marquee of glass cards. Two counter-scrolling rows create
+ * movement, and a "See more reviews on Google" CTA anchors the section
+ * to the clinic's live Google Business Profile.
  *
- * NOTE: These are PLACEHOLDER testimonials for design purposes. Before
- * launch, replace with real reviews via one of:
- * - Google Places API (server-side fetch + revalidate)
- * - Manual copy from Google Business Profile
- * - A third-party widget (Elfsight, EmbedSocial, etc.)
- * The names are anonymized (First name + last initial) and no specific
- * clinical claims or doctor names are attributed.
+ * Names are shortened to First name + last initial to match the
+ * presentation on Google's own review widget.
  */
+
+const GOOGLE_REVIEWS_URL =
+ "https://www.google.com/maps/place/Aligned+Health+formerly+known+as+ASAP+Alpha+Sport+And+Performance+Chiropractic/@33.5748115,-117.6755535,871m/data=!3m2!1e3!5s0x80dceec47cf99773:0x8e0bd7756e6af25c!4m8!3m7!1s0x80dcebe3bbff6193:0xa55599af90af8db0!8m2!3d33.5748115!4d-117.6755535!9m1!1b1!16s%2Fg%2F11fwj32nr9?entry=ttu";
 
 interface Testimonial {
  id: string;
@@ -28,73 +29,161 @@ interface Testimonial {
 const TESTIMONIALS: readonly Testimonial[] = [
  {
  id: "t1",
- name: "Sarah M.",
- initial: "S",
- date: "3 months ago",
+ name: "Jenna M.",
+ initial: "J",
+ date: "1 month ago",
  rating: 5,
- text: "Same-day appointment when I threw my back out. The team knew exactly what to do, felt relief after the first visit.",
+ text: "Dustin treats his clients well, like you’re not just a number. Treatment feels tailored to specific needs and not rushed. This new location is great: easy to find, larger space, and has a comfortable feel and energy to it. I highly recommend!",
  },
  {
  id: "t2",
- name: "Michael R.",
- initial: "M",
- date: "1 month ago",
+ name: "Jay L.",
+ initial: "J",
+ date: "2 months ago",
  rating: 5,
- text: "Best chiropractic experience I've had. They really listen and tailor treatment to what my body actually needs.",
+ text: "Doctor Dustin is an adjusting savant. I go to chiropractors every 3 months, this man aligns joints and alleviates pressure others miss or can’t get to. Leaves me feeling like I can smell colors. Even my nasal passages open up. Forever grateful for you doctor.",
  },
  {
  id: "t3",
- name: "Jennifer L.",
+ name: "Juani L.",
  initial: "J",
- date: "2 weeks ago",
+ date: "11 months ago",
  rating: 5,
- text: "Been coming for over a year. The combination of adjustments and percussion therapy has transformed how my body feels every day.",
+ text: "I made an appointment with Dr. Dustin Hack after I threw out my lower back. I’d been in excruciating pain for three weeks. In a single session he was able to put my SI joint back and I felt huge relief. He is very personable, knowledgeable and very professional. He is a life changer.",
  },
  {
  id: "t4",
- name: "David K.",
- initial: "D",
- date: "4 months ago",
+ name: "Trevor C.",
+ initial: "T",
+ date: "8 months ago",
  rating: 5,
- text: "Professional, friendly, and effective. They verified my insurance up front so there were no surprises. Highly recommend.",
+ text: "I can’t say enough good things about Dr. Dustin Hack. I’ve been to so many chiropractors over the years, and he is by far the best I’ve ever worked with. He helped me when no one else could. His care, skill, and attention to detail are on another level. Highly, highly recommend.",
  },
  {
  id: "t5",
- name: "Amanda S.",
- initial: "A",
+ name: "Diana C.",
+ initial: "D",
  date: "2 months ago",
  rating: 5,
- text: "Convenient Laguna Hills location and easy booking. The whole team takes time to explain what they're doing at each visit.",
+ text: "Dr. Dustin Hack is very honest, fair and knowledgeable! Highly recommend him for any kind of body pain you may be experiencing, he has creative solutions!",
  },
  {
  id: "t6",
- name: "Robert T.",
+ name: "Robert R.",
  initial: "R",
- date: "5 weeks ago",
+ date: "1 year ago",
  rating: 5,
- text: "The compression therapy after my adjustment is a game-changer. Feels like a spa and PT session combined.",
+ text: "I have been going for 6 years now and every time I leave I feel so much better than when I walked in. Dustin spends the time to understand and evaluate the ailments of his patients and figures out the best treatment. His depth of knowledge is incredible. He is a true hidden gem.",
  },
  {
  id: "t7",
- name: "Emily N.",
- initial: "E",
- date: "1 week ago",
+ name: "Rachel W.",
+ initial: "R",
+ date: "9 months ago",
  rating: 5,
- text: "Been to a lot of chiros over the years. Aligned Health stands out for their whole-person approach and warm environment.",
+ text: "Dustin is the best! He is skilled and knowledgeable about how to treat injuries and is a great chiropractor too. Our whole family has benefited from his treatments. 10/10 recommend!",
  },
  {
  id: "t8",
- name: "Christopher B.",
- initial: "C",
- date: "3 weeks ago",
- rating: 4,
- text: "Got scheduled the same day I called after tweaking my neck. Relief within a couple of visits, very knowledgeable team.",
+ name: "Emma R.",
+ initial: "E",
+ date: "1 year ago",
+ rating: 5,
+ text: "Dustin is simply the best!! I’ve been going to him for 8 years. Being an athlete he has always kept me on the field and playing my best. He always goes the extra mile, he massages, stretches, and has many modalities that help with recovery and performance.",
+ },
+ {
+ id: "t9",
+ name: "Malisa H.",
+ initial: "M",
+ date: "1 year ago",
+ rating: 5,
+ text: "Dustin is the best chiropractor. He spends quality time doing muscle work to allow the body to adjust easily. Dustin is professional and very knowledgeable. I highly recommend him and I visit his office three times a month.",
+ },
+ {
+ id: "t10",
+ name: "Jessica R.",
+ initial: "J",
+ date: "1 year ago",
+ rating: 5,
+ text: "I’m currently training for the LA Marathon and ended up with severe pain in my back, hip, and leg. After nearly a month of discomfort, I finally visited Dr. Dustin. The next day, ALL of my pain was completely gone. If you’re considering going to a sports chiropractor, Dr. Dustin is worth every penny!",
+ },
+ {
+ id: "t11",
+ name: "Maurice T.",
+ initial: "M",
+ date: "1 year ago",
+ rating: 5,
+ text: "I started seeing Dustin a few years back for back issues from surfing and working out. At 57, I need to stay healthy, the chiropractic and preventive therapy he uses keeps me active. There’s no shortage of chiropractors around, but Dustin has produced the results.",
+ },
+ {
+ id: "t12",
+ name: "Stephanie K.",
+ initial: "S",
+ date: "1 year ago",
+ rating: 5,
+ text: "I can’t say enough good things about Dr. Dustin! From the moment I walked into his office, I felt genuinely cared for. Not only is he incredibly skilled, but his bedside manner is unmatched. Every visit leaves me feeling more aligned and pain-free.",
+ },
+ {
+ id: "t13",
+ name: "Jordan B.",
+ initial: "J",
+ date: "10 months ago",
+ rating: 5,
+ text: "Dustin is literally the best! I don’t know anyone that does both chiropractic work AND deep tissue work at the same time. He knows the body inside and out, and not only works on your body but helps you understand what he is doing and why.",
+ },
+ {
+ id: "t14",
+ name: "Rosen S.",
+ initial: "R",
+ date: "1 year ago",
+ rating: 5,
+ text: "I’ve been going here for years, and every time Dustin does a great job on my weak spots. I work at a desk, so my neck, back and legs need constant work. Dustin is very professional, takes the time to work on the problem areas, and I always leave in much better shape.",
+ },
+ {
+ id: "t15",
+ name: "Nick",
+ initial: "N",
+ date: "9 months ago",
+ rating: 5,
+ text: "I had an amazing experience! Dr. Dustin was incredibly accommodating, and his adjustment and treatment were absolutely top-notch. I highly recommend him!",
+ },
+ {
+ id: "t16",
+ name: "Aggi L.",
+ initial: "A",
+ date: "10 months ago",
+ rating: 5,
+ text: "Dustin has helped my daughter and I for 7 years and I have no complaints. He’s thorough, considerate and takes everything you tell him into consideration to give you the best care.",
+ },
+ {
+ id: "t17",
+ name: "Joselyn C.",
+ initial: "J",
+ date: "1 year ago",
+ rating: 5,
+ text: "I came in serious pain after hurting my back out of nowhere. I could barely breathe or lie down comfortably. Dr. Dustin Hack took the time to understand what was going on and provided real treatment, not just a quick fix. After my first adjustment my pain decreased dramatically. 10/10 recommend!",
+ },
+ {
+ id: "t18",
+ name: "Teresa C.",
+ initial: "T",
+ date: "8 months ago",
+ rating: 5,
+ text: "I’ve been to many other offices and I finally found the best! Dr. Hack is incredibly knowledgeable, kind, and attentive to whatever injury I have at the time. He takes the time to listen and explain what’s going on. Definitely recommend!",
+ },
+ {
+ id: "t19",
+ name: "Kelly J.",
+ initial: "K",
+ date: "2 years ago",
+ rating: 5,
+ text: "Dustin is amazing! My sister has been raving about his treatments and I finally got to experience one myself. I walked in with a lot of issues and left an hour later feeling like a new person. He used the percussion massager, compression boots and did adjustments. The best treatment I’ve ever had.",
  },
 ];
 
-// Split into two rows for counter-scrolling variety.
-const ROW_A = TESTIMONIALS.slice(0, 4);
-const ROW_B = TESTIMONIALS.slice(4);
+// Split into two counter-scrolling rows for visual variety.
+const ROW_A = TESTIMONIALS.slice(0, 10);
+const ROW_B = TESTIMONIALS.slice(10);
 
 export function TestimonialsMarquee() {
  const reduce = useReducedMotion();
@@ -157,7 +246,7 @@ export function TestimonialsMarquee() {
  className="inline-flex items-center gap-4 rounded-2xl border border-linen/25 bg-espresso/40 px-5 py-3 shadow-card backdrop-blur-sm"
  >
  <span className="font-serif text-3xl leading-none text-linen">
- 4.9
+ 5.0
  </span>
  <div className="flex flex-col gap-1">
  <StarRating rating={5} />
@@ -195,6 +284,27 @@ export function TestimonialsMarquee() {
  ))}
  </Marquee>
  </div>
+ </div>
+
+ {/* Footer CTA, links to the live Google Business Profile so patients
+ can read every review and add their own. */}
+ <div className="container-shell relative z-10 mt-12 flex justify-center md:mt-16">
+ <motion.div
+ initial={reduce ? false : { opacity: 0, y: 10 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+ transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+ >
+ <Link
+ href={GOOGLE_REVIEWS_URL}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="btn-cta-onDark btn-lg inline-flex items-center gap-2"
+ >
+ See more reviews on Google
+ <span aria-hidden="true">↗</span>
+ </Link>
+ </motion.div>
  </div>
  </section>
  );
