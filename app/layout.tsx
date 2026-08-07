@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { CLINIC, SITE_URL } from "@/lib/site";
 import { SiteHeader } from "@/app/_components/SiteHeader";
@@ -46,6 +47,12 @@ export default function RootLayout({
  <SiteHeader />
  <main className="flex-1">{children}</main>
  <SiteFooter />
+ <Script
+ src="https://widgets.leadconnectorhq.com/loader.js"
+ data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+ data-widget-id="6a761d806d7a5e86d2f32577"
+ strategy="lazyOnload"
+ />
  </body>
  </html>
  );
