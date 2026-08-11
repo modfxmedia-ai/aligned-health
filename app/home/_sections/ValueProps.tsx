@@ -10,8 +10,8 @@ import {
  type Variants,
 } from "motion/react";
 import { useRef, type ReactNode } from "react";
-
-const JANE_APP_URL = "https://alignedhealthoc.janeapp.com/";
+import { CLINIC } from "@/lib/site";
+import { BookNowLink } from "@/app/_components/BookNowLink";
 
 /**
  * "Why Aligned Health", merged header + full-width photo band + a horizontal
@@ -40,8 +40,9 @@ const HERO_PHOTO =
 interface Step {
  index: string;
  title: string;
- body: string;
+ body: ReactNode;
  highlight: string;
+ highlightHref?: string;
  Icon: (props: { className?: string }) => ReactNode;
 }
 
@@ -56,15 +57,25 @@ const STEPS: readonly Step[] = [
  {
  index: "02",
  title: "Insurance Verified First",
- body: "We verify your PPO benefits prior to booking so there are no surprises, HSA, FSA, and HRA welcome.",
- highlight: "6+ PPO plans accepted",
+ body: (
+ <>
+ If you want to use your insurance contact us at{" "}
+ <a href={`tel:${CLINIC.phone}`} className="link-underline text-espresso">
+ {CLINIC.phoneDisplay}
+ </a>
+ . We will verify your coverage prior to booking an appointment.
+ </>
+ ),
+ highlight:
+ "We proudly accept most PPO plans: Aetna, Meritain Health, Anthem Blue Cross, Blue Shield of CA, United Healthcare, Cigna",
  Icon: ShieldIcon,
  },
  {
  index: "03",
- title: "Whole-Person Care",
+ title: "One-on-One Sessions with a Highly Qualified Provider",
  body: "Diversified adjusting, percussion therapy, and pneumatic compression combined to restore mobility.",
- highlight: "3 signature therapies",
+ highlight: "View Services",
+ highlightHref: "/services",
  Icon: OrbitIcon,
  },
 ];
@@ -116,26 +127,6 @@ export function ValueProps() {
  <br className="hidden md:block" /> and stays{" "}
  <span className="italic text-mocha">personal.</span>
  </motion.h2>
- </div>
-
- <div className="md:col-span-5 md:col-start-8">
- <div className="flex items-center gap-4">
- <motion.span
- aria-hidden="true"
- initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
- whileInView={{ scaleX: 1 }}
- viewport={{ once: true, margin: "0px 0px -60px 0px" }}
- transition={{
- duration: 1.1,
- delay: 0.25,
- ease: [0.16, 1, 0.3, 1],
- }}
- className="block h-px flex-1 origin-left bg-tan/60"
- />
- <span className="whitespace-nowrap text-[0.7rem] uppercase tracking-[0.24em] text-mocha/70">
- Three promises
- </span>
- </div>
  </div>
  </div>
 
@@ -207,8 +198,7 @@ export function ValueProps() {
  Hands-on care
  </p>
  <p className="mt-1.5 text-sm leading-snug text-espresso">
- One-on-one sessions with a highly qualified team, no
- assembly-line care.
+ Personalized care plans to meet your needs.
  </p>
  </motion.div>
 
@@ -308,14 +298,9 @@ function TimelineStep({ step, index }: { step: Step; index: number }) {
  <div className="min-w-0 flex-1">
  <h3 className="heading-card">
  {index === 0 ? (
- <Link
- href={JANE_APP_URL}
- target="_blank"
- rel="noopener noreferrer"
- className="link-underline"
- >
+ <BookNowLink className="link-underline">
  {step.title}
- </Link>
+ </BookNowLink>
  ) : (
  step.title
  )}
@@ -325,9 +310,18 @@ function TimelineStep({ step, index }: { step: Step; index: number }) {
  </p>
  <div className="mt-6 flex items-center gap-3 border-t border-tan/25 pt-4">
  <span aria-hidden="true" className="block h-px w-4 bg-tan" />
+ {step.highlightHref ? (
+ <Link
+ href={step.highlightHref}
+ className="link-underline text-[0.65rem] uppercase tracking-[0.2em] text-mocha/80"
+ >
+ {step.highlight}
+ </Link>
+ ) : (
  <span className="text-[0.65rem] uppercase tracking-[0.2em] text-mocha/80">
  {step.highlight}
  </span>
+ )}
  </div>
  </div>
  </div>

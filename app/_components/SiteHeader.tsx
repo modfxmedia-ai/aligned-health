@@ -13,6 +13,7 @@ import {
 } from "react";
 import { CLINIC } from "@/lib/site";
 import { SERVICE_NAV_ITEMS } from "@/lib/services";
+import { BookNowLink } from "@/app/_components/BookNowLink";
 
 /**
  * Site-wide navigation.
@@ -48,7 +49,6 @@ const NAV_ITEMS: readonly NavItem[] = [
 
 const CTA = {
  label: "Book an Appointment Online",
- href: "https://alignedhealthoc.janeapp.com/",
 };
 
 const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
@@ -127,14 +127,9 @@ export function SiteHeader() {
  </nav>
 
  <div className="hidden lg:block">
- <Link
- href={CTA.href}
- target="_blank"
- rel="noopener noreferrer"
- className="btn-cta-onDark"
- >
+ <BookNowLink className="btn-cta-onDark">
  {CTA.label}
- </Link>
+ </BookNowLink>
  </div>
 
  <button
@@ -179,16 +174,13 @@ export function SiteHeader() {
  />
  )
  )}
- <Link
- href={CTA.href}
- target="_blank"
- rel="noopener noreferrer"
- onClick={close}
+ <BookNowLink
+ onNavigate={close}
  tabIndex={open ? 0 : -1}
  className="btn-cta-onDark btn-lg mt-6 w-full"
  >
  {CTA.label}
- </Link>
+ </BookNowLink>
  </nav>
  </div>
  </div>
@@ -427,16 +419,13 @@ function ServicesDropdown({
  <p className="text-[0.7rem] uppercase tracking-[0.22em] text-mocha">
  Schedule now.
  </p>
- <Link
- href={CTA.href}
- target="_blank"
- rel="noopener noreferrer"
+ <BookNowLink
  role="menuitem"
  className="btn-primary btn-sm inline-flex items-center justify-center gap-2"
  >
  Book Appointment
  <span aria-hidden="true">→</span>
- </Link>
+ </BookNowLink>
  </div>
  </div>
  </div>
@@ -567,17 +556,14 @@ function MobileServicesAccordion({
  {/* Book Appointment CTA — always reachable inside the mobile
  Services accordion. */}
  <div className="pb-4 pl-4">
- <Link
- href={CTA.href}
- target="_blank"
- rel="noopener noreferrer"
- onClick={onNavigate}
+ <BookNowLink
+ onNavigate={onNavigate}
  tabIndex={expanded && tabIndex >= 0 ? 0 : -1}
  className="btn-cta-onDark btn-sm mt-2 inline-flex items-center gap-2"
  >
  Book Appointment
  <span aria-hidden="true">→</span>
- </Link>
+ </BookNowLink>
  </div>
  </div>
  </div>

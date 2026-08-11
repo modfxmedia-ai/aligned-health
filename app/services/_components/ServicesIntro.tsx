@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { BookNowLink } from "@/app/_components/BookNowLink";
 import {
  motion,
  useReducedMotion,
@@ -71,8 +72,7 @@ const SERVICES: readonly Service[] = [
  title: "PEMF, Pulsed Electromagnetic Field Therapy",
  description:
  "Electromagnetic pulses that support cellular repair and reduce inflammation at the tissue level.",
- imageSrc:
- "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/7eb0895e-30d3-40da-8cbe-1eef6767350c/IMG_9121.jpeg",
+ imageSrc: "/images/services/pemf-therapy.webp",
  },
  {
  slug: "game-ready-ice-compressions",
@@ -95,16 +95,14 @@ const SERVICES: readonly Service[] = [
  title: "Red Light Therapy (Photobiomodulation)",
  description:
  "Targeted red and near-infrared wavelengths that calm inflammation and support tissue repair at the cellular level.",
- imageSrc:
- "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/65e22074-e814-43e0-bd6e-e7713e190427/IMG_7890+2.jpeg",
+ imageSrc: "/images/services/red-light-therapy.webp",
  },
  {
  slug: "pneumatic-compressions",
  title: "Pneumatic Compressions",
  description:
  "Sequential air compression sleeves that boost circulation through the muscles, spa-like recovery for legs and arms.",
- imageSrc:
- "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/d644eb01-5e65-4e5c-a604-f4dfcc95e70c/IMG_8245.jpeg",
+ imageSrc: "/images/services/pneumatic-compressions.png",
  },
  {
  slug: "intersegmental-distraction",
@@ -119,8 +117,7 @@ const SERVICES: readonly Service[] = [
  title: "Assisted Stretching",
  description:
  "Guided passive stretching to restore flexibility, balance, and range of motion, done for you, not to you.",
- imageSrc:
- "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/5965888a-2f81-413a-af59-2ba709d807de/IMG_8467.jpeg",
+ imageSrc: "/images/services/assisted-stretching.webp",
  },
  {
  slug: "cupping",
@@ -300,17 +297,12 @@ export function ServicesIntro() {
  </p>
  </div>
  <div className="flex flex-wrap items-center gap-4">
- <Link
- href="https://alignedhealthoc.janeapp.com/"
- target="_blank"
- rel="noopener noreferrer"
- className="btn-accent"
- >
+ <BookNowLink className="btn-accent">
  Book Online
  <span aria-hidden="true" className="ml-1">
  →
  </span>
- </Link>
+ </BookNowLink>
  <Link
  href="/contact-us"
  className="text-sm uppercase tracking-[0.18em] text-espresso underline decoration-tan underline-offset-4 hover:text-mocha"
@@ -342,7 +334,7 @@ function ServiceCard({ service }: { service: Service }) {
  alt={service.title}
  fill
  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
- className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+ className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
  />
 
  {/* Legibility gradient, stronger at bottom for title/description */}

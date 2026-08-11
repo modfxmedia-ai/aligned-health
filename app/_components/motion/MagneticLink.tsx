@@ -17,7 +17,8 @@ import { useRef, type MouseEvent, type ReactNode } from "react";
  * classes (`btn-primary`, `btn-cta-onDark`, `btn-lg`) via `className`.
  */
 export interface MagneticLinkProps {
- href: string;
+ /** Omit when passing `onClick` to render a `<button>` instead of a link. */
+ href?: string;
  children: ReactNode;
  className?: string;
  /** How strongly the button follows the cursor. 0 disables. Default 0.28. */
@@ -25,6 +26,8 @@ export interface MagneticLinkProps {
  /** Open in new tab (adds noopener). */
  external?: boolean;
  ariaLabel?: string;
+ /** Renders a `<button>` that calls this instead of navigating via `href`. */
+ onClick?: () => void;
 }
 
 export function MagneticLink({
@@ -34,6 +37,7 @@ export function MagneticLink({
  strength = 0.28,
  external = false,
  ariaLabel,
+ onClick,
 }: MagneticLinkProps) {
  const reduce = useReducedMotion();
  const ref = useRef<HTMLSpanElement>(null);
@@ -67,14 +71,15 @@ export function MagneticLink({
  style={reduce ? undefined : { x: springX, y: springY }}
  className="inline-block will-change-transform"
  >
- <Link
- href={href}
- aria-label={ariaLabel}
- className={className}
- {...linkProps}
- >
+ {onClick ? (
+ <button type="button" onClick={onClick} aria-label={ariaLabel} className={className}>
+ {children}
+ </button>
+ ) : (
+ <Link href={href ?? "#"} aria-label={ariaLabel} className={className} {...linkProps}>
  {children}
  </Link>
+ )}
  </motion.span>
  );
 }

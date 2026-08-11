@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import { CLINIC } from "@/lib/site";
+import { BookNowLink } from "@/app/_components/BookNowLink";
 
 /**
  * Persistent bottom "Book Now" bar for the homepage.
@@ -139,15 +139,10 @@ export function BookNowBanner() {
                 <PhoneIcon />
                 <span>{CLINIC.phoneDisplay}</span>
               </a>
-              <Link
-                href="https://alignedhealthoc.janeapp.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-cta-onDark btn-sm inline-flex flex-1 items-center justify-center gap-2 sm:flex-initial"
-              >
+              <BookNowLink className="btn-cta-onDark btn-sm inline-flex flex-1 items-center justify-center gap-2 sm:flex-initial">
                 Book Now
                 <span aria-hidden="true">→</span>
-              </Link>
+              </BookNowLink>
               <button
                 type="button"
                 onClick={dismiss}

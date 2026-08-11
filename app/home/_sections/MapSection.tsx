@@ -4,10 +4,9 @@ import {
  motion,
  useReducedMotion,
 } from "motion/react";
-import { useState, type FormEvent } from "react";
 import { Marquee } from "@/app/_components/motion/Marquee";
 import { CLINIC } from "@/lib/site";
-import { EmailLink } from "@/app/_components/EmailLink";
+import { LeadConnectorForm } from "@/app/_components/LeadConnectorForm";
 
 /**
  * "Visit us", location + contact form + areas-served marquee.
@@ -21,8 +20,6 @@ import { EmailLink } from "@/app/_components/EmailLink";
  * into the map card, phone/email live in the form's footer, and service
  * areas run as a single-row marquee at the bottom.
  */
-
-const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
 
 const FULL_ADDRESS = `${CLINIC.address.street}, ${CLINIC.address.city}, ${CLINIC.address.region} ${CLINIC.address.postalCode}`;
 
@@ -266,215 +263,12 @@ export function MapSection() {
 /* Contact form */
 /* ---------------------------------------------------------------------- */
 
-interface FormState {
- name: string;
- email: string;
- phone: string;
- message: string;
-}
-
-const INITIAL: FormState = { name: "", email: "", phone: "", message: "" };
-
 function ContactForm() {
- const [values, setValues] = useState<FormState>(INITIAL);
- const [submitting, setSubmitting] = useState(false);
- const [submitted, setSubmitted] = useState(false);
-
- const handleChange = (field: keyof FormState) =>
- (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
- setValues((prev) => ({ ...prev, [field]: event.target.value }));
- };
-
- async function handleSubmit(event: FormEvent<HTMLFormElement>) {
- event.preventDefault();
- setSubmitting(true);
- // TODO: wire to a real endpoint (Formspree / Resend / API route).
- await new Promise((resolve) => setTimeout(resolve, 700));
- setSubmitting(false);
- setSubmitted(true);
- setValues(INITIAL);
- }
-
  return (
- <form
- onSubmit={handleSubmit}
- className="flex h-full flex-col rounded-3xl border border-tan/30 bg-linen p-6 shadow-card md:p-8"
- >
- <div className="flex items-center gap-3">
- <span
- aria-hidden="true"
- className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-tan/15 text-tan"
- >
- <MailIcon />
- </span>
- <p className="eyebrow">Send us a message</p>
+ <div className="flex h-full flex-col rounded-3xl border border-tan/30 bg-linen p-6 shadow-card md:p-8">
+ <div className="flex-1">
+ <LeadConnectorForm />
  </div>
-
- <h3 className="heading-card mt-3">
- We&rsquo;ll be in touch{" "}
- <span className="italic text-tan">shortly.</span>
- </h3>
- <p className="mt-3 text-sm leading-relaxed text-mocha">
- Have a question or want to check benefits before booking? Drop a note
- and we&rsquo;ll get back to you within one business day.
- </p>
-
- <div className="mt-6 flex flex-col gap-4">
- <Field
- id="ah-name"
- label="Name"
- name="name"
- type="text"
- autoComplete="name"
- required
- value={values.name}
- onChange={handleChange("name")}
- disabled={submitting}
- />
- <Field
- id="ah-email"
- label="Email"
- name="email"
- type="email"
- autoComplete="email"
- required
- value={values.email}
- onChange={handleChange("email")}
- disabled={submitting}
- />
- <Field
- id="ah-phone"
- label="Phone (optional)"
- name="phone"
- type="tel"
- autoComplete="tel"
- value={values.phone}
- onChange={handleChange("phone")}
- disabled={submitting}
- />
- <Field
- id="ah-message"
- label="Message"
- name="message"
- multiline
- rows={4}
- required
- value={values.message}
- onChange={handleChange("message")}
- disabled={submitting}
- />
- </div>
-
- <div className="mt-6 flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between">
- <button
- type="submit"
- disabled={submitting}
- className="btn-primary inline-flex w-full items-center justify-center gap-2 md:w-auto"
- >
- {submitting ? "Sending…" : "Send Message"}
- {!submitting ? <span aria-hidden="true">→</span> : null}
- </button>
-
- {submitted ? (
- <motion.p
- initial={{ opacity: 0, y: 6 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
- className="text-xs uppercase tracking-[0.2em] text-tan"
- aria-live="polite"
- >
- ✓ Message sent, thank you.
- </motion.p>
- ) : (
- <p className="text-xs leading-relaxed text-mocha/70">
- Or call{" "}
- <a
- href={`tel:${PHONE_TEL}`}
- className="underline decoration-tan underline-offset-4 hover:text-espresso"
- >
- {CLINIC.phoneDisplay}
- </a>{" "}
- · <EmailLink
- email={CLINIC.email}
- className="underline decoration-tan underline-offset-4 hover:text-espresso"
- copiedClassName="text-mocha"
- >
- email us
- </EmailLink>
- </p>
- )}
- </div>
- </form>
- );
-}
-
-interface FieldProps {
- id: string;
- label: string;
- name: string;
- type?: string;
- value: string;
- onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
- required?: boolean;
- disabled?: boolean;
- autoComplete?: string;
- multiline?: boolean;
- rows?: number;
-}
-
-function Field({
- id,
- label,
- name,
- type = "text",
- value,
- onChange,
- required = false,
- disabled = false,
- autoComplete,
- multiline = false,
- rows = 3,
-}: FieldProps) {
- const baseInput =
- "w-full rounded-xl border border-tan/40 bg-cream/60 px-4 py-3 text-sm text-espresso placeholder:text-mocha/40 focus:border-tan focus:bg-linen focus:outline-none focus:ring-2 focus:ring-tan/40 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60";
-
- return (
- <div>
- <label
- htmlFor={id}
- className="mb-1.5 block text-[0.65rem] uppercase tracking-[0.2em] text-mocha"
- >
- {label}
- {required ? (
- <span aria-hidden="true" className="ml-1 text-tan">
- *
- </span>
- ) : null}
- </label>
- {multiline ? (
- <textarea
- id={id}
- name={name}
- value={value}
- onChange={onChange}
- required={required}
- disabled={disabled}
- rows={rows}
- className={`${baseInput} resize-none`}
- />
- ) : (
- <input
- id={id}
- name={name}
- type={type}
- value={value}
- onChange={onChange}
- required={required}
- disabled={disabled}
- autoComplete={autoComplete}
- className={baseInput}
- />
- )}
  </div>
  );
 }
@@ -488,15 +282,6 @@ function PinIcon() {
  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
  <path d="M12 22s7-6 7-12a7 7 0 10-14 0c0 6 7 12 7 12z" />
  <circle cx="12" cy="10" r="2.5" />
- </svg>
- );
-}
-
-function MailIcon() {
- return (
- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
- <rect x="3" y="5" width="18" height="14" rx="2" />
- <path d="M3 7l9 6 9-6" />
  </svg>
  );
 }

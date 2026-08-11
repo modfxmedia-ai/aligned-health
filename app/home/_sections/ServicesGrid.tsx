@@ -129,6 +129,17 @@ const SPAN_CLASSES: Record<Service["span"], string> = {
  quarter: "md:col-span-1 min-h-[220px]",
 };
 
+// Portrait source photo gets cropped hard by these landscape tiles; centered
+// object-position lands on the shelf/wall, above the patient. Shift down +
+// zoom (via the wrapping div, so it doesn't collide with the Image's own
+// group-hover scale) so the patient stays in frame.
+const IMAGE_OBJECT_POSITION_CLASS: Partial<Record<string, string>> = {
+ "assisted-stretching": "object-[50%_78%]",
+};
+const IMAGE_ZOOM_STYLE: Partial<Record<string, string>> = {
+ "assisted-stretching": "scale(1.2)",
+};
+
 export function ServicesGrid() {
  const reduce = useReducedMotion();
 
@@ -235,23 +246,33 @@ function ServiceCard({ service }: { service: Service }) {
  animate={reduce ? undefined : { scale: [1, 1.04, 1] }}
  transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
  className="absolute inset-0"
+ style={{ transform: IMAGE_ZOOM_STYLE[service.slug] }}
  >
  <Image
  src={service.imageSrc}
  alt={service.title}
  fill
  sizes="(min-width: 768px) 50vw, 100vw"
- className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+ className={`object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06] ${
+ IMAGE_OBJECT_POSITION_CLASS[service.slug] ?? ""
+ }`}
  />
  </motion.div>
  ) : (
+ <div
+ className="absolute inset-0"
+ style={{ transform: IMAGE_ZOOM_STYLE[service.slug] }}
+ >
  <Image
  src={service.imageSrc}
  alt={service.title}
  fill
  sizes="(min-width: 768px) 25vw, 100vw"
- className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+ className={`object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06] ${
+ IMAGE_OBJECT_POSITION_CLASS[service.slug] ?? ""
+ }`}
  />
+ </div>
  )}
 
  {/* Legibility gradient */}

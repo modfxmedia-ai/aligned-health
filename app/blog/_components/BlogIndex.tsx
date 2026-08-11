@@ -13,8 +13,8 @@ interface Word {
  accent?: boolean;
 }
 const HEADING_WORDS: readonly Word[] = [
- { text: "The" },
- { text: "Journal.", accent: true },
+ { text: "Wellness" },
+ { text: "Insights.", accent: true },
 ];
 
 const HEADING_CONTAINER: Variants = {
@@ -41,7 +41,7 @@ export function BlogIndex({ posts }: { posts: readonly BlogPost[] }) {
  className="flex items-center justify-center gap-3"
  >
  <span aria-hidden="true" className="block h-px w-10 bg-tan" />
- <p className="eyebrow !text-mocha">Field notes</p>
+ <p className="eyebrow !text-mocha">Wellness insights</p>
  <span aria-hidden="true" className="block h-px w-10 bg-tan" />
  </motion.div>
 

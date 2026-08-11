@@ -10,6 +10,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { Counter } from "@/app/_components/motion/Counter";
 import { MagneticLink } from "@/app/_components/motion/MagneticLink";
+import { useBookingModal } from "@/app/_components/booking/BookingModalContext";
 
 /**
  * /home hero, dark, editorial, motion-forward, with richer brand color use.
@@ -73,6 +74,7 @@ const HEADLINE: readonly HeadlinePart[] = [
 
 export function Hero() {
  const reduce = useReducedMotion();
+ const { openBookingModal } = useBookingModal();
  const sectionRef = useRef<HTMLElement>(null);
 
  const { scrollYProgress } = useScroll({
@@ -198,8 +200,7 @@ export function Hero() {
  className="mt-12 flex flex-wrap items-center gap-4"
  >
  <MagneticLink
- href="https://alignedhealthoc.janeapp.com/"
- external
+ onClick={openBookingModal}
  className="btn-cta-onDark btn-lg"
  >
  Book an Appointment

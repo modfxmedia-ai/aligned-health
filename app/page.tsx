@@ -4,7 +4,6 @@ import { ClinicJsonLd } from "@/app/_components/ClinicJsonLd";
 import { BlogPreview } from "@/app/home/_sections/BlogPreview";
 import { ClosingSection } from "@/app/home/_sections/ClosingSection";
 import { Hero } from "@/app/home/_sections/Hero";
-import { InsuranceSection } from "@/app/home/_sections/InsuranceSection";
 import { MapSection } from "@/app/home/_sections/MapSection";
 import { ServicesGrid } from "@/app/home/_sections/ServicesGrid";
 import { TeamSection } from "@/app/home/_sections/TeamSection";
@@ -39,7 +38,6 @@ export default function HomePage() {
       <TrustMarquee />
       <ValueProps />
       <ServicesGrid />
-      <InsuranceSection />
       <TeamSection />
       <TestimonialsMarquee />
       <BlogPreview posts={recentPosts} />

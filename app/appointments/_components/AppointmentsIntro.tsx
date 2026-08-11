@@ -1,34 +1,22 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import {
- motion,
- useReducedMotion,
- useScroll,
- useTransform,
- type Variants,
-} from "motion/react";
-import { useRef } from "react";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 import { MagneticLink } from "@/app/_components/motion/MagneticLink";
+import { useBookingModal } from "@/app/_components/booking/BookingModalContext";
 import { CLINIC } from "@/lib/site";
 
 /**
- * /appointments, full-bleed interior photo hero + wave divider, then a
- * cream section with a prominent Jane App booking CTA.
+ * /appointments, cream banner (matches the blog page's hero styling) then
+ * a cream section with a prominent Jane App booking CTA.
  *
- * Copy verbatim from the live /appointments page:
- * H1: "Book an Appointment"
+ * H1: "Let's get you aligned." (reused from the homepage closing section)
  * Sub: "Come in and experience the Aligned Health difference."
  *
  * The booking button preserves the exact external Jane App URL used on
  * the source site, we intentionally do NOT rebuild a custom form.
  */
 
-const HERO_PHOTO =
- "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/72094e82-8d28-4666-ab86-4b405dc74b46/IMG_8193.jpeg";
-
-const JANE_APP_URL = "https://alignedhealthoc.janeapp.com/";
 const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
 
 interface Word {
@@ -36,9 +24,10 @@ interface Word {
  accent?: boolean;
 }
 const HEADING_WORDS: readonly Word[] = [
- { text: "Book" },
- { text: "an" },
- { text: "Appointment.", accent: true },
+ { text: "Let's" },
+ { text: "get" },
+ { text: "you" },
+ { text: "aligned.", accent: true },
 ];
 
 const HEADING_CONTAINER: Variants = {
@@ -59,84 +48,45 @@ const REASSURANCE = [
 
 export function AppointmentsIntro() {
  const reduce = useReducedMotion();
- const heroRef = useRef<HTMLDivElement>(null);
-
- const { scrollYProgress } = useScroll({
- target: heroRef,
- offset: ["start start", "end start"],
- });
- const photoY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
- const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
- const overlay = useTransform(scrollYProgress, [0, 1], [0.4, 0.75]);
+ const { openBookingModal } = useBookingModal();
 
  return (
  <>
- {/* --- Full-bleed hero --- */}
- <section
- ref={heroRef}
- className="relative h-[80vh] min-h-[560px] w-full overflow-hidden bg-espresso"
- >
- {/* Photo, parallax + slow zoom */}
- <motion.div
- style={reduce ? undefined : { y: photoY, scale: photoScale }}
- className="absolute inset-0"
- >
- <Image
- src={HERO_PHOTO}
- alt="Aligned Health treatment room in Laguna Hills"
- fill
- priority
- sizes="100vw"
- className="object-cover"
- />
- </motion.div>
+ {/* --- Banner, cream background matching the blog page hero --- */}
+ <section className="section-cream relative overflow-hidden pt-28 pb-10 md:pt-32 md:pb-14">
+ <BackgroundFlourish />
 
- {/* Dark bottom-anchored gradient */}
+ <div className="container-shell relative z-10">
+ <div className="mx-auto max-w-3xl text-center">
  <motion.div
- aria-hidden="true"
- style={reduce ? undefined : { opacity: overlay }}
- className="absolute inset-0 bg-gradient-to-b from-espresso/40 via-espresso/20 to-espresso/80"
- />
-
- {/* Warm tan glow, top-left */}
- <div
- aria-hidden="true"
- className="pointer-events-none absolute inset-0"
- style={{
- background:
- "radial-gradient(50% 45% at 15% 25%, rgba(185,165,144,0.16) 0%, rgba(54,48,42,0) 60%)",
- }}
- />
-
- {/* Top-left eyebrow tag */}
- <motion.div
- initial={reduce ? false : { opacity: 0, y: -8 }}
+ initial={reduce ? false : { opacity: 0, y: 10 }}
  animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
- className="container-shell relative z-10 flex items-center gap-3 pt-24 text-linen md:pt-32"
+ transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+ className="flex items-center justify-center gap-3"
  >
- <span aria-hidden="true" className="relative inline-flex h-2 w-2">
- <motion.span
- animate={
- reduce
- ? undefined
- : { scale: [1, 2.5, 1], opacity: [0.7, 0, 0.7] }
- }
- transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
- className="absolute inset-0 rounded-full bg-tan"
- />
- <span className="relative h-2 w-2 rounded-full bg-tan" />
- </span>
- <p className="text-[0.7rem] uppercase tracking-[0.28em] text-linen/85">
- Book your visit
- </p>
+ <span aria-hidden="true" className="block h-px w-10 bg-tan" />
+ <p className="eyebrow !text-mocha">Schedule your visit</p>
+ <span aria-hidden="true" className="block h-px w-10 bg-tan" />
  </motion.div>
 
- <WaveDivider />
+ <motion.p
+ initial={reduce ? false : { opacity: 0, y: 16 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{
+ duration: 0.7,
+ delay: 0.2,
+ ease: [0.16, 1, 0.3, 1],
+ }}
+ className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight text-espresso md:text-6xl lg:text-7xl"
+ >
+ Book an <span className="italic text-tan">Appointment</span>
+ </motion.p>
+ </div>
+ </div>
  </section>
 
- {/* --- Cream content section --- */}
- <section className="section-cream section relative overflow-hidden">
+ {/* --- Linen content section --- */}
+ <section className="section-linen section relative overflow-hidden">
  <BackgroundFlourish />
 
  <div className="container-shell relative z-10">
@@ -218,10 +168,9 @@ export function AppointmentsIntro() {
  />
 
  <MagneticLink
- href={JANE_APP_URL}
- external
+ onClick={openBookingModal}
  className="btn-primary btn-lg relative !px-10 !py-5 !text-base"
- ariaLabel="Book an appointment online (opens Jane App in a new tab)"
+ ariaLabel="Book an appointment online"
  >
  Book Now
  <span aria-hidden="true" className="ml-1">
@@ -236,7 +185,7 @@ export function AppointmentsIntro() {
  aria-hidden="true"
  className="inline-block h-1.5 w-1.5 rounded-full bg-tan"
  />
- Opens Jane App · secure booking
+ Secure online scheduling
  </span>
  <span aria-hidden="true" className="text-tan/60">
  ·
@@ -260,7 +209,7 @@ export function AppointmentsIntro() {
  delay: 1.05,
  ease: [0.16, 1, 0.3, 1],
  }}
- className="mt-16 rounded-3xl border border-tan/30 bg-linen p-6 md:p-8"
+ className="mt-16 rounded-3xl border border-tan/30 bg-cream p-6 md:p-8"
  >
  <div className="flex items-center gap-3">
  <span aria-hidden="true" className="block h-px w-6 bg-tan" />
@@ -382,48 +331,6 @@ function HeadingWord({
  </motion.span>
  </span>
  </>
- );
-}
-
-function WaveDivider() {
- const reduce = useReducedMotion();
- return (
- <div
- aria-hidden="true"
- className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
- >
- <svg
- viewBox="0 0 1440 140"
- preserveAspectRatio="none"
- className="block h-[80px] w-full text-cream md:h-[120px]"
- >
- <motion.path
- d="M0 60 C 240 110, 480 20, 720 60 S 1200 110, 1440 60"
- fill="none"
- stroke="#B9A590"
- strokeWidth="1"
- strokeOpacity="0.4"
- initial={reduce ? { pathLength: 1 } : { pathLength: 0 }}
- animate={{ pathLength: 1 }}
- transition={{
- duration: 2,
- delay: 0.6,
- ease: "easeOut" as const,
- }}
- />
- <motion.path
- d="M0 60 C 240 110, 480 20, 720 60 S 1200 110, 1440 60 L1440 140 L0 140 Z"
- fill="currentColor"
- initial={reduce ? { y: 0 } : { y: 40 }}
- animate={{ y: 0 }}
- transition={{
- duration: 1.2,
- delay: 0.35,
- ease: [0.16, 1, 0.3, 1],
- }}
- />
- </svg>
- </div>
  );
 }
 

@@ -29,14 +29,8 @@ const VALUES: readonly Value[] = [
  },
  {
  index: "02",
- title: "Whole-person approach",
- body: "We look at movement, posture, tissue quality, and daily activity to identify the root cause of pain, then build a plan that sticks rather than chasing symptoms.",
- Icon: HeartIcon,
- },
- {
- index: "03",
  title: "Personal attention",
- body: "No assembly-line care. Every session is one-on-one with a highly qualified team who takes the time to understand what you love to do, and how to get you back to it.",
+ body: "No assembly-line care. Every session is one-on-one with a highly qualified provider who takes the time to understand what you love to do, and how to get you back to it.",
  Icon: HandIcon,
  },
 ];
@@ -102,7 +96,7 @@ export function AboutValues() {
  className="block h-px flex-1 origin-left bg-tan/60"
  />
  <span className="whitespace-nowrap text-[0.7rem] uppercase tracking-[0.24em] text-mocha/70">
- Three principles
+ Two principles
  </span>
  </div>
  </div>
@@ -114,7 +108,7 @@ export function AboutValues() {
  initial="hidden"
  whileInView="visible"
  viewport={{ once: true, margin: "0px 0px -80px 0px" }}
- className="mt-14 grid gap-6 md:grid-cols-3 md:gap-6 lg:gap-8"
+ className="mt-14 grid gap-6 sm:grid-cols-2 md:mx-auto md:max-w-3xl md:gap-6 lg:gap-8"
  >
  {VALUES.map((value) => (
  <motion.li
@@ -199,38 +193,6 @@ function BeakerIcon({ className }: IconProps) {
  >
  <motion.path d="M12 4 H20 M13 4 V13 L6 26 A2 2 0 0 0 8 28 H24 A2 2 0 0 0 26 26 L19 13 V4" {...draw(0.9)} />
  <motion.path d="M9 22 H23" {...draw(1.4)} />
- </svg>
- );
-}
-
-function HeartIcon({ className }: IconProps) {
- const reduce = useReducedMotion();
- const draw = (delay: number) => ({
- initial: reduce
- ? { pathLength: 1, opacity: 1 }
- : { pathLength: 0, opacity: 0 },
- whileInView: { pathLength: 1, opacity: 1 },
- viewport: { once: true, margin: "0px 0px -60px 0px" },
- transition: {
- pathLength: { duration: 1.2, delay, ease: "easeOut" as const },
- opacity: { duration: 0.3, delay },
- },
- });
- return (
- <svg
- viewBox="0 0 32 32"
- fill="none"
- stroke="currentColor"
- strokeWidth="1.5"
- strokeLinecap="round"
- strokeLinejoin="round"
- className={className}
- aria-hidden="true"
- >
- <motion.path
- d="M16 27 C 8 21, 3 16, 3 11 A 5.5 5.5 0 0 1 16 8 A 5.5 5.5 0 0 1 29 11 C 29 16, 24 21, 16 27 Z"
- {...draw(1.05)}
- />
  </svg>
  );
 }

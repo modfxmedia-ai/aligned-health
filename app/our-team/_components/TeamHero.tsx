@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "motion/react";
+import { BookNowLink } from "@/app/_components/BookNowLink";
 
 /**
  * /our-team hero, compact intro before the two doctor profiles.
@@ -72,7 +73,10 @@ export function TeamHero() {
  >
  A highly qualified team helping patients across Laguna Hills and
  Southern California relieve pain, recover mobility, and get back to
- doing what they love. Schedule now.
+ doing what they love.{" "}
+ <BookNowLink className="link-underline text-espresso">
+ Schedule now.
+ </BookNowLink>
  </motion.p>
  </div>
  </div>

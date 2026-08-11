@@ -18,6 +18,7 @@ import {
 import { PostCard } from "@/app/blog/_components/PostCard";
 import { RichText } from "@/app/blog/_components/RichText";
 import { MagneticLink } from "@/app/_components/motion/MagneticLink";
+import { useBookingModal } from "@/app/_components/booking/BookingModalContext";
 
 /**
  * Individual blog post view. Full-bleed hero image with a floating meta
@@ -50,6 +51,7 @@ const RELATED_SERVICE_NAMES: Record<string, string> = {
 
 export function BlogPostView({ post }: { post: BlogPost }) {
   const reduce = useReducedMotion();
+  const { openBookingModal } = useBookingModal();
   const heroRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -111,7 +113,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
                 href="/blog"
                 className="hover:text-linen"
               >
-                Journal
+                Wellness Insights
               </Link>
               <span aria-hidden="true" className="block h-px w-6 bg-tan/60" />
               <span
@@ -260,8 +262,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <MagneticLink
-                href="https://alignedhealthoc.janeapp.com/"
-                external
+                onClick={openBookingModal}
                 className="btn-primary btn-lg inline-flex items-center gap-2"
               >
                 Book an Appointment
@@ -286,8 +287,8 @@ export function BlogPostView({ post }: { post: BlogPost }) {
               <div>
                 <p className="eyebrow !text-mocha">Keep reading</p>
                 <h2 className="heading-section mt-3">
-                  More from the{" "}
-                  <span className="italic text-tan">Journal.</span>
+                  More{" "}
+                  <span className="italic text-tan">Wellness Insights.</span>
                 </h2>
               </div>
               <Link

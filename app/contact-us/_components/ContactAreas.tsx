@@ -6,6 +6,7 @@ import {
  useReducedMotion,
  type Variants,
 } from "motion/react";
+import { BookNowLink } from "@/app/_components/BookNowLink";
 
 /**
  * /contact-us, "Areas we serve" section on dark espresso. Grid of nearby
@@ -194,15 +195,10 @@ export function ContactAreas() {
  See our location
  <span aria-hidden="true">↑</span>
  </Link>
- <Link
- href="https://alignedhealthoc.janeapp.com/"
- target="_blank"
- rel="noopener noreferrer"
- className="btn-cta-onDark btn-sm inline-flex items-center gap-2"
- >
+ <BookNowLink className="btn-cta-onDark btn-sm inline-flex items-center gap-2">
  Book an Appointment
  <span aria-hidden="true">→</span>
- </Link>
+ </BookNowLink>
  </div>
  </motion.div>
  </div>

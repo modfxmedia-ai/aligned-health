@@ -12,7 +12,6 @@ const ITEMS = [
   "HSA · FSA · HRA welcome",
   "New patients welcome",
   "Laguna Hills, CA",
-  "Whole-person care",
   "Insurance verified first",
   "1-on-1 focused sessions",
 ] as const;

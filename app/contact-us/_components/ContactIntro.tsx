@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import {
  motion,
  useReducedMotion,
@@ -9,9 +8,11 @@ import {
  useTransform,
  type Variants,
 } from "motion/react";
-import { useRef, useState, type FormEvent } from "react";
+import { useRef } from "react";
 import { CLINIC } from "@/lib/site";
 import { EmailLink } from "@/app/_components/EmailLink";
+import { BookNowLink } from "@/app/_components/BookNowLink";
+import { LeadConnectorForm } from "@/app/_components/LeadConnectorForm";
 
 /**
  * /contact-us, full-bleed hero photo + wave divider + two-column content
@@ -26,8 +27,7 @@ import { EmailLink } from "@/app/_components/EmailLink";
  * Message, with a Send submit button.
  */
 
-const HERO_PHOTO =
- "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/26ae4e44-8626-48dd-9869-057f8c0b6861/IMG_8776.jpeg";
+const HERO_PHOTO = "/images/contact-us/hero-v2.jpg";
 
 const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
 const FULL_ADDRESS = `${CLINIC.address.street}, ${CLINIC.address.city}, ${CLINIC.address.region} ${CLINIC.address.postalCode}`;
@@ -58,7 +58,7 @@ export function ContactIntro() {
  offset: ["start start", "end start"],
  });
  const photoY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
- const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
+ const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.02]);
  const overlay = useTransform(scrollYProgress, [0, 1], [0.4, 0.75]);
 
  return (
@@ -74,9 +74,10 @@ export function ContactIntro() {
  >
  <Image
  src={HERO_PHOTO}
- alt="Aligned Health interior office in Laguna Hills"
+ alt="A note reading 'We're here to help' next to an Aligned Health contact card on a desk"
  fill
  priority
+ quality={90}
  sizes="100vw"
  className="object-cover"
  />
@@ -170,11 +171,12 @@ export function ContactIntro() {
  }}
  className="mt-8 max-w-2xl text-base leading-relaxed text-mocha md:text-lg"
  >
- To help us best serve your inquiry, we recommend that you first
- describe the issue you&rsquo;re having before telling us what you
- want to achieve. You may also email or call us to make an
- appointment. Our general response time is{" "}
- <span className="italic text-espresso">one business day.</span>
+ We&rsquo;d love to hear from you. Share a little about what&rsquo;s
+ going on and what you&rsquo;re hoping for, and our team will follow
+ up personally within{" "}
+ <span className="italic text-espresso">one business day.</span>{" "}
+ Prefer to talk it through? Give us a call or send an email anytime,
+ we&rsquo;re happy to help.
  </motion.p>
  </div>
 
@@ -216,239 +218,10 @@ export function ContactIntro() {
 /* Contact form */
 /* ---------------------------------------------------------------------- */
 
-interface FormState {
- firstName: string;
- lastName: string;
- email: string;
- message: string;
-}
-const INITIAL: FormState = {
- firstName: "",
- lastName: "",
- email: "",
- message: "",
-};
-
 function ContactForm() {
- const [values, setValues] = useState<FormState>(INITIAL);
- const [submitting, setSubmitting] = useState(false);
- const [submitted, setSubmitted] = useState(false);
- const [error, setError] = useState<string | null>(null);
-
- const handleChange = (field: keyof FormState) =>
- (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
- setValues((prev) => ({ ...prev, [field]: event.target.value }));
- };
-
- async function handleSubmit(event: FormEvent<HTMLFormElement>) {
- event.preventDefault();
- setSubmitting(true);
- setError(null);
-
- // TODO, wire to a real endpoint. Options:
- // 1) POST to a Next.js Route Handler (e.g. `app/api/contact/route.ts`)
- // that forwards via Resend / SendGrid / Nodemailer to
- // `Contact@AlignedHealthOC.com`.
- // 2) POST to Formspree (`https://formspree.io/f/<form-id>`), no
- // backend required, they email the site owner directly.
- // 3) POST to a Zapier / Make webhook.
- // For now we simulate a network call and show a success state so the
- // interaction reads correctly during design review.
- try {
- await new Promise((resolve) => setTimeout(resolve, 750));
- setSubmitted(true);
- setValues(INITIAL);
- } catch {
- setError(
- "Something went wrong sending your message. Please try again or email us directly."
- );
- } finally {
- setSubmitting(false);
- }
- }
-
  return (
- <form
- onSubmit={handleSubmit}
- className="rounded-3xl border border-tan/30 bg-linen p-6 shadow-card md:p-10"
- >
- <p className="eyebrow">Send us a message</p>
- <h2 className="heading-card mt-3">
- We&rsquo;ll respond within{" "}
- <span className="italic text-tan">one business day.</span>
- </h2>
-
- <div className="mt-8 flex flex-col gap-5">
- <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
- <Field
- id="contact-first-name"
- label="First Name"
- name="firstName"
- autoComplete="given-name"
- required
- value={values.firstName}
- onChange={handleChange("firstName")}
- disabled={submitting}
- />
- <Field
- id="contact-last-name"
- label="Last Name"
- name="lastName"
- autoComplete="family-name"
- required
- value={values.lastName}
- onChange={handleChange("lastName")}
- disabled={submitting}
- />
- </div>
-
- <Field
- id="contact-email"
- label="Email"
- name="email"
- type="email"
- autoComplete="email"
- required
- value={values.email}
- onChange={handleChange("email")}
- disabled={submitting}
- />
-
- <Field
- id="contact-message"
- label="Message"
- name="message"
- multiline
- rows={6}
- required
- value={values.message}
- onChange={handleChange("message")}
- disabled={submitting}
- hint="Please describe the issue you're having before telling us what you want to achieve."
- />
- </div>
-
- <div className="mt-8 flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between">
- <button
- type="submit"
- disabled={submitting}
- className="btn-primary btn-lg inline-flex w-full items-center justify-center gap-2 md:w-auto"
- >
- {submitting ? "Sending…" : "Send"}
- {!submitting ? <span aria-hidden="true">→</span> : null}
- </button>
-
- <p className="text-xs leading-relaxed text-mocha/70">
- Or email us at{" "}
- <EmailLink
- email={CLINIC.email}
- className="underline decoration-tan underline-offset-4 hover:text-espresso"
- copiedClassName="text-mocha"
- />
- .
- </p>
- </div>
-
- {submitted ? (
- <motion.p
- initial={{ opacity: 0, y: 6 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
- className="mt-6 rounded-2xl border border-tan/40 bg-cream px-4 py-3 text-sm text-espresso"
- aria-live="polite"
- >
- <span className="mr-2 font-medium text-tan">✓ Message sent.</span>
- Thanks for reaching out, we&rsquo;ll respond within one business
- day.
- </motion.p>
- ) : null}
-
- {error ? (
- <p
- className="mt-6 rounded-2xl border border-espresso/30 bg-espresso/5 px-4 py-3 text-sm text-espresso"
- role="alert"
- >
- {error}
- </p>
- ) : null}
- </form>
- );
-}
-
-interface FieldProps {
- id: string;
- label: string;
- name: string;
- type?: string;
- value: string;
- onChange: (
- e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
- ) => void;
- required?: boolean;
- disabled?: boolean;
- autoComplete?: string;
- multiline?: boolean;
- rows?: number;
- hint?: string;
-}
-
-function Field({
- id,
- label,
- name,
- type = "text",
- value,
- onChange,
- required = false,
- disabled = false,
- autoComplete,
- multiline = false,
- rows = 3,
- hint,
-}: FieldProps) {
- const baseInput =
- "w-full rounded-xl border border-tan/40 bg-cream/60 px-4 py-3 text-sm text-espresso placeholder:text-mocha/40 focus:border-tan focus:bg-linen focus:outline-none focus:ring-2 focus:ring-tan/40 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60";
-
- return (
- <div>
- <label
- htmlFor={id}
- className="mb-1.5 block text-[0.65rem] uppercase tracking-[0.2em] text-mocha"
- >
- {label}
- {required ? (
- <span aria-hidden="true" className="ml-1 text-tan">
- *
- </span>
- ) : null}
- </label>
- {multiline ? (
- <textarea
- id={id}
- name={name}
- value={value}
- onChange={onChange}
- required={required}
- disabled={disabled}
- rows={rows}
- className={`${baseInput} resize-none`}
- />
- ) : (
- <input
- id={id}
- name={name}
- type={type}
- value={value}
- onChange={onChange}
- required={required}
- disabled={disabled}
- autoComplete={autoComplete}
- className={baseInput}
- />
- )}
- {hint ? (
- <p className="mt-2 text-xs leading-relaxed text-mocha/70">{hint}</p>
- ) : null}
+ <div className="rounded-3xl border border-tan/30 bg-linen p-6 shadow-card md:p-10">
+ <LeadConnectorForm />
  </div>
  );
 }
@@ -533,15 +306,10 @@ function ContactSidebar() {
  <p className="mt-3 text-sm leading-relaxed text-linen/85">
  Schedule now. Secure scheduling through Jane App.
  </p>
- <Link
- href="https://alignedhealthoc.janeapp.com/"
- target="_blank"
- rel="noopener noreferrer"
- className="btn-cta-onDark btn-sm mt-5 inline-flex w-full items-center justify-center gap-2"
- >
+ <BookNowLink className="btn-cta-onDark btn-sm mt-5 inline-flex w-full items-center justify-center gap-2">
  Book an Appointment
  <span aria-hidden="true">→</span>
- </Link>
+ </BookNowLink>
  </div>
  </div>
  );

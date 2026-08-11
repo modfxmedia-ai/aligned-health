@@ -12,6 +12,7 @@ import {
 import { useRef } from "react";
 import type { Service } from "@/lib/services";
 import { MagneticLink } from "@/app/_components/motion/MagneticLink";
+import { useBookingModal } from "@/app/_components/booking/BookingModalContext";
 
 /**
  * Shared rendering shell for every /services/[slug] page.
@@ -29,9 +30,40 @@ import { MagneticLink } from "@/app/_components/motion/MagneticLink";
  * 10. Closing CTA, book / call
  */
 
+// The "Related services" cards use the original Squarespace CDN photos
+// (not the newer local hero images) per client feedback.
+const LEGACY_IMG_BASE =
+ "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5";
+const LEGACY_RELATED_IMAGE_SRC: Record<string, string> = {
+ "chiropractic-adjustments": `${LEGACY_IMG_BASE}/3dd5634c-1569-4b59-9138-2caf3eb46524/IMG_8324.jpg`,
+ "spinal-decompression": `${LEGACY_IMG_BASE}/50c96876-138b-4b5d-9508-4b3880f504fb/IMG_9092.jpg`,
+ "electromuscular-stimulation": `${LEGACY_IMG_BASE}/a41945d6-c5f3-49b5-a385-aeb4edf98114/IMG_8271.jpg`,
+ "percussion-therapy": `${LEGACY_IMG_BASE}/735abe96-9486-433e-9899-802b92cc0e45/IMG_8435.jpg`,
+ "pemf-therapy": `${LEGACY_IMG_BASE}/7eb0895e-30d3-40da-8cbe-1eef6767350c/IMG_9121.jpeg`,
+ "game-ready-ice-compressions": `${LEGACY_IMG_BASE}/4cfa78c3-93ae-41a2-af51-9f3d262d3af9/IMG_8230.jpg`,
+ "myofascial-scraping": `${LEGACY_IMG_BASE}/75314aa8-23a6-457e-a167-b0c25e33c30c/IMG_8565.jpeg`,
+ "red-light-therapy": `${LEGACY_IMG_BASE}/65e22074-e814-43e0-bd6e-e7713e190427/IMG_7890+2.jpeg`,
+ "pneumatic-compressions": `${LEGACY_IMG_BASE}/d644eb01-5e65-4e5c-a604-f4dfcc95e70c/IMG_8245.jpeg`,
+ "intersegmental-distraction": `${LEGACY_IMG_BASE}/d6c36965-f455-4ec1-b80e-bbe0385a7667/IMG_9130.jpg`,
+ "assisted-stretching": `${LEGACY_IMG_BASE}/5965888a-2f81-413a-af59-2ba709d807de/IMG_8467.jpeg`,
+ cupping: `${LEGACY_IMG_BASE}/d1a65330-f45f-4350-a789-344425a454be/IMG_1237_Original.jpg`,
+ "therapeutic-ultrasounds": `${LEGACY_IMG_BASE}/db97a98a-50f3-426a-90a9-a18061ff7558/74AA8CFA-75BD-4EBC-A7DE-A7E803253B34_1_105_c.jpeg`,
+ "auto-personal-injury": `${LEGACY_IMG_BASE}/3dd5634c-1569-4b59-9138-2caf3eb46524/IMG_8324.jpg`,
+};
+
 const HEADING_CONTAINER: Variants = {
  hidden: {},
  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+};
+
+// Portrait source photos get cropped hard by the 4:3 related-card frame;
+// these tune the crop so the patient/treatment stays in view (not just
+// the wall/poster at the top of the shot).
+const RELATED_CARD_IMAGE_CLASS: Record<string, string> = {
+ "spinal-decompression": "object-[58%_62%] scale-[1.4]",
+ "pneumatic-compressions": "object-[65%_78%] scale-[1.3]",
+ "pemf-therapy": "object-[30%_82%] scale-[1.3]",
+ "red-light-therapy": "object-[50%_75%] scale-[1.2]",
 };
 
 const HEADING_WORD: Variants = {
@@ -50,6 +82,7 @@ export function ServicePageView({
  related: readonly Service[];
 }) {
  const reduce = useReducedMotion();
+ const { openBookingModal } = useBookingModal();
  const heroRef = useRef<HTMLElement>(null);
 
  const { scrollYProgress } = useScroll({
@@ -78,8 +111,9 @@ export function ServicePageView({
  alt={service.imageAlt}
  fill
  priority
+ quality={95}
  sizes="100vw"
- className="object-cover object-top"
+ className="object-cover object-center"
  />
  </motion.div>
  <motion.div
@@ -178,8 +212,7 @@ export function ServicePageView({
  </div>
  ) : null}
  <MagneticLink
- href="https://alignedhealthoc.janeapp.com/"
- external
+ onClick={openBookingModal}
  className="btn-primary inline-flex items-center gap-2"
  >
  Book an Appointment
@@ -504,11 +537,13 @@ export function ServicePageView({
  }}
  >
  <Image
- src={r.imageSrc}
+ src={LEGACY_RELATED_IMAGE_SRC[r.slug] ?? r.imageSrc}
  alt={r.imageAlt}
  fill
  sizes="(max-width: 768px) 100vw, 33vw"
- className="object-cover"
+ className={`object-cover ${
+ RELATED_CARD_IMAGE_CLASS[r.slug] ?? "object-top"
+ }`}
  />
  </motion.div>
  <div className="absolute inset-0 bg-gradient-to-t from-espresso/50 via-espresso/10 to-transparent" />
@@ -560,8 +595,7 @@ export function ServicePageView({
  </p>
  <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
  <MagneticLink
- href="https://alignedhealthoc.janeapp.com/"
- external
+ onClick={openBookingModal}
  className="btn-primary btn-lg inline-flex items-center gap-2"
  >
  Book an Appointment

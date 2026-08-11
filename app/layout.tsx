@@ -5,6 +5,8 @@ import "./globals.css";
 import { CLINIC, SITE_URL } from "@/lib/site";
 import { SiteHeader } from "@/app/_components/SiteHeader";
 import { SiteFooter } from "@/app/_components/SiteFooter";
+import { BookingModalProvider } from "@/app/_components/booking/BookingModalContext";
+import { BookingModal } from "@/app/_components/booking/BookingModal";
 
 // Body: clean modern sans-serif.
 const inter = Inter({
@@ -44,9 +46,12 @@ export default function RootLayout({
  className={`${inter.variable} ${fraunces.variable} h-full`}
  >
  <body className="min-h-full flex flex-col bg-cream text-espresso font-sans antialiased">
+ <BookingModalProvider>
  <SiteHeader />
  <main className="flex-1">{children}</main>
  <SiteFooter />
+ <BookingModal />
+ </BookingModalProvider>
  <Script
  src="https://widgets.leadconnectorhq.com/loader.js"
  data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"

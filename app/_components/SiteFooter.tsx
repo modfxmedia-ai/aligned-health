@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CLINIC } from "@/lib/site";
 import { EmailLink } from "@/app/_components/EmailLink";
+import { BookNowLink } from "@/app/_components/BookNowLink";
 
 /**
  * Modern multi-column footer.
@@ -130,17 +131,12 @@ export function SiteFooter() {
  Schedule now
  </div>
  <p className="mt-3 text-sm leading-relaxed text-linen/85">
- By appointment · Schedule now.
+ By appointment.
  </p>
- <Link
- href="https://alignedhealthoc.janeapp.com/"
- target="_blank"
- rel="noopener noreferrer"
- className="btn-cta-onDark btn-sm mt-5 inline-flex w-full items-center justify-center gap-2"
- >
+ <BookNowLink className="btn-cta-onDark btn-sm mt-5 inline-flex w-full items-center justify-center gap-2">
  Book an Appointment
  <span aria-hidden="true">→</span>
- </Link>
+ </BookNowLink>
  </div>
  </div>
  </div>

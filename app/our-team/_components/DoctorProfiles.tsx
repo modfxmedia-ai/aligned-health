@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { BookNowLink } from "@/app/_components/BookNowLink";
 import {
  motion,
  useReducedMotion,
@@ -151,7 +152,6 @@ function ProfileBlock({
  <Portrait
  src={doctor.photo}
  alt={doctor.photoAlt}
- role={doctor.role}
  cardBg={cardBg}
  />
  </div>
@@ -285,17 +285,12 @@ function ProfileBlock({
  }}
  className="mt-10 flex flex-wrap items-center gap-4"
  >
- <Link
- href="https://alignedhealthoc.janeapp.com/"
- target="_blank"
- rel="noopener noreferrer"
- className="btn-accent btn-sm"
- >
+ <BookNowLink className="btn-accent btn-sm">
  Book with {doctor.name.split(" ").slice(0, 2).join(" ")}
  <span aria-hidden="true" className="ml-1">
  →
  </span>
- </Link>
+ </BookNowLink>
  <Link
  href="/contact-us"
  className="text-sm uppercase tracking-[0.18em] text-espresso underline decoration-tan underline-offset-4 hover:text-mocha"
@@ -313,12 +308,10 @@ function ProfileBlock({
 function Portrait({
  src,
  alt,
- role,
  cardBg,
 }: {
  src: string;
  alt: string;
- role: string;
  cardBg: string;
 }) {
  const reduce = useReducedMotion();
@@ -345,20 +338,6 @@ function Portrait({
  className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
  />
  </motion.div>
-
- {/* Warm bottom wash for role caption */}
- <div
- aria-hidden="true"
- className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-espresso/70 via-espresso/10 to-transparent"
- />
-
- {/* Role overlay */}
- <div className="absolute inset-x-0 bottom-0 flex items-center gap-3 p-5 text-linen">
- <span aria-hidden="true" className="block h-px w-6 bg-tan" />
- <span className="text-[0.65rem] uppercase tracking-[0.24em]">
- {role}
- </span>
- </div>
 
  {/* Corner ticks */}
  <span

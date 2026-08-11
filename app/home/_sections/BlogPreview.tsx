@@ -23,9 +23,12 @@ interface Word {
  accent?: boolean;
 }
 const HEADING_WORDS: readonly Word[] = [
- { text: "From" },
- { text: "the" },
- { text: "Journal.", accent: true },
+ { text: "Move" },
+ { text: "Better." },
+ { text: "Feel" },
+ { text: "Better." },
+ { text: "Live" },
+ { text: "Better.", accent: true },
 ];
 
 const HEADING_CONTAINER: Variants = {
@@ -53,7 +56,7 @@ export function BlogPreview({ posts }: { posts: readonly BlogPost[] }) {
  className="flex items-center gap-3"
  >
  <span aria-hidden="true" className="block h-px w-10 bg-tan" />
- <p className="eyebrow !text-mocha">Field notes</p>
+ <p className="eyebrow !text-mocha">Wellness insights</p>
  </motion.div>
 
  <motion.h2
@@ -84,8 +87,8 @@ export function BlogPreview({ posts }: { posts: readonly BlogPost[] }) {
  }}
  className="mt-5 max-w-xl text-base leading-relaxed text-mocha md:text-lg"
  >
- Plain-spoken articles on the tools, techniques, and treatment
- plans behind the work we do at Aligned Health.
+ Helpful guidance on chiropractic care, pain relief, mobility,
+ and everyday wellness to help you take control of your health.
  </motion.p>
  </div>
 

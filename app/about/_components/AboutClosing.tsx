@@ -5,6 +5,7 @@ import {
  useReducedMotion,
 } from "motion/react";
 import { MagneticLink } from "@/app/_components/motion/MagneticLink";
+import { useBookingModal } from "@/app/_components/booking/BookingModalContext";
 import { CLINIC } from "@/lib/site";
 
 /**
@@ -16,6 +17,7 @@ const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
 
 export function AboutClosing() {
  const reduce = useReducedMotion();
+ const { openBookingModal } = useBookingModal();
 
  return (
  <section className="section-espresso section relative overflow-hidden">
@@ -82,8 +84,7 @@ export function AboutClosing() {
  className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-8"
  >
  <MagneticLink
- href="https://alignedhealthoc.janeapp.com/"
- external
+ onClick={openBookingModal}
  className="btn-cta-onDark btn-lg"
  >
  Book an Appointment
