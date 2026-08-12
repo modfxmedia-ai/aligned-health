@@ -95,7 +95,7 @@ export const SERVICES: readonly Service[] = [
  "neck adjustment laguna hills",
  "chiropractor for lower back pain",
  ],
- imageSrc: "/images/services/chiropractic-adjustments.webp",
+ imageSrc: "/images/services/chiropractic-adjustments-banner.png",
  imageAlt: "Chiropractic adjustment being performed at Aligned Health",
  hero: {
  eyebrow: "Core service",
@@ -198,7 +198,7 @@ export const SERVICES: readonly Service[] = [
  "spinal traction therapy",
  "back pain relief without surgery",
  ],
- imageSrc: "/images/services/spinal-decompression.png",
+ imageSrc: "/images/services/spinal-decompression-banner.png",
  imageAlt: "Spinal decompression table at Aligned Health in Laguna Hills",
  hero: {
  eyebrow: "Disc & sciatica care",
@@ -301,7 +301,7 @@ export const SERVICES: readonly Service[] = [
  "electric muscle stimulation for pain",
  "ems recovery therapy",
  ],
- imageSrc: "/images/services/electromuscular-stimulation.jpg",
+ imageSrc: "/images/services/electromuscular-stimulation-banner.png",
  imageAlt:
  "Electromuscular stimulation pads applied during a recovery session",
  hero: {
@@ -402,7 +402,7 @@ export const SERVICES: readonly Service[] = [
  "myofascial percussion therapy",
  "sports recovery near me",
  ],
- imageSrc: "/images/services/percussion-therapy.jpg",
+ imageSrc: "/images/services/percussion-therapy-banner.png",
  imageAlt: "Percussion therapy treatment at Aligned Health",
  hero: {
  eyebrow: "Recovery modality",
@@ -502,7 +502,7 @@ export const SERVICES: readonly Service[] = [
  "pemf near me",
  "pemf pain relief chiropractor",
  ],
- imageSrc: "/images/services/pemf-therapy.webp",
+ imageSrc: "/images/services/pemf-therapy-banner.png",
  imageAlt: "PEMF therapy setup at Aligned Health in Laguna Hills",
  hero: {
  eyebrow: "Cellular recovery",
@@ -601,7 +601,7 @@ export const SERVICES: readonly Service[] = [
  "post surgery recovery chiropractor",
  "sports injury cold therapy",
  ],
- imageSrc: "/images/services/game-ready-ice-compressions.jpg",
+ imageSrc: "/images/services/game-ready-ice-compressions-banner.png",
  imageAlt:
  "Game Ready cold compression wrap in use at Aligned Health",
  hero: {
@@ -796,7 +796,7 @@ export const SERVICES: readonly Service[] = [
  "red light therapy for pain",
  "cold laser therapy laguna hills",
  ],
- imageSrc: "/images/services/red-light-therapy.webp",
+ imageSrc: "/images/services/red-light-therapy-banner.png",
  imageAlt: "Red light therapy session at Aligned Health",
  hero: {
  eyebrow: "Recovery light",
@@ -895,7 +895,7 @@ export const SERVICES: readonly Service[] = [
  "normatec alternative laguna hills",
  "circulation boots for athletes",
  ],
- imageSrc: "/images/services/pneumatic-compressions.png",
+ imageSrc: "/images/services/pneumatic-compressions-banner.png",
  imageAlt: "Pneumatic compression boots in use at Aligned Health",
  hero: {
  eyebrow: "Circulation & recovery",
@@ -994,7 +994,7 @@ export const SERVICES: readonly Service[] = [
  "gentle chiropractic care orange county",
  "roller table for back stiffness",
  ],
- imageSrc: "/images/services/intersegmental-distraction.webp",
+ imageSrc: "/images/services/intersegmental-distraction-banner.png",
  imageAlt:
  "Intersegmental distraction roller table at Aligned Health",
  hero: {
@@ -1094,7 +1094,7 @@ export const SERVICES: readonly Service[] = [
  "mobility work laguna hills",
  "passive stretching near me",
  ],
- imageSrc: "/images/services/assisted-stretching.webp",
+ imageSrc: "/images/services/assisted-stretching-banner.png",
  imageAlt: "One-on-one assisted stretching session at Aligned Health",
  hero: {
  eyebrow: "Mobility & flexibility",
@@ -1187,7 +1187,7 @@ export const SERVICES: readonly Service[] = [
  "cupping near me",
  "vacuum cupping therapy",
  ],
- imageSrc: "/images/services/cupping-v2.jpg",
+ imageSrc: "/images/services/cupping-banner.png",
  imageAlt: "Cupping therapy session at Aligned Health",
  hero: {
  eyebrow: "Soft-tissue release",
@@ -1286,7 +1286,7 @@ export const SERVICES: readonly Service[] = [
  "physical therapy ultrasound near me",
  "ultrasound for tendonitis",
  ],
- imageSrc: "/images/services/therapeutic-ultrasounds.png",
+ imageSrc: "/images/services/therapeutic-ultrasounds-banner.png",
  imageAlt:
  "Therapeutic ultrasound applied during treatment at Aligned Health",
  hero: {
@@ -1393,7 +1393,7 @@ export const SERVICES: readonly Service[] = [
   // auto/PI hero image is provided. Swap `imageSrc` when new imagery
   // is available; keep the Squarespace CDN allow-list entry in
   // next.config.ts intact.
-  imageSrc: "/images/services/auto-personal-injury.jpg",
+  imageSrc: "/images/services/auto-personal-injury-banner.png",
   imageAlt:
    "Chiropractic care for auto accident and personal injury patients at Aligned Health in Laguna Hills",
   hero: {

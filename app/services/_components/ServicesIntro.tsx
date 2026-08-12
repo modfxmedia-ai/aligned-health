@@ -72,7 +72,8 @@ const SERVICES: readonly Service[] = [
  title: "PEMF, Pulsed Electromagnetic Field Therapy",
  description:
  "Electromagnetic pulses that support cellular repair and reduce inflammation at the tissue level.",
- imageSrc: "/images/services/pemf-therapy.webp",
+ imageSrc:
+ "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/7eb0895e-30d3-40da-8cbe-1eef6767350c/IMG_9121.jpeg",
  },
  {
  slug: "game-ready-ice-compressions",
@@ -95,14 +96,15 @@ const SERVICES: readonly Service[] = [
  title: "Red Light Therapy (Photobiomodulation)",
  description:
  "Targeted red and near-infrared wavelengths that calm inflammation and support tissue repair at the cellular level.",
- imageSrc: "/images/services/red-light-therapy.webp",
+ imageSrc:
+ "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/65e22074-e814-43e0-bd6e-e7713e190427/IMG_7890+2.jpeg",
  },
  {
  slug: "pneumatic-compressions",
  title: "Pneumatic Compressions",
  description:
  "Sequential air compression sleeves that boost circulation through the muscles, spa-like recovery for legs and arms.",
- imageSrc: "/images/services/pneumatic-compressions.png",
+ imageSrc: "/images/services/pneumatic-compressions-card.webp",
  },
  {
  slug: "intersegmental-distraction",
@@ -117,7 +119,8 @@ const SERVICES: readonly Service[] = [
  title: "Assisted Stretching",
  description:
  "Guided passive stretching to restore flexibility, balance, and range of motion, done for you, not to you.",
- imageSrc: "/images/services/assisted-stretching.webp",
+ imageSrc:
+ "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/5965888a-2f81-413a-af59-2ba709d807de/IMG_8467.jpeg",
  },
  {
  slug: "cupping",

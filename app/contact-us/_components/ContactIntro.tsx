@@ -82,7 +82,11 @@ export function ContactIntro() {
  className="object-cover"
  />
  </motion.div>
-
+ {/* Flat base darkening, keeps the heading legible regardless of scroll position */}
+ <div
+ aria-hidden="true"
+ className="pointer-events-none absolute inset-0 bg-espresso/45"
+ />
  <motion.div
  aria-hidden="true"
  style={reduce ? undefined : { opacity: overlay }}
@@ -122,6 +126,22 @@ export function ContactIntro() {
  </p>
  </motion.div>
 
+ <motion.h1
+ variants={HEADING_CONTAINER}
+ initial="hidden"
+ animate="visible"
+ className="container-shell relative z-10 mt-6 font-serif text-4xl leading-[1.05] tracking-tight text-linen md:text-5xl lg:text-6xl"
+ >
+ {HEADING_WORDS.map((word, index) => (
+ <HeadingWord
+ key={word.text}
+ word={word}
+ index={index}
+ reduce={!!reduce}
+ />
+ ))}
+ </motion.h1>
+
  <WaveDivider />
  </section>
 
@@ -143,7 +163,7 @@ export function ContactIntro() {
  <p className="eyebrow !text-mocha">We&rsquo;re listening</p>
  </motion.div>
 
- <motion.h1
+ <motion.h2
  variants={HEADING_CONTAINER}
  initial="hidden"
  whileInView="visible"
@@ -158,7 +178,7 @@ export function ContactIntro() {
  reduce={!!reduce}
  />
  ))}
- </motion.h1>
+ </motion.h2>
 
  <motion.p
  initial={reduce ? false : { opacity: 0, y: 14 }}
