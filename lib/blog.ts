@@ -351,6 +351,326 @@ const POSTS: readonly BlogPost[] = [
  "pemf-therapy",
  ],
  },
+
+ {
+ slug: "how-often-chiropractic-adjustments-laguna-hills",
+ title:
+ "How Often Should You Get a Chiropractic Adjustment? A Realistic Guide",
+ description:
+ "Wondering how many chiropractic visits you actually need? Here&rsquo;s how Aligned Health builds a realistic adjustment schedule based on your case, not a one-size-fits-all package.",
+ keywords: [
+ "how often chiropractic adjustments",
+ "chiropractic visit frequency",
+ "chiropractor laguna hills",
+ "maintenance chiropractic care",
+ "chiropractic treatment plan",
+ "how many chiropractic sessions",
+ "orange county chiropractor",
+ ],
+ category: "Chiropractic Care",
+ datePublished: "2026-07-29",
+ readingTime: 5,
+ author: {
+ name: "Dr. Dustin Hack, D.C.",
+ role: "Chiropractor · Aligned Health",
+ },
+ hero: {
+ src: "/images/blog/chirorpactic-care.webp",
+ alt: "Chiropractor assessing a patient&rsquo;s spine before an adjustment at Aligned Health in Laguna Hills",
+ },
+ body: [
+ {
+ type: "lead",
+ text: "One of the most common questions we get isn&rsquo;t &ldquo;does this work&rdquo;, it&rsquo;s &ldquo;how many times do I actually need to come in?&rdquo; The honest answer depends on what brought you in, how long it&rsquo;s been going on, and what you&rsquo;re trying to get back to. Here&rsquo;s how we actually build that number.",
+ },
+ {
+ type: "h2",
+ text: "There&rsquo;s no universal number, and be wary of anyone who gives you one",
+ },
+ {
+ type: "p",
+ text: "A 25-year-old with a two-week-old tweak from the gym and a 55-year-old managing a decade of stiff, degenerative changes in the low back are not the same case, even if they both walk in describing &ldquo;back pain.&rdquo; Anyone who quotes you a fixed number of visits before doing an exam is guessing, or selling. We&rsquo;d rather examine you first and tell you what we actually see.",
+ },
+ { type: "h2", text: "The three phases we actually plan around" },
+ {
+ type: "ol",
+ items: [
+ "**Relief phase**, frequent visits early (often 2-3 per week) while pain and guarding are highest, focused on calming the area down and restoring basic movement.",
+ "**Corrective phase**, visits taper as things stabilize (often weekly), and we start layering in mobility and strengthening work so the improvement holds on its own.",
+ "**Maintenance phase**, occasional visits (monthly or as needed) once you&rsquo;re back to normal life, aimed at keeping small issues from becoming big ones.",
+ ],
+ },
+ {
+ type: "callout",
+ title: "A red flag to watch for",
+ text: "Be cautious of any clinic that asks you to prepay for a large block of visits before your first exam is even finished. A real plan is built from what we find in your assessment, not from a package price.",
+ },
+ { type: "h2", text: "What actually changes the number" },
+ {
+ type: "ul",
+ items: [
+ "How long you&rsquo;ve had the issue, chronic cases generally take longer to settle than fresh ones",
+ "Your job and daily posture demands, a desk job or physical labor both add their own stress to the plan",
+ "Prior injuries or surgeries in the area",
+ "How consistently you do the home mobility work we give you between visits",
+ "Whether you&rsquo;re also addressing sleep, stress, and activity level, all of which affect recovery speed",
+ ],
+ },
+ { type: "h2", text: "What maintenance care looks like once you feel good" },
+ {
+ type: "p",
+ text: "Once you&rsquo;re out of pain and moving well, we&rsquo;re not interested in keeping you on a schedule you don&rsquo;t need. Many patients settle into a **once-a-month tune-up**, others come in only when something flares. Both are reasonable, the goal is matching the visit frequency to what your body is actually asking for, not to a set calendar.",
+ },
+ {
+ type: "quote",
+ text: "Care should shrink as you improve, not stay the same size forever.",
+ attribution: "Dr. Dustin Hack, D.C.",
+ },
+ { type: "h2", text: "How we set your plan at the first visit" },
+ {
+ type: "p",
+ text: "After your history and exam, we&rsquo;ll give you a realistic estimate, not a sales pitch, and we reassess as we go. If you&rsquo;re progressing faster than expected, your plan gets shorter. If something isn&rsquo;t responding the way it should, we&rsquo;ll say so and adjust the approach instead of just adding more visits.",
+ },
+ { type: "h2", text: "Book your first visit" },
+ {
+ type: "p",
+ text: "If you&rsquo;re trying to figure out what a realistic plan looks like for your specific back, neck, or joint pain, the first visit is the place to start. We serve Laguna Hills, Mission Viejo, Laguna Niguel, Aliso Viejo, and the rest of South Orange County, and can usually get you in within a day or two.",
+ },
+ ],
+ relatedServiceSlugs: [
+ "chiropractic-adjustments",
+ "spinal-decompression",
+ "assisted-stretching",
+ ],
+ },
+
+ {
+ slug: "red-light-therapy-recovery-laguna-hills",
+ title: "Red Light Therapy for Recovery: What It Does and Who It Helps",
+ description:
+ "Red light therapy is more than a wellness trend. Here&rsquo;s how we use photobiomodulation at Aligned Health in Laguna Hills to support tissue recovery, inflammation, and pain management.",
+ keywords: [
+ "red light therapy laguna hills",
+ "photobiomodulation therapy",
+ "red light therapy recovery",
+ "infrared light therapy orange county",
+ "chiropractor red light therapy",
+ "inflammation recovery therapy",
+ "red light therapy benefits",
+ ],
+ category: "Recovery",
+ datePublished: "2026-08-05",
+ readingTime: 5,
+ author: {
+ name: "Dr. Dustin Hack, D.C.",
+ role: "Chiropractor · Aligned Health",
+ },
+ hero: {
+ src: "/images/services/red-light-therapy-banner.png",
+ alt: "Red light therapy treatment bed glowing red at Aligned Health in Laguna Hills",
+ },
+ body: [
+ {
+ type: "lead",
+ text: "Red light therapy has gone from niche recovery tool to something you&rsquo;ll find in gyms, spas, and now clinical settings. Used with real clinical judgment rather than as a stand-alone trend, it&rsquo;s a genuinely useful part of a recovery plan. Here&rsquo;s how we actually use it.",
+ },
+ { type: "h2", text: "What red light therapy does at the tissue level" },
+ {
+ type: "p",
+ text: "Red light therapy, also called **photobiomodulation**, uses specific wavelengths of red and near-infrared light to reach cells beneath the skin. The light energy is absorbed by structures inside the cell that support energy production, which is thought to help tissue repair itself and may calm local inflammation.",
+ },
+ {
+ type: "p",
+ text: "In practice, that translates to less soreness, a bit more ease of movement, and tissue that responds better to the rest of what we&rsquo;re doing that visit, whether that&rsquo;s an adjustment, percussion work, or decompression.",
+ },
+ { type: "h2", text: "Who we use it with" },
+ {
+ type: "ul",
+ items: [
+ "Patients with lingering joint or muscle inflammation",
+ "Athletes managing tendinopathy or overuse injuries",
+ "Post-adjustment patients who want to calm an irritated area faster",
+ "Anyone recovering from a minor soft-tissue strain",
+ "Patients looking for a non-invasive option alongside their main care plan",
+ ],
+ },
+ { type: "h2", text: "What a session actually looks like" },
+ {
+ type: "p",
+ text: "You&rsquo;ll lie or sit near the light panel with the treatment area exposed for **10-20 minutes**. There&rsquo;s no discomfort, no downtime, and most patients describe it as one of the more relaxing parts of their visit, a gentle warmth is usually all you feel.",
+ },
+ {
+ type: "callout",
+ title: "Where red light therapy fits, and where it doesn&rsquo;t",
+ text: "Red light therapy is a supportive tool, not a stand-alone fix for a structural issue like a disc herniation or an unstable joint. We use it to complement hands-on care, not replace an accurate diagnosis or a full treatment plan.",
+ },
+ { type: "h2", text: "How it pairs with the rest of our toolkit" },
+ {
+ type: "p",
+ text: "Red light therapy works especially well paired with **chiropractic adjustments**, **Game Ready ice compression**, and **percussion therapy**. A common flow: adjustment first to restore motion, then red light to support the tissue&rsquo;s response, occasionally paired with PEMF for deeper inflammation.",
+ },
+ {
+ type: "quote",
+ text: "It&rsquo;s not a miracle light, it&rsquo;s a tool that helps your body do what it&rsquo;s already trying to do.",
+ attribution: "Dr. Dustin Hack, D.C.",
+ },
+ { type: "h2", text: "Book a session" },
+ {
+ type: "p",
+ text: "If you&rsquo;re dealing with lingering inflammation, a stubborn overuse injury, or just want a low-effort addition to your recovery plan, ask us whether red light therapy fits your case. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach.",
+ },
+ ],
+ relatedServiceSlugs: [
+ "red-light-therapy",
+ "game-ready-ice-compressions",
+ "percussion-therapy",
+ ],
+ },
+
+ {
+ slug: "game-ready-ice-compression-sports-injury-recovery-laguna-hills",
+ title: "When Game Ready Ice Compression Supports Sports Injury Recovery",
+ description:
+ "Learn how Game Ready ice compression in Laguna Hills may help reduce post-injury discomfort, support mobility, and aid a safe return to sports activity.",
+ keywords: [
+ "game ready ice compression laguna hills",
+ "sports injury recovery orange county",
+ "ice compression therapy",
+ "cold compression therapy laguna hills",
+ "athletic injury recovery",
+ "return to play chiropractor",
+ "sports rehabilitation laguna hills",
+ ],
+ category: "Sports Recovery",
+ datePublished: "2026-08-11",
+ readingTime: 6,
+ author: {
+ name: "Dr. Dustin Hack, D.C.",
+ role: "Chiropractor · Aligned Health",
+ },
+ hero: {
+ src: "/images/blog/ice-compression-therapy-for-athletic-injury-recovery.png",
+ alt: "Athlete applying a Game Ready ice compression wrap to his knee during a recovery session at Aligned Health in Laguna Hills",
+ },
+ body: [
+ {
+ type: "lead",
+ text: "Summer activity can leave you with more than good memories. Long pickleball games, weekend hikes, beach volleyball, cycling, and preseason workouts may lead to lingering soreness, swelling, stiffness, or pain that makes everyday movement feel harder than it should.",
+ },
+ {
+ type: "p",
+ text: "As fall sports preseason gets closer, we help active people understand when recovery therapies may fit into a larger care plan. Game Ready ice compression can be one option for managing discomfort after certain injuries or demanding training, but it works best when it is guided by an assessment of your specific needs.",
+ },
+ { type: "h2", text: "How Game Ready Ice Compression Supports Recovery" },
+ {
+ type: "p",
+ text: "Game Ready ice compression in Laguna Hills combines controlled cold therapy with pneumatic compression. The cold component may help temporarily reduce pain and swelling, while intermittent compression may help manage fluid buildup around an irritated area.",
+ },
+ {
+ type: "p",
+ text: "This approach can be useful when soreness or swelling makes movement uncomfortable after an injury, a tough workout, or a rehabilitation visit. For example, a sore ankle after a court sport or an irritated knee after extra training may feel more manageable when recovery care is part of a provider-directed plan.",
+ },
+ {
+ type: "p",
+ text: "At Aligned Health, we consider more than the location of the pain. We look at your symptoms, injury history, activity level, health status, and goals before recommending any recovery therapy. Cold compression is not a replacement for an accurate diagnosis, a rehabilitation plan, or medical evaluation when a more serious injury may be present.",
+ },
+ {
+ type: "p",
+ text: "A provider may consider cold compression when you are dealing with:",
+ },
+ {
+ type: "ul",
+ items: [
+ "Localized swelling after activity",
+ "Soreness that limits comfortable movement",
+ "Stiffness following training or rehabilitation",
+ "Minor soft-tissue irritation that needs monitored recovery support",
+ ],
+ },
+ { type: "h2", text: "Sports Injuries That May Benefit From Cold Compression" },
+ {
+ type: "p",
+ text: "Not every ache needs the same response. We may consider provider-directed cold compression for common sports-related concerns such as ankle sprains, knee irritation, muscle strains, shoulder discomfort, post-workout soreness, and other minor soft-tissue injuries.",
+ },
+ {
+ type: "p",
+ text: "August can be especially busy for active families and athletes. More time outdoors, back-to-school routines, and preseason conditioning can increase training volume quickly. We often see people who feel fine during a game or workout, then notice discomfort later when they climb stairs, sit at work, or try to sleep.",
+ },
+ { type: "p", text: "Common warm-season situations can include:" },
+ {
+ type: "ul",
+ items: [
+ "A pickleball player with ankle or knee soreness after a long match",
+ "A hiker whose knee feels irritated after a steep trail",
+ "A beach volleyball player with a muscle strain or shoulder discomfort",
+ "A cyclist with lingering leg soreness after increased mileage",
+ "A student athlete feeling run down during preseason conditioning",
+ ],
+ },
+ {
+ type: "callout",
+ title: "When to seek care right away",
+ text: "Sudden severe pain, an inability to bear weight, visible deformity, numbness, major weakness, or rapidly worsening swelling may point to a problem that needs more immediate attention. We want you to get the right level of care, not simply push through symptoms.",
+ },
+ { type: "h2", text: "When Game Ready Ice Compression in Laguna Hills Fits Care" },
+ {
+ type: "p",
+ text: "Recovery therapy is usually most helpful when it is part of a bigger plan. Depending on what we find during your assessment, Game Ready ice compression may be combined with chiropractic care, sports rehabilitation, mobility work, or guided exercises that match your stage of healing.",
+ },
+ {
+ type: "p",
+ text: "Timing matters, especially for active people. A new injury can affect work, school, sleep, family responsibilities, and training all at once. Persistent soreness can also slowly change how you move, which may lead you to favor one side or avoid movements you normally enjoy. Timely appointments give us an opportunity to assess what is going on before discomfort becomes a bigger interruption.",
+ },
+ { type: "p", text: "During care, we can help determine:" },
+ {
+ type: "ul",
+ items: [
+ "The treatment area that needs attention",
+ "When cold compression may fit into your recovery routine",
+ "How often therapy may be appropriate",
+ "What activity changes may support healing",
+ "When it may be appropriate to add mobility or strengthening work",
+ ],
+ },
+ {
+ type: "p",
+ text: "We also provide at-home recovery recommendations based on your goals and symptoms. The right plan for a recreational athlete returning to weekend activity may look different from the plan for a student preparing for regular practices.",
+ },
+ { type: "h2", text: "Pair Recovery Therapy with a Return-to-Play Plan" },
+ {
+ type: "p",
+ text: "Feeling less sore is helpful, but symptom relief is only one piece of sports injury recovery. Before returning to full practices, tournament play, or high-intensity workouts, many people also need to rebuild mobility, strength, balance, and confidence in the affected area.",
+ },
+ {
+ type: "p",
+ text: "A gradual return-to-activity plan can help you avoid doing too much too soon. This is particularly important during preseason conditioning, when practice schedules grow quickly and athletes may feel pressure to keep up. We can help you understand which movements may be appropriate now and which ones may need to wait while your body recovers.",
+ },
+ {
+ type: "p",
+ text: "Provider guidance may include attention to rest, activity modification, hydration, sleep, mobility exercises, and progressive strengthening. Rather than treating recovery as a short pause between workouts, we encourage you to see it as part of staying active over the long term.",
+ },
+ { type: "h2", text: "Recovery Assessment Before Fall Sports" },
+ {
+ type: "p",
+ text: "Pain, swelling, stiffness, or trouble returning to normal activity are worth paying attention to before fall sports and seasonal routines intensify. At Aligned Health in Laguna Hills, we can assess sports-related concerns and determine whether Game Ready ice compression, chiropractic care, sports rehabilitation, or another approach may fit your needs. We offer timely appointments and accept many PPO insurance plans.",
+ },
+ {
+ type: "quote",
+ text: "Give your body and your care plan enough time to address pain, restore movement, and build back toward the activities you enjoy.",
+ attribution: "Dr. Dustin Hack, D.C.",
+ },
+ { type: "h2", text: "Support Your Recovery With Targeted Care" },
+ {
+ type: "p",
+ text: "At Aligned Health, we can help you determine whether Game Ready ice compression in Laguna Hills fits your recovery plan. Our team focuses on care that supports comfort, mobility, and a gradual return to movement. If you have questions or would like to schedule an appointment, reach out today.",
+ },
+ ],
+ relatedServiceSlugs: [
+ "game-ready-ice-compressions",
+ "chiropractic-adjustments",
+ "assisted-stretching",
+ ],
+ },
 ];
 
 /* ---------------------------------------------------------------------- */
