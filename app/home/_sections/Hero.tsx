@@ -37,7 +37,7 @@ const HERO_IMAGE =
  "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/13a8a82a-4f38-4686-997f-57d70e3e14b1/IMG_7513.jpeg";
 
 // Rotating background slideshow behind the whole hero. A curated set of
-// real service photos from the clinic, crossfading every ~6 seconds so
+// real service photos from the office, crossfading every ~6 seconds so
 // the section always has a fresh scene playing underneath. Deliberately
 // avoids IMG_7513 (sidebar portrait) and IMG_8372 (used in ClosingSection
 // / PhotoBand) so nothing repeats on the same page.

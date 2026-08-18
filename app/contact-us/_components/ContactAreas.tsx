@@ -11,7 +11,7 @@ import { BookNowLink } from "@/app/_components/BookNowLink";
 /**
  * /contact-us, "Areas we serve" section on dark espresso. Grid of nearby
  * cities with the primary location (Laguna Hills) called out with a tan
- * "Home clinic" chip. The rest read as a soft grid of tan-bordered pills
+ * "Home office" chip. The rest read as a soft grid of tan-bordered pills
  * that stagger in.
  */
 
@@ -112,7 +112,7 @@ export function ContactAreas() {
  }}
  className="mt-5 text-base leading-relaxed text-linen/80 md:text-lg"
  >
- Our Laguna Hills clinic is a short drive from most of South OC.
+ Our Laguna Hills office is a short drive from most of South OC.
  Patients regularly come to us from the neighborhoods below.
  Schedule now.
  </motion.p>
@@ -150,7 +150,7 @@ export function ContactAreas() {
  </p>
  {city.home ? (
  <p className="mt-1 text-[0.6rem] uppercase tracking-[0.24em] text-tan">
- Home clinic
+ Home office
  </p>
  ) : (
  <p className="mt-1 text-[0.6rem] uppercase tracking-[0.24em] text-linen/50">

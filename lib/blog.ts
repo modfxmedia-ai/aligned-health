@@ -61,7 +61,7 @@ const POSTS: readonly BlogPost[] = [
  title:
  "Chiropractic Adjustments for Lower Back Pain: What to Expect at Aligned Health",
  description:
- "A straight-shooting guide to how chiropractic adjustments relieve lower back pain, what actually happens on the table, who they help, and how we build a plan at our Laguna Hills clinic.",
+        "A straight-shooting guide to how chiropractic adjustments relieve lower back pain, what actually happens on the table, who they help, and how we build a plan at our Laguna Hills office.",
  keywords: [
  "chiropractor laguna hills",
  "lower back pain chiropractor",
@@ -188,7 +188,7 @@ const POSTS: readonly BlogPost[] = [
  body: [
  {
  type: "lead",
- text: "You&rsquo;ve seen the massage guns everywhere, gyms, airports, your neighbor&rsquo;s garage. Used well, **percussion therapy** is genuinely one of the fastest ways to unwind tight tissue and speed up recovery. Used badly, it&rsquo;s a bruise machine. Here&rsquo;s how we actually use it in-clinic, and when it&rsquo;s the right tool for the job.",
+        text: "You&rsquo;ve seen the massage guns everywhere, gyms, airports, your neighbor&rsquo;s garage. Used well, **percussion therapy** is genuinely one of the fastest ways to unwind tight tissue and speed up recovery. Used badly, it&rsquo;s a bruise machine. Here&rsquo;s how we actually use it in-office, and when it&rsquo;s the right tool for the job.",
  },
  { type: "h2", text: "What percussion therapy does at the tissue level" },
  {
@@ -403,7 +403,7 @@ const POSTS: readonly BlogPost[] = [
  {
  type: "callout",
  title: "A red flag to watch for",
- text: "Be cautious of any clinic that asks you to prepay for a large block of visits before your first exam is even finished. A real plan is built from what we find in your assessment, not from a package price.",
+        text: "Be cautious of any office that asks you to prepay for a large block of visits before your first exam is even finished. A real plan is built from what we find in your assessment, not from a package price.",
  },
  { type: "h2", text: "What actually changes the number" },
  {

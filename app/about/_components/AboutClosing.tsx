@@ -10,7 +10,7 @@ import { CLINIC } from "@/lib/site";
 
 /**
  * About / Closing CTA, dark espresso section pushing the visitor toward
- * booking or contacting the clinic.
+ * booking or contacting the office.
  */
 
 const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");

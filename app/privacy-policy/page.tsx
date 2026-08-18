@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
             <div className="mt-12 space-y-8 text-base leading-relaxed text-mocha md:text-lg">
               <p>
                 Aligned Health (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or
-                &ldquo;the clinic&rdquo;) respects your privacy. This page
+                &ldquo;the office&rdquo;) respects your privacy. This page
                 explains what information we collect through this website,
                 how we use it, and the choices you have. If anything here is
                 unclear, please contact us using the details at the bottom
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
                   </li>
                   <li className="text-espresso">
                     <span className="font-medium">When you contact us.</span>{" "}
-                    If you submit our contact form, call the clinic, or email
+                    If you submit our contact form, call the office, or email
                     us, we receive only what you choose to share, typically
                     your name, email, phone number, and message. We use this
                     information to respond to your inquiry.
@@ -153,7 +153,7 @@ export default function PrivacyPolicyPage() {
                 </h2>
                 <p className="mt-4">
                   Some pages embed content from third parties, for example
-                  Google Maps directions to the clinic. When you interact
+                  Google Maps directions to the office. When you interact
                   with those embeds, the third party may set its own cookies
                   or collect data under its own privacy policy. We do not
                   control those policies.

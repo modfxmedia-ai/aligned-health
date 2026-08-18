@@ -134,7 +134,7 @@ export function BookNowBanner() {
               <a
                 href={`tel:${PHONE_TEL}`}
                 className="btn-outline-invert btn-sm hidden items-center gap-2 md:inline-flex"
-                aria-label={`Call the clinic at ${CLINIC.phoneDisplay}`}
+                aria-label={`Call the office at ${CLINIC.phoneDisplay}`}
               >
                 <PhoneIcon />
                 <span>{CLINIC.phoneDisplay}</span>

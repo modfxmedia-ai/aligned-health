@@ -295,7 +295,7 @@ function ProfileBlock({
  href="/contact-us"
  className="text-sm uppercase tracking-[0.18em] text-espresso underline decoration-tan underline-offset-4 hover:text-mocha"
  >
- Contact the clinic
+ Contact the office
  </Link>
  </motion.div>
  </div>

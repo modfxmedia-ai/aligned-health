@@ -8,8 +8,7 @@ import { Marquee } from "@/app/_components/motion/Marquee";
  * "What our patients say", real 5-star Google reviews rendered as a
  * horizontal marquee of glass cards. Two counter-scrolling rows create
  * movement, and a "See more reviews on Google" CTA anchors the section
- * to the clinic's live Google Business Profile.
- *
+ * to the office's live Google Business Profile.
  * Names are shortened to First name + last initial to match the
  * presentation on Google's own review widget.
  */

@@ -260,7 +260,7 @@ function ContactSidebar() {
  <PinIcon />
  </IconChip>
  <div className="min-w-0 flex-1">
- <p className="eyebrow !text-mocha">The clinic</p>
+ <p className="eyebrow !text-mocha">The office</p>
  <address className="mt-3 flex flex-col gap-1 text-sm not-italic leading-relaxed text-espresso">
  <span>{CLINIC.address.street}</span>
  <span>
@@ -287,7 +287,7 @@ function ContactSidebar() {
  <PhoneIcon />
  </IconChip>
  <div className="min-w-0 flex-1">
- <p className="eyebrow !text-mocha">Call the clinic</p>
+ <p className="eyebrow !text-mocha">Call the office</p>
  <a
  href={`tel:${PHONE_TEL}`}
  className="mt-2 block font-serif text-2xl text-espresso hover:text-mocha md:text-3xl"

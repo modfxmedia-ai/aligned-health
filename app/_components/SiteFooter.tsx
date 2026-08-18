@@ -67,7 +67,7 @@ export function SiteFooter() {
  href={`tel:${PHONE_TEL}`}
  className="mt-8 inline-flex flex-col gap-1 text-linen transition-colors hover:text-tan"
  >
- <span className="eyebrow">Call the clinic</span>
+ <span className="eyebrow">Call the office</span>
  <span className="font-serif text-3xl tracking-tight md:text-4xl">
  {CLINIC.phoneDisplay}
  </span>

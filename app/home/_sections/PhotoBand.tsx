@@ -41,7 +41,7 @@ export function PhotoBand() {
 
  return (
  <section
- aria-label="Inside the Aligned Health clinic"
+ aria-label="Inside the Aligned Health office"
  className="bg-cream pt-4 pb-12 md:pb-16"
  >
  <div className="container-shell">
@@ -91,7 +91,7 @@ export function PhotoBand() {
  >
  <Image
  src={PRIMARY_PHOTO}
- alt="Chiropractic treatment in the Aligned Health clinic"
+ alt="Chiropractic treatment in the Aligned Health office"
  fill
  sizes="(min-width: 768px) 66vw, 100vw"
  className="object-cover"

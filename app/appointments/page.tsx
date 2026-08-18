@@ -12,7 +12,7 @@ export const metadata: Metadata = {
  openGraph: {
  title: "Book an Appointment · Aligned Health Chiropractic in Laguna Hills",
  description:
-      "Come in and experience the Aligned Health difference. Book online through Jane App or call the clinic, schedule now.",
+      "Come in and experience the Aligned Health difference. Book online through Jane App or call the office, schedule now.",
  url: PATH,
  type: "website",
  },

@@ -13,7 +13,7 @@ export const CLINIC = {
   name: "Aligned Health",
   legalName: "Aligned Health",
   description:
-    "Chiropractic clinic in Laguna Hills, CA offering chiropractic care and wellness services.",
+    "Chiropractic office in Laguna Hills, CA offering chiropractic care and wellness services.",
   phone: "+1-949-557-7208",
   phoneDisplay: "(949) 557-7208",
   email: "Contact@AlignedHealthOC.com",

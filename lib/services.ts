@@ -374,7 +374,7 @@ export const SERVICES: readonly Service[] = [
  },
  {
  q: "Can I use one at home?",
- a: "Home units are useful for pain management but can&rsquo;t replace the in-clinic version paired with adjustment and manual therapy. We&rsquo;re happy to guide home use.",
+ a: "Home units are useful for pain management but can&rsquo;t replace the in-office version paired with adjustment and manual therapy. We&rsquo;re happy to guide home use.",
  },
  ],
  relatedSlugs: [
@@ -413,7 +413,7 @@ export const SERVICES: readonly Service[] = [
  intro: {
  lead:
  "Percussion therapy delivers rapid, targeted mechanical pulses into a muscle group to unwind tight tissue and speed recovery.",
- body: "Used well, it&rsquo;s one of the fastest ways to change how tissue feels. In clinic we use it before adjustments to relax surrounding muscle and after to consolidate the change, matched to the tissue&rsquo;s actual response, not chased around a sore spot.",
+ body: "Used well, it&rsquo;s one of the fastest ways to change how tissue feels. In-office we use it before adjustments to relax surrounding muscle and after to consolidate the change, matched to the tissue&rsquo;s actual response, not chased around a sore spot.",
  },
  howItWorks: [
  {
@@ -466,7 +466,7 @@ export const SERVICES: readonly Service[] = [
  faqs: [
  {
  q: "How is this different from a massage gun at home?",
- a: "Same principle, better technique and pairing. In-clinic we choose the right head, pressure, and duration based on how your tissue responds, and we pair it with an adjustment or stretch to make the change stick.",
+ a: "Same principle, better technique and pairing. In-office we choose the right head, pressure, and duration based on how your tissue responds, and we pair it with an adjustment or stretch to make the change stick.",
  },
  {
  q: "Will it leave bruises?",
@@ -613,7 +613,7 @@ export const SERVICES: readonly Service[] = [
  intro: {
  lead:
  "Game Ready pairs deep cold with intermittent pneumatic compression in a single wrap, so you get the anti-inflammatory benefit of ice plus the swelling clearance of pumping compression.",
- body: "It&rsquo;s the same technology stocked in college and pro training rooms. In our clinic it&rsquo;s our first-line pick for acute strains, sprains, post-training swelling, and post-surgical recovery once your surgeon clears external cold.",
+ body: "It&rsquo;s the same technology stocked in college and pro training rooms. In our office it&rsquo;s our first-line pick for acute strains, sprains, post-training swelling, and post-surgical recovery once your surgeon clears external cold.",
  },
  howItWorks: [
  {
@@ -960,7 +960,7 @@ export const SERVICES: readonly Service[] = [
  faqs: [
  {
  q: "Is this like Normatec?",
- a: "Same category of therapy, sequential air compression. We&rsquo;ve chosen the specific equipment that works best in our clinic setting.",
+ a: "Same category of therapy, sequential air compression. We&rsquo;ve chosen the specific equipment that works best in our office setting.",
  },
  {
  q: "How often should I do it?",
