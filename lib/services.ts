@@ -900,12 +900,12 @@ export const SERVICES: readonly Service[] = [
  hero: {
  eyebrow: "Circulation & recovery",
  tagline:
- "Sequential air compression sleeves that pump fluid through your muscles, spa-like recovery for legs and arms.",
+ "Sequential compression sleeves that boost venous return and lymphatic drainage through your body.",
  stat: { value: "20-30", label: "min per session" },
  },
  intro: {
  lead:
- "Pneumatic compression uses inflatable sleeves, usually on the legs, sometimes on the arms, that inflate and deflate in a programmed sequence.",
+ "Pneumatic compression uses inflatable sleeves, usually on the legs, sometimes on the arms or hips, that inflate and deflate in a programmed sequence.",
  body: "The wave-like pressure boosts venous return and lymphatic drainage, clearing metabolic waste and delivering fresh blood to fatigued tissue. Athletes love them for post-training recovery; anyone with tired, heavy legs will feel the difference.",
  },
  howItWorks: [

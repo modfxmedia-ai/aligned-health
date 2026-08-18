@@ -209,7 +209,7 @@ export function Hero() {
  </span>
  </MagneticLink>
  <MagneticLink
- href="/about"
+ href="/our-team"
  className="btn-outline-invert"
  >
  Meet our team

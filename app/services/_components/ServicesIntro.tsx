@@ -243,7 +243,7 @@ export function ServicesIntro() {
  className="mt-4 max-w-xl text-sm leading-relaxed text-mocha/80"
  >
  Hover a card for a quick overview. Book any service through our
- online scheduler or call the clinic.
+ online scheduler or call the office.
  </motion.p>
  </div>
  </div>
@@ -310,7 +310,7 @@ export function ServicesIntro() {
  href="/contact-us"
  className="text-sm uppercase tracking-[0.18em] text-espresso underline decoration-tan underline-offset-4 hover:text-mocha"
  >
- Contact the clinic
+ Contact the office
  </Link>
  </div>
  </motion.div>

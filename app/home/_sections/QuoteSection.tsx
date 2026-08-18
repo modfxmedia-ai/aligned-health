@@ -81,7 +81,7 @@ export function QuoteSection() {
  className="mt-10"
  >
  <cite className="not-italic text-sm uppercase tracking-[0.32em] text-tan">
-, John Wooden
+John Wooden
  </cite>
  </motion.footer>
  </blockquote>
