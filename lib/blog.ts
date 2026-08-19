@@ -375,7 +375,7 @@ const POSTS: readonly BlogPost[] = [
  role: "Chiropractor · Aligned Health",
  },
  hero: {
- src: "/images/blog/chirorpactic-care.webp",
+ src: "/images/blog/blog-hero__what-to-do-after-a-chiro-adjustment.webp",
  alt: "Chiropractor assessing a patient&rsquo;s spine before an adjustment at Aligned Health in Laguna Hills",
  },
  body: [
