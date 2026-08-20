@@ -11,16 +11,17 @@ import {
 import { useRef } from "react";
 
 /**
- * /about, full-bleed interior photo hero, a wave-shaped divider that
- * transitions into a cream content section carrying the "Prevent. Recover.
- * Compete." heading and the two supporting paragraphs.
+ * /about, dark editorial banner with the heading on the left and the
+ * interior office photo as a framed card on the right (not a full-bleed
+ * background), then a wave-shaped divider transitioning into a cream
+ * content section carrying the "Prevent. Recover. Compete." heading and
+ * the two supporting paragraphs.
  *
  * Copy is verbatim from the live site's /about page.
  * Photo is the actual interior office photograph pulled from the same page.
  *
  * Motion (respects `prefers-reduced-motion`):
- * - Bg photo scroll parallax + slow "breathing" scale
- * - Warm bottom gradient fading into the wave divider
+ * - Photo card fades/scales in + slow "breathing" scale on scroll
  * - Wave path draws in on mount
  * - Word-by-word reveal on "Prevent. Recover. Compete." with an italic
  * mocha accent on "Recover."
@@ -55,45 +56,16 @@ export function AboutIntro() {
  target: heroRef,
  offset: ["start start", "end start"],
  });
- const photoY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
- const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
- const overlay = useTransform(scrollYProgress, [0, 1], [0.7, 0.92]);
+ const photoY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+ const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
  return (
  <>
- {/* --- Full-bleed hero --- */}
+ {/* --- Dark banner, heading left / photo card right --- */}
  <section
  ref={heroRef}
- className="relative flex h-[80vh] min-h-[560px] w-full items-center justify-center overflow-hidden bg-espresso"
+ className="relative w-full overflow-hidden bg-espresso pt-28 pb-24 md:pt-32 md:pb-28"
  >
- {/* Photo with parallax + slow breathing scale */}
- <motion.div
- style={reduce ? undefined : { y: photoY, scale: photoScale }}
- className="absolute inset-0"
- >
- <Image
- src={HERO_PHOTO}
- alt="Aligned Health interior office in Laguna Hills"
- fill
- priority
- sizes="100vw"
- className="object-cover"
- />
- </motion.div>
-
- {/* Flat base darkening, keeps the centered heading legible regardless of scroll position */}
- <div
- aria-hidden="true"
- className="pointer-events-none absolute inset-0 bg-espresso/45"
- />
-
- {/* Dark bottom-anchored gradient, keeps text/wave transition legible */}
- <motion.div
- aria-hidden="true"
- style={reduce ? undefined : { opacity: overlay }}
- className="absolute inset-0 bg-gradient-to-b from-espresso/80 via-espresso/70 to-espresso/95"
- />
-
  {/* Warm tan radial glow, top-left */}
  <div
  aria-hidden="true"
@@ -104,15 +76,65 @@ export function AboutIntro() {
  }}
  />
 
+ <div className="container-shell relative z-10">
+ <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-12">
  {/* Banner heading */}
  <motion.h1
  initial={reduce ? false : { opacity: 0, y: 16 }}
  animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.75, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
- className="container-shell relative z-10 text-center font-serif text-4xl leading-[1.05] tracking-tight text-linen md:text-5xl lg:text-6xl"
+ transition={{
+ duration: 0.75,
+ delay: 0.3,
+ ease: [0.16, 1, 0.3, 1],
+ }}
+ className="font-serif text-4xl leading-[1.05] tracking-tight text-linen md:text-5xl lg:col-span-7 lg:text-6xl"
  >
  About Aligned Health.
  </motion.h1>
+
+ {/* Photo card, right side */}
+ <div className="lg:col-span-5">
+ <motion.div
+ initial={reduce ? false : { opacity: 0, scale: 0.96, y: 24 }}
+ animate={{ opacity: 1, scale: 1, y: 0 }}
+ transition={{
+ duration: 1.1,
+ delay: 0.35,
+ ease: [0.16, 1, 0.3, 1],
+ }}
+ className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-card ring-1 ring-linen/10"
+ >
+ <motion.div
+ style={reduce ? undefined : { y: photoY, scale: photoScale }}
+ className="absolute inset-0"
+ >
+ <Image
+ src={HERO_PHOTO}
+ alt="Aligned Health interior office in Laguna Hills"
+ fill
+ priority
+ sizes="(min-width: 1024px) 40vw, 100vw"
+ className="object-cover"
+ />
+ </motion.div>
+
+ {/* Warm color wash: espresso base + subtle tan highlight top-right */}
+ <div
+ aria-hidden="true"
+ className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-espresso/5 to-transparent"
+ />
+ <div
+ aria-hidden="true"
+ className="absolute inset-0"
+ style={{
+ background:
+ "radial-gradient(60% 40% at 90% 10%, rgba(185,165,144,0.22) 0%, rgba(0,0,0,0) 70%)",
+ }}
+ />
+ </motion.div>
+ </div>
+ </div>
+ </div>
 
  {/* Wave-shaped divider transitioning into cream content section */}
  <WaveDivider />
