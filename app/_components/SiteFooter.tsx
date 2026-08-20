@@ -26,6 +26,7 @@ const EXPLORE_LINKS = [
  { label: "About", href: "/about" },
  { label: "Our Team", href: "/our-team" },
  { label: "Services", href: "/services" },
+ { label: "Areas We Serve", href: "/areas-we-serve" },
  { label: "Blog", href: "/blog" },
  { label: "Appointments", href: "/appointments" },
  { label: "Contact Us", href: "/contact-us" },

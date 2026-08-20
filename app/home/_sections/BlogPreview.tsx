@@ -68,7 +68,7 @@ export function BlogPreview({ posts }: { posts: readonly BlogPost[] }) {
  >
  {HEADING_WORDS.map((word, index) => (
  <HeadingWord
- key={word.text}
+ key={`${word.text}-${index}`}
  word={word}
  index={index}
  reduce={!!reduce}

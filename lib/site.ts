@@ -35,6 +35,7 @@ export const ROUTES = [
   "/about",
   "/our-team",
   "/services",
+  "/areas-we-serve",
   "/blog",
   "/appointments",
   "/contact-us",

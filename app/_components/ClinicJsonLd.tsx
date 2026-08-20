@@ -12,9 +12,18 @@ export interface ClinicJsonLdProps {
   pagePath?: string;
   /** Optional stable `@id` override. Defaults to `${SITE_URL}#clinic`. */
   id?: string;
+  /** Overrides the `areaServed` city name. Defaults to "Laguna Hills". */
+  areaServedName?: string;
+  /** Overrides the `areaServed` Wikipedia `sameAs` link. */
+  areaServedSameAs?: string;
 }
 
-export function ClinicJsonLd({ pagePath, id }: ClinicJsonLdProps) {
+export function ClinicJsonLd({
+  pagePath,
+  id,
+  areaServedName = "Laguna Hills",
+  areaServedSameAs = "https://en.wikipedia.org/wiki/Laguna_Hills,_California",
+}: ClinicJsonLdProps) {
   const url = pagePath ? absoluteUrl(pagePath) : SITE_URL;
 
   const schema = {
@@ -41,8 +50,8 @@ export function ClinicJsonLd({ pagePath, id }: ClinicJsonLdProps) {
     },
     areaServed: {
       "@type": "City",
-      name: "Laguna Hills",
-      sameAs: "https://en.wikipedia.org/wiki/Laguna_Hills,_California",
+      name: areaServedName,
+      sameAs: areaServedSameAs,
     },
     serviceType: "Chiropractic Care and Wellness Services",
     availableService: [

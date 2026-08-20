@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { ROUTES, SITE_URL, type Route } from "@/lib/site";
 import { getAllPosts } from "@/lib/blog";
 import { getAllServices } from "@/lib/services";
+import { LOCATIONS } from "@/lib/locations";
 
 /**
  * Per-route sitemap metadata. Keep priorities and change frequencies here so
@@ -15,6 +16,7 @@ const ROUTE_META: Record<
   "/about": { changeFrequency: "monthly", priority: 0.8 },
   "/our-team": { changeFrequency: "monthly", priority: 0.8 },
   "/services": { changeFrequency: "monthly", priority: 0.9 },
+  "/areas-we-serve": { changeFrequency: "monthly", priority: 0.8 },
   "/blog": { changeFrequency: "weekly", priority: 0.6 },
   "/appointments": { changeFrequency: "monthly", priority: 0.9 },
   "/contact-us": { changeFrequency: "yearly", priority: 0.7 },
@@ -47,5 +49,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...staticEntries, ...serviceEntries, ...postEntries];
+  const cityEntries: MetadataRoute.Sitemap = LOCATIONS.map((location) => ({
+    url: `${SITE_URL}/areas-we-serve/${location.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const cityServiceEntries: MetadataRoute.Sitemap = LOCATIONS.flatMap(
+    (location) =>
+      getAllServices().map((service) => ({
+        url: `${SITE_URL}/areas-we-serve/${location.slug}/${service.slug}`,
+        lastModified,
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+      }))
+  );
+
+  return [
+    ...staticEntries,
+    ...serviceEntries,
+    ...cityEntries,
+    ...cityServiceEntries,
+    ...postEntries,
+  ];
 }
