@@ -1,7 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import Link from "next/link";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 import { useBookingModal } from "@/app/_components/booking/BookingModalContext";
+import {
+  SERVICES,
+  ServiceCard,
+} from "@/app/services/_components/ServicesIntro";
 
 /**
  * /appointments — this page is for EXISTING patients only.
@@ -19,10 +24,23 @@ export function AppointmentsIntro() {
  const reduce = useReducedMotion();
  const { openBookingModal } = useBookingModal();
 
+ const servicesContainer: Variants = {
+ hidden: {},
+ visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+ };
+ const servicesItem: Variants = {
+ hidden: reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
+ visible: {
+ opacity: 1,
+ y: 0,
+ transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+ },
+ };
+
  return (
  <>
  {/* --- Banner, cream background matching the blog page hero --- */}
- <section className="section-cream relative overflow-hidden pt-28 pb-10 md:pt-32 md:pb-14">
+ <section className="section-cream relative overflow-hidden pt-14 pb-10 md:pt-32 md:pb-14">
  <BackgroundFlourish />
 
  <div className="container-shell relative z-10">
@@ -64,6 +82,27 @@ export function AppointmentsIntro() {
  Schedule your appointment below.
  </motion.p>
 
+ <motion.div
+ initial={reduce ? false : { opacity: 0, y: 14 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{
+ duration: 0.7,
+ delay: 0.45,
+ ease: [0.16, 1, 0.3, 1],
+ }}
+ className="mt-7"
+ >
+ <a
+ href={EXISTING_PATIENT_SCHEDULER_URL}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="btn-primary btn-lg inline-flex items-center gap-2"
+ >
+                Schedule Now
+ <span aria-hidden="true">→</span>
+ </a>
+ </motion.div>
+
  <motion.p
  initial={reduce ? false : { opacity: 0, y: 12 }}
  animate={{ opacity: 1, y: 0 }}
@@ -88,51 +127,73 @@ export function AppointmentsIntro() {
  </div>
  </section>
 
- {/* --- Linen section, existing-patient scheduler CTA ---
- Jane App sends `X-Frame-Options: SAMEORIGIN` on every response, so
- their scheduler can never be embedded in an <iframe> on this site —
- the browser refuses to render it regardless of our own code. A
- direct, one-click link to the same existing-patients calendar is the
- closest equivalent to "scheduling right on the page". */}
+ {/* --- Linen section, services showcase --- */}
  <section className="section-linen section relative overflow-hidden">
- <BackgroundFlourish />
+        <BackgroundFlourish />
 
- <div className="container-shell relative z-10">
- <div className="mx-auto max-w-4xl">
- <motion.div
- initial={reduce ? false : { opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true, margin: "0px 0px -60px 0px" }}
- transition={{
- duration: 0.8,
- delay: 0.15,
- ease: [0.16, 1, 0.3, 1],
- }}
- className="flex flex-col items-center gap-6 rounded-3xl border border-tan/30 bg-cream p-10 text-center shadow-card md:p-14"
- >
- <p className="eyebrow !text-mocha">Existing patients</p>
- <p className="font-serif text-3xl leading-snug text-espresso md:text-4xl">
- Pick a time that works for you.
- </p>
- <p className="max-w-md text-sm leading-relaxed text-mocha md:text-base">
- Opens the Aligned Health calendar in a new tab, secure scheduling
- through Jane App.
- </p>
- <a
- href={EXISTING_PATIENT_SCHEDULER_URL}
- target="_blank"
- rel="noopener noreferrer"
- className="btn-primary btn-lg inline-flex items-center gap-2"
- >
- Open the scheduler
- <span aria-hidden="true">→</span>
- </a>
- </motion.div>
- </div>
- </div>
- </section>
- </>
- );
+        <div className="container-shell relative z-10">
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <motion.p
+                initial={reduce ? false : { opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="eyebrow !text-mocha"
+              >
+                While you&rsquo;re here
+              </motion.p>
+              <motion.p
+                initial={reduce ? false : { opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="mt-4 font-serif text-3xl leading-snug text-espresso md:text-4xl"
+              >
+                Services we offer.
+              </motion.p>
+            </div>
+
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+              transition={{
+                duration: 0.6,
+                delay: 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              <Link href="/services" className="btn-outline btn-sm">
+                View All Services
+                <span aria-hidden="true" className="ml-1">
+                  →
+                </span>
+              </Link>
+            </motion.div>
+          </div>
+
+          <motion.ul
+            variants={servicesContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+            className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-12 lg:grid-cols-3 lg:gap-6"
+          >
+            {SERVICES.map((service) => (
+              <motion.li key={service.slug} variants={servicesItem}>
+                <ServiceCard service={service} />
+              </motion.li>
+            ))}
+          </motion.ul>
+        </div>
+      </section>
+    </>
+  );
 }
 
 /* ---------------------------------------------------------------------- */

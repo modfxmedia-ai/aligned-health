@@ -24,7 +24,7 @@ import {
  * from the live page's DOM order.
  */
 
-interface Service {
+export interface Service {
  slug: string;
  title: string;
  description: string;
@@ -34,7 +34,7 @@ interface Service {
 const INTRO =
  "At Aligned Health we provide some of the most advanced treatment and therapeutic modalities.";
 
-const SERVICES: readonly Service[] = [
+export const SERVICES: readonly Service[] = [
  {
  slug: "chiropractic-adjustments",
  title: "Chiropractic Adjustments",
@@ -324,7 +324,7 @@ export function ServicesIntro() {
 /* Service card */
 /* ---------------------------------------------------------------------- */
 
-function ServiceCard({ service }: { service: Service }) {
+export function ServiceCard({ service }: { service: Service }) {
  return (
  <Link
  href={`/services/${service.slug}`}
