@@ -33,8 +33,7 @@ import { useBookingModal } from "@/app/_components/booking/BookingModalContext";
  * - Vertical scroll hint at the bottom center
  */
 
-const HERO_IMAGE =
- "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/13a8a82a-4f38-4686-997f-57d70e3e14b1/IMG_7513.jpeg";
+const HERO_IMAGE = "/images/home/hero-treatment-room.jpg";
 
 // Rotating background slideshow behind the whole hero. A curated set of
 // real service photos from the office, crossfading every ~6 seconds so

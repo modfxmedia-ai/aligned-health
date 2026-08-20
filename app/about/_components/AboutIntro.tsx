@@ -28,8 +28,7 @@ import { useRef } from "react";
  * - Bottom hairline + eyebrow tags fade in
  */
 
-const HERO_PHOTO =
- "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/6a6eb945-7def-4b74-9fd4-6b0d586466d1/IMG_7093.jpeg";
+const HERO_PHOTO = "/images/about/about-hero-office.jpg";
 
 interface Word {
  text: string;
