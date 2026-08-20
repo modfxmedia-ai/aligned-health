@@ -160,12 +160,12 @@ export function SiteFooter() {
  </Link>
  </li>
  <li>
- <a
- href="/sitemap.xml"
+ <Link
+ href="/sitemap"
  className="text-linen/60 transition-colors hover:text-linen"
  >
  Sitemap
- </a>
+ </Link>
  </li>
  <li className="hidden text-linen/30 sm:inline">·</li>
  <li className="text-linen/40">
