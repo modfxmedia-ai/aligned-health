@@ -671,6 +671,144 @@ const POSTS: readonly BlogPost[] = [
  "assisted-stretching",
  ],
  },
+
+  {
+    slug: "assisted-stretching-stiff-hips-laguna-hills",
+    title: "Should You Try Assisted Stretching for Stiff Hips?",
+    description:
+      "Discover how assisted stretching in Laguna Hills may ease hip stiffness, improve flexibility, and support comfortable movement through personalized care options.",
+    keywords: [
+      "assisted stretching laguna hills",
+      "hip mobility chiropractor",
+      "stiff hips treatment orange county",
+      "guided stretching therapy",
+      "hip flexor tightness relief",
+      "flexibility therapy laguna hills",
+      "hip pain chiropractor near me",
+    ],
+    category: "Recovery",
+    datePublished: "2026-08-18",
+    readingTime: 6,
+    author: {
+      name: "Dr. Dustin Hack, D.C.",
+      role: "Chiropractor · Aligned Health",
+    },
+    hero: {
+      src: "/images/blog/improve-hip-mobility-with-assisted-stretching.png",
+      alt: "Provider guiding a patient through an assisted hip stretch at Aligned Health in Laguna Hills",
+    },
+    body: [
+      {
+        type: "lead",
+        text: "Stiff hips can take the fun out of late-summer plans. A beach walk, a hike, a round of golf, a bike ride, or even a long drive can feel less enjoyable when standing up, climbing stairs, or getting out of a chair feels restricted.",
+      },
+      {
+        type: "p",
+        text: "At Aligned Health, we often see people who stay active but still feel like their hips do not move as freely as they should. Assisted stretching in Laguna Hills can be a personalized option for people who want guided support with mobility, flexibility, and recovery. It is not a one-size-fits-all answer, though. Understanding what may be causing your stiffness can help you decide whether guided stretching belongs in your care plan.",
+      },
+      { type: "h2", text: "Know Why Your Hips May Feel Tight" },
+      {
+        type: "p",
+        text: "Hip stiffness can build up slowly. Long hours at a desk, daily commuting, and extended road trips can leave the hip flexors and nearby muscles in the same shortened position for too long. Even people who do not feel &ldquo;inactive&rdquo; may notice that sitting changes how easily they move once they stand up.",
+      },
+      {
+        type: "p",
+        text: "Summer activity can create stiffness, too. Running, cycling, strength training, recreational sports, and busy weekends may leave muscles feeling tired when recovery time and mobility work get pushed aside. A sudden jump in activity, such as doing more hiking or pickleball than usual, can also make tightness more noticeable.",
+      },
+      {
+        type: "p",
+        text: "The source of hip discomfort is not always the hip joint itself. Limited movement may involve the lower back, pelvis, glutes, hamstrings, or other surrounding soft tissues. We recommend a professional evaluation when stiffness keeps returning, gets worse, or comes with symptoms such as pain, numbness, weakness, or trouble bearing weight.",
+      },
+      { type: "h2", text: "Decide Whether Assisted Stretching Fits Your Needs" },
+      {
+        type: "p",
+        text: "Guided stretching may be worth considering when stiffness is affecting the way you work, exercise, travel, or move through daily life. Rather than trying to push through a stretch on your own, you can receive support with positioning and range of motion based on your comfort level.",
+      },
+      {
+        type: "p",
+        text: "People who may ask us about assisted stretching include:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Adults who feel stiff after desk work or long commutes",
+          "Active people recovering from demanding workouts or sports",
+          "Individuals returning to movement after an injury",
+          "People who feel limited while walking, bending, sitting, or standing",
+          "Anyone who wants help building a more consistent mobility routine",
+        ],
+      },
+      {
+        type: "p",
+        text: "During assisted stretching, we can help identify areas that appear restricted and guide your body into controlled movements. Proper alignment matters. Some stretches are hard to perform effectively alone because it is difficult to relax one area while trying to hold your position in another.",
+      },
+      {
+        type: "callout",
+        title: "When another approach may come first",
+        text: "Stretching should always fit the person, not the other way around. Recent injuries, joint instability, significant arthritis, post-surgical restrictions, and unexplained pain may require a different approach first. We take your history and current concerns into account so we can determine whether stretching is appropriate or whether another therapeutic service may better support your needs.",
+      },
+      { type: "h2", text: "See How a Guided Stretching Session Works" },
+      {
+        type: "p",
+        text: "A guided stretching visit usually starts with a conversation. We want to know when your hips feel tight, what activities make the problem more noticeable, how active you are, and what you hope to get back to doing with greater comfort. Your health history and movement goals help shape the session.",
+      },
+      {
+        type: "p",
+        text: "From there, we may guide the hips and legs through gentle, controlled movements that address areas such as the hip flexors, glutes, hamstrings, and inner thighs. The goal is not to force flexibility or chase an uncomfortable range of motion. Instead, we focus on gradual movement that respects your body&rsquo;s signals.",
+      },
+      {
+        type: "p",
+        text: "Assisted stretching can also complement other services we provide, including chiropractic care, rehabilitation, and recovery therapies. When hip stiffness is tied to broader movement concerns, a combined plan may support pain relief, strength, movement quality, and injury recovery in a more complete way.",
+      },
+      { type: "h2", text: "Build Hip Mobility That Lasts Beyond the Table" },
+      {
+        type: "p",
+        text: "One session can feel like a helpful reset, but lasting mobility usually comes from steady habits over time. Professional care can help you understand what your body needs, while realistic movement changes can make it easier to maintain progress between visits.",
+      },
+      {
+        type: "p",
+        text: "Depending on your needs, we may discuss supportive strategies such as:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Taking regular breaks from long periods of sitting",
+          "Using simple mobility movements recommended for your current ability",
+          "Building strength in the glutes, core, and legs",
+          "Adjusting training volume when soreness or fatigue is building",
+          "Making time for recovery after busy activity days",
+        ],
+      },
+      {
+        type: "p",
+        text: "Late summer can be a good reminder to prepare your body before activity instead of waiting until it feels tight. A brief warmup before a beach walk, cycling outing, hike, golf game, pickleball match, or travel day may help your body ease into movement. Rest days matter, too, especially when your schedule is full of back-to-school errands, work demands, and weekend plans.",
+      },
+      { type: "h2", text: "Recognize Patterns in Hip Stiffness" },
+      {
+        type: "p",
+        text: "Stiff hips do not have to become a normal part of work, exercise, travel, or getting older. Paying attention to when stiffness starts, what makes it worse, and which activities feel limited can help clarify whether it is related to prolonged sitting, changes in activity, recovery needs, or another movement concern.",
+      },
+      {
+        type: "p",
+        text: "When stiffness keeps returning, becomes more severe, or occurs with pain, numbness, weakness, or trouble bearing weight, an appropriate professional evaluation can help identify the factors involved. Recognizing these patterns supports safer, more informed decisions about mobility, activity, and recovery.",
+      },
+      {
+        type: "quote",
+        text: "Stretching should fit the person in front of us, not the other way around.",
+        attribution: "Dr. Dustin Hack, D.C.",
+      },
+      { type: "h2", text: "Support More Comfortable, Confident Movement" },
+      {
+        type: "p",
+        text: "At Aligned Health, we tailor care to your mobility goals and daily activity needs. Our assisted stretching in Laguna Hills can help you improve flexibility, move with greater ease, and build a routine that supports lasting progress. Contact us to discuss your needs and schedule a visit.",
+      },
+    ],
+    relatedServiceSlugs: [
+      "assisted-stretching",
+      "chiropractic-adjustments",
+      "percussion-therapy",
+    ],
+  },
 ];
 
 /* ---------------------------------------------------------------------- */
