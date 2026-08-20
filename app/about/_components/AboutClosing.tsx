@@ -87,7 +87,7 @@ export function AboutClosing() {
  onClick={openBookingModal}
  className="btn-cta-onDark btn-lg"
  >
- Book an Appointment
+ Book your New Patient Appointment
  <span aria-hidden="true" className="ml-1">
  →
  </span>

@@ -43,12 +43,12 @@ const NAV_ITEMS: readonly NavItem[] = [
  { label: "Our Team", href: "/our-team" },
  { label: "Services", href: "/services", hasServicesDropdown: true },
  { label: "Blog", href: "/blog" },
- { label: "Appointments", href: "/appointments" },
+ { label: "Existing Patient\nAppointments", href: "/appointments" },
  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const CTA = {
- label: "Book an Appointment Online",
+ label: "Book your New Patient Appointment",
 };
 
 const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
@@ -222,15 +222,28 @@ function Wordmark({ onClick }: { onClick: () => void }) {
 }
 
 function DesktopLink({ item, active }: { item: NavItem; active: boolean }) {
+ // Only labels with an explicit line break stack; every other label
+ // stays single-line so it can't be squeezed into an awkward wrap.
+ const lines = item.label.split("\n");
+ const stacked = lines.length > 1;
+
  return (
  <Link
  href={item.href}
  aria-current={active ? "page" : undefined}
- className={`group relative inline-flex items-center py-2 text-[0.82rem] font-medium uppercase tracking-[0.14em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 focus-visible:ring-offset-espresso rounded-sm ${
- active ? "text-tan" : "text-linen hover:text-tan"
- }`}
+ className={`group relative inline-flex shrink-0 items-center py-2 text-[0.82rem] font-medium uppercase tracking-[0.14em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 focus-visible:ring-offset-espresso rounded-sm ${
+ stacked ? "text-center leading-tight" : "whitespace-nowrap"
+ } ${active ? "text-tan" : "text-linen hover:text-tan"}`}
  >
- {item.label}
+ {stacked ? (
+ <span className="flex flex-col">
+ {lines.map((line) => (
+ <span key={line}>{line}</span>
+ ))}
+ </span>
+ ) : (
+ item.label
+ )}
  <span
  aria-hidden="true"
  className={`pointer-events-none absolute left-0 right-0 -bottom-[2px] h-px origin-left bg-tan transition-transform duration-300 ease-out ${
@@ -333,7 +346,7 @@ function ServicesDropdown({
  aria-haspopup="menu"
  aria-controls={panelId}
  onKeyDown={onTriggerKeyDown}
- className={`group relative inline-flex items-center gap-1.5 py-2 text-[0.82rem] font-medium uppercase tracking-[0.14em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 focus-visible:ring-offset-espresso rounded-sm ${
+ className={`group relative inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap py-2 text-[0.82rem] font-medium uppercase tracking-[0.14em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 focus-visible:ring-offset-espresso rounded-sm ${
  active || open ? "text-tan" : "text-linen hover:text-tan"
  }`}
  >
@@ -423,7 +436,7 @@ function ServicesDropdown({
  role="menuitem"
  className="btn-primary btn-sm inline-flex items-center justify-center gap-2"
  >
- Book Appointment
+ Book your New Patient Appointment
  <span aria-hidden="true">→</span>
  </BookNowLink>
  </div>
@@ -561,7 +574,7 @@ function MobileServicesAccordion({
  tabIndex={expanded && tabIndex >= 0 ? 0 : -1}
  className="btn-cta-onDark btn-sm mt-2 inline-flex items-center gap-2"
  >
- Book Appointment
+ Book your New Patient Appointment
  <span aria-hidden="true">→</span>
  </BookNowLink>
  </div>

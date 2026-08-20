@@ -133,8 +133,8 @@ export function SiteFooter() {
  <p className="mt-3 text-sm leading-relaxed text-linen/85">
  By appointment.
  </p>
- <BookNowLink className="btn-cta-onDark btn-sm mt-5 inline-flex w-full items-center justify-center gap-2">
- Book an Appointment
+ <BookNowLink className="btn-cta-onDark btn-sm mt-5 inline-flex w-full items-center justify-center gap-2 whitespace-normal text-center leading-snug">
+ Book your New Patient Appointment
  <span aria-hidden="true">→</span>
  </BookNowLink>
  </div>

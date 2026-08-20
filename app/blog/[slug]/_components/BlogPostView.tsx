@@ -265,7 +265,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
                 onClick={openBookingModal}
                 className="btn-primary btn-lg inline-flex items-center gap-2"
               >
-                Book an Appointment
+                Book your New Patient Appointment
                 <span aria-hidden="true">→</span>
               </MagneticLink>
               <Link

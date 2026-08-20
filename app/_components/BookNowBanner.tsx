@@ -140,7 +140,7 @@ export function BookNowBanner() {
                 <span>{CLINIC.phoneDisplay}</span>
               </a>
               <BookNowLink className="btn-cta-onDark btn-sm inline-flex flex-1 items-center justify-center gap-2 sm:flex-initial">
-                Book Now
+                Book your New Patient Appointment
                 <span aria-hidden="true">→</span>
               </BookNowLink>
               <button

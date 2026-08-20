@@ -196,7 +196,7 @@ export function ContactAreas() {
  <span aria-hidden="true">↑</span>
  </Link>
  <BookNowLink className="btn-cta-onDark btn-sm inline-flex items-center gap-2">
- Book an Appointment
+ Book your New Patient Appointment
  <span aria-hidden="true">→</span>
  </BookNowLink>
  </div>
