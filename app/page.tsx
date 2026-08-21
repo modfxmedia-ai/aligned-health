@@ -14,11 +14,34 @@ import { getRecentPosts } from "@/lib/blog";
 
 const PATH = "/";
 
+const TITLE = "Chiropractic Care in Laguna Hills, CA | Aligned Health";
+const DESCRIPTION =
+  "Aligned Health's Laguna Hills chiropractic team helps patients relieve pain, recover from surgery, and rebuild strength, balance, and mobility. Schedule now.";
+
 export const metadata: Metadata = {
-  title: "Chiropractic Care in Laguna Hills, CA",
-  description:
-    "Aligned Health's Laguna Hills chiropractic team helps patients relieve pain, recover from surgery, and rebuild strength, balance, and mobility. Schedule now.",
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
   alternates: { canonical: PATH },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PATH,
+    type: "website",
+    images: [
+      {
+        url: "/images/contact-us/hero-v2.jpg",
+        width: 2400,
+        height: 1018,
+        alt: "Aligned Health chiropractic office in Laguna Hills, CA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/images/contact-us/hero-v2.jpg"],
+  },
 };
 
 /**

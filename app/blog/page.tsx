@@ -6,10 +6,13 @@ import { SITE_URL } from "@/lib/site";
 
 const PATH = "/blog";
 
+const TITLE = "The Aligned Health Journal · Chiropractic Insights in Laguna Hills";
+const DESCRIPTION =
+    "Plain-spoken articles on chiropractic care, recovery modalities, and treatment plans from the Aligned Health team in Laguna Hills, CA.";
+
 export const metadata: Metadata = {
-  title: "The Aligned Health Journal · Chiropractic Insights in Laguna Hills",
-  description:
-    "Plain-spoken articles on chiropractic care, recovery modalities, and treatment plans from the Aligned Health team in Laguna Hills, CA.",
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
   keywords: [
     "chiropractic blog",
     "chiropractor laguna hills blog",
@@ -19,11 +22,24 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: PATH },
   openGraph: {
-    title: "The Aligned Health Journal",
-    description:
-      "Plain-spoken articles on chiropractic care, recovery modalities, and treatment plans.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: PATH,
     type: "website",
+    images: [
+      {
+        url: "/images/contact-us/hero-v2.jpg",
+        width: 2400,
+        height: 1018,
+        alt: "Aligned Health chiropractic office in Laguna Hills, CA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/images/contact-us/hero-v2.jpg"],
   },
 };
 

@@ -6,7 +6,6 @@ import {
  useReducedMotion,
  useScroll,
  useTransform,
- type Variants,
 } from "motion/react";
 import { useRef } from "react";
 

@@ -56,7 +56,7 @@ export function AppointmentsIntro() {
  <span aria-hidden="true" className="block h-px w-10 bg-tan" />
  </motion.div>
 
- <motion.p
+ <motion.h1
  initial={reduce ? false : { opacity: 0, y: 16 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{
@@ -67,7 +67,7 @@ export function AppointmentsIntro() {
  className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight text-espresso md:text-6xl lg:text-7xl"
  >
  Welcome <span className="italic text-tan">Back</span>
- </motion.p>
+ </motion.h1>
 
  <motion.p
  initial={reduce ? false : { opacity: 0, y: 14 }}

@@ -40,7 +40,7 @@ export async function generateMetadata({
 
  const url = `/blog/${post.slug}`;
  return {
- title: plainTitle,
+ title: { absolute: plainTitle },
  description: plainDescription,
  keywords: post.keywords,
  authors: [{ name: post.author.name }],

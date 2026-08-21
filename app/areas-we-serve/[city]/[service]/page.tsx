@@ -50,7 +50,7 @@ export async function generateMetadata({
   const url = `/areas-we-serve/${location.slug}/${service.slug}`;
 
   return {
-    title: content.metaTitle,
+    title: { absolute: content.metaTitle },
     description: content.metaDescription,
     keywords: service.keywords,
     alternates: { canonical: url },

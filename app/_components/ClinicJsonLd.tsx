@@ -48,6 +48,12 @@ export function ClinicJsonLd({
       postalCode: CLINIC.address.postalCode,
       addressCountry: CLINIC.address.country,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 33.5749909,
+      longitude: -117.6755141,
+    },
+    image: absoluteUrl("/images/contact-us/hero-v2.jpg"),
     areaServed: {
       "@type": "City",
       name: areaServedName,

@@ -6,17 +6,33 @@ import { SITE_URL } from "@/lib/site";
 
 const PATH = "/areas-we-serve";
 
+const TITLE = "Areas We Serve · Orange County Chiropractic Care · Aligned Health";
+const DESCRIPTION =
+  "Aligned Health serves patients across 30 Orange County cities from our Laguna Hills office with chiropractic adjustments, spinal decompression, and more.";
+
 export const metadata: Metadata = {
-  title: "Areas We Serve · Orange County Chiropractic Care · Aligned Health",
-  description:
-    "Aligned Health serves patients across 30 Orange County cities from our Laguna Hills office, chiropractic adjustments, spinal decompression, and 12 other recovery services. Find your city.",
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
   alternates: { canonical: PATH },
   openGraph: {
-    title: "Areas We Serve · Orange County Chiropractic Care · Aligned Health",
-    description:
-      "Find drive times, local details, and the full list of services available to your Orange County city.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: PATH,
     type: "website",
+    images: [
+      {
+        url: "/images/about/about-hero-office.jpg",
+        width: 768,
+        height: 1024,
+        alt: "Aligned Health interior office in Laguna Hills",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/images/about/about-hero-office.jpg"],
   },
 };
 

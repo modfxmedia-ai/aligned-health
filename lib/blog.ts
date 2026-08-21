@@ -466,7 +466,7 @@ const POSTS: readonly BlogPost[] = [
  role: "Chiropractor · Aligned Health",
  },
  hero: {
- src: "/images/services/red-light-therapy-banner.png",
+ src: "/images/services/red-light-therapy-banner.jpg",
  alt: "Red light therapy treatment bed glowing red at Aligned Health in Laguna Hills",
  },
  body: [
@@ -549,7 +549,7 @@ const POSTS: readonly BlogPost[] = [
  role: "Chiropractor · Aligned Health",
  },
  hero: {
- src: "/images/blog/ice-compression-therapy-for-athletic-injury-recovery.png",
+ src: "/images/blog/ice-compression-therapy-for-athletic-injury-recovery.jpg",
  alt: "Athlete applying a Game Ready ice compression wrap to his knee during a recovery session at Aligned Health in Laguna Hills",
  },
  body: [
@@ -694,7 +694,7 @@ const POSTS: readonly BlogPost[] = [
       role: "Chiropractor · Aligned Health",
     },
     hero: {
-      src: "/images/blog/improve-hip-mobility-with-assisted-stretching.png",
+      src: "/images/blog/improve-hip-mobility-with-assisted-stretching.jpg",
       alt: "Provider guiding a patient through an assisted hip stretch at Aligned Health in Laguna Hills",
     },
     body: [

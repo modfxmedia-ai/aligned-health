@@ -4,17 +4,33 @@ import { AppointmentsIntro } from "@/app/appointments/_components/AppointmentsIn
 
 const PATH = "/appointments";
 
+const TITLE = "Book an Appointment · Aligned Health Chiropractic in Laguna Hills";
+const DESCRIPTION =
+ "Book your chiropractic appointment at Aligned Health in Laguna Hills, CA. Schedule now, most PPO plans accepted, and secure online scheduling via Jane App.";
+
 export const metadata: Metadata = {
- title: "Book an Appointment · Aligned Health Chiropractic in Laguna Hills",
- description:
-    "Book your chiropractic appointment at Aligned Health in Laguna Hills, CA. Schedule now, most PPO plans accepted, and secure online scheduling via Jane App.",
+ title: { absolute: TITLE },
+ description: DESCRIPTION,
  alternates: { canonical: PATH },
  openGraph: {
- title: "Book an Appointment · Aligned Health Chiropractic in Laguna Hills",
- description:
-      "Come in and experience the Aligned Health difference. Book online through Jane App or call the office, schedule now.",
+ title: TITLE,
+ description: DESCRIPTION,
  url: PATH,
  type: "website",
+ images: [
+ {
+ url: "/images/about/about-hero-office.jpg",
+ width: 768,
+ height: 1024,
+ alt: "Aligned Health interior office in Laguna Hills",
+ },
+ ],
+ },
+ twitter: {
+ card: "summary_large_image",
+ title: TITLE,
+ description: DESCRIPTION,
+ images: ["/images/about/about-hero-office.jpg"],
  },
 };
 

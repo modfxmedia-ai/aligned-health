@@ -7,18 +7,33 @@ const PATH = "/privacy-policy";
 const LAST_UPDATED = "August 2026";
 const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
 const DESCRIPTION =
-  "How Aligned Health collects, uses, and protects information you share with our Laguna Hills chiropractic practice through this website, our contact form, and our online booking portal.";
+  "How Aligned Health collects, uses, and protects information you share through this website, our contact form, and our online booking portal.";
+const TITLE = "Privacy Policy · Aligned Health";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PATH },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Privacy Policy · Aligned Health",
+    title: TITLE,
     description: DESCRIPTION,
     url: PATH,
     type: "article",
+    images: [
+      {
+        url: "/images/contact-us/hero-v2.jpg",
+        width: 2400,
+        height: 1018,
+        alt: "Aligned Health chiropractic office in Laguna Hills, CA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/images/contact-us/hero-v2.jpg"],
   },
 };
 

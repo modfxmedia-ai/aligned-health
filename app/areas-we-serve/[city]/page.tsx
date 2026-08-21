@@ -32,12 +32,27 @@ export async function generateMetadata({
   const url = `/areas-we-serve/${location.slug}`;
   const title = `Chiropractor in ${location.name}, CA \u00b7 Aligned Health`;
   const description = `Chiropractic adjustments, spinal decompression, and 12 other recovery services for ${location.name}, CA patients at Aligned Health in Laguna Hills. Schedule now, most PPO plans accepted.`;
+  const image = "/images/about/about-hero-office.jpg";
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: url },
-    openGraph: { type: "website", url, title, description },
+    openGraph: {
+      type: "website",
+      url,
+      title,
+      description,
+      images: [
+        { url: image, width: 768, height: 1024, alt: "Aligned Health interior office in Laguna Hills" },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
   };
 }
 

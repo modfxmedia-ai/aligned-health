@@ -34,7 +34,7 @@ export async function generateMetadata({
 
  const url = `/services/${service.slug}`;
  return {
- title: service.metaTitle,
+ title: { absolute: service.metaTitle },
  description: service.metaDescription.replace(/&[a-z]+;/g, ""),
  keywords: service.keywords,
  alternates: { canonical: url },
