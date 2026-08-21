@@ -53,6 +53,18 @@ export default function RootLayout({
  <BookingModal />
  </BookingModalProvider>
  <Script
+ src="https://www.googletagmanager.com/gtag/js?id=G-8VEHGC7P8H"
+ strategy="afterInteractive"
+ />
+ <Script id="google-analytics" strategy="afterInteractive">
+ {`
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-8VEHGC7P8H');
+ `}
+ </Script>
+ <Script
  src="https://widgets.leadconnectorhq.com/loader.js"
  data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
  data-widget-id="6a761d806d7a5e86d2f32577"
