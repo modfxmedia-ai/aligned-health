@@ -27,9 +27,8 @@ const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
  FULL_ADDRESS
 )}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
-const MAP_LINK = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
- FULL_ADDRESS
-)}`;
+const MAP_LINK =
+ "https://www.google.com/maps/place/Aligned+Health/@33.5748115,-117.6755535,871m/data=!3m2!1e3!5s0x80dceec47cf99773:0x8e0bd7756e6af25c!4m15!1m8!3m7!1s0x80dceec47ef93b1b:0xbdc6a1d087b932bd!2s26071+Merit+Cir+%23114,+Laguna+Hills,+CA+92653,+USA!3b1!8m2!3d33.5748115!4d-117.6755535!16s%2Fg%2F11n09cth33!3m5!1s0x80dcebe3bbff6193:0xa55599af90af8db0!8m2!3d33.5748115!4d-117.6755535!16s%2Fg%2F11fwj32nr9!5m1!1e1?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
 
 const SERVICE_AREAS = [
  "Laguna Hills",
