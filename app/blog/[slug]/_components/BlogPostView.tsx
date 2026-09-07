@@ -12,7 +12,6 @@ import {
 import { useRef } from "react";
 import {
   formatPostDate,
-  getRecentPosts,
   type BlogPost,
 } from "@/lib/blog";
 import { PostCard } from "@/app/blog/_components/PostCard";
@@ -49,7 +48,13 @@ const RELATED_SERVICE_NAMES: Record<string, string> = {
   "assisted-stretching": "Assisted Stretching",
 };
 
-export function BlogPostView({ post }: { post: BlogPost }) {
+export function BlogPostView({
+  post,
+  related = [],
+}: {
+  post: BlogPost;
+  related?: readonly BlogPost[];
+}) {
   const reduce = useReducedMotion();
   const { openBookingModal } = useBookingModal();
   const heroRef = useRef<HTMLElement>(null);
@@ -63,7 +68,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
   const overlay = useTransform(scrollYProgress, [0, 1], [0.55, 0.85]);
 
   const words = splitTitle(post.title);
-  const recent = getRecentPosts(3).filter((p) => p.slug !== post.slug);
+  const recent = related.filter((p) => p.slug !== post.slug);
 
   return (
     <>

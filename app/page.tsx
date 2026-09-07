@@ -10,7 +10,7 @@ import { TeamSection } from "@/app/home/_sections/TeamSection";
 import { TestimonialsMarquee } from "@/app/home/_sections/TestimonialsMarquee";
 import { TrustMarquee } from "@/app/home/_sections/TrustMarquee";
 import { ValueProps } from "@/app/home/_sections/ValueProps";
-import { getRecentPosts } from "@/lib/blog";
+import { getRecentSitePosts } from "@/lib/ranked/site-posts";
 
 const PATH = "/";
 
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
  * live under `app/home/_sections/` — that folder starts with `_`, so
  * Next.js treats it as private (no route generated).
  */
-export default function HomePage() {
-  const recentPosts = getRecentPosts(3);
+export default async function HomePage() {
+  const recentPosts = await getRecentSitePosts(3);
   return (
     <>
       <ClinicJsonLd pagePath={PATH} />

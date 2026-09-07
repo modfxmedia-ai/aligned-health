@@ -7,26 +7,56 @@ import type { BlogBlock } from "@/lib/blog";
  * &raquo;/&ldquo;/etc, passed through as raw HTML entities
  * Text is assumed to be safe author content, not untrusted user input.
  */
+function renderMarkdownLinks(text: string, keyBase: number): React.ReactNode {
+  const chunks = text.split(/(\[[^\]]+\]\([^)\s]+\))/g).filter(Boolean);
+  return chunks.map((chunk, i) => {
+    const match = chunk.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
+    if (match) {
+      const href = match[2];
+      const safe =
+        href.startsWith("https://") ||
+        href.startsWith("http://") ||
+        href.startsWith("/");
+      if (!safe) return <span key={`${keyBase}-${i}`}>{match[1]}</span>;
+      return (
+        <a
+          key={`${keyBase}-${i}`}
+          href={href}
+          className="underline decoration-tan underline-offset-4 hover:text-espresso"
+        >
+          {match[1]}
+        </a>
+      );
+    }
+    return renderEmphasis(chunk, `${keyBase}-${i}`);
+  });
+}
+
+function renderEmphasis(text: string, key: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).filter(Boolean);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={`${key}-b-${i}`} className="font-medium text-espresso">
+          <span dangerouslySetInnerHTML={{ __html: part.slice(2, -2) }} />
+        </strong>
+      );
+    }
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return (
+        <em key={`${key}-i-${i}`} className="italic text-tan">
+          <span dangerouslySetInnerHTML={{ __html: part.slice(1, -1) }} />
+        </em>
+      );
+    }
+    return (
+      <span key={`${key}-t-${i}`} dangerouslySetInnerHTML={{ __html: part }} />
+    );
+  });
+}
+
 function renderInline(text: string): React.ReactNode {
- // Split on **...** and *...* while keeping delimiters
- const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).filter(Boolean);
- return parts.map((part, i) => {
- if (part.startsWith("**") && part.endsWith("**")) {
- return (
- <strong key={i} className="font-medium text-espresso">
- <span dangerouslySetInnerHTML={{ __html: part.slice(2, -2) }} />
- </strong>
- );
- }
- if (part.startsWith("*") && part.endsWith("*")) {
- return (
- <em key={i} className="italic text-tan">
- <span dangerouslySetInnerHTML={{ __html: part.slice(1, -1) }} />
- </em>
- );
- }
- return <span key={i} dangerouslySetInnerHTML={{ __html: part }} />;
- });
+  return renderMarkdownLinks(text, 0);
 }
 
 export function RichText({ blocks }: { blocks: readonly BlogBlock[] }) {

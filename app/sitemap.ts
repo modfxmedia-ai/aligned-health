@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ROUTES, SITE_URL, type Route } from "@/lib/site";
-import { getAllPosts } from "@/lib/blog";
+import { getPublishedSitePosts } from "@/lib/ranked/site-posts";
 import { getAllServices } from "@/lib/services";
 import { LOCATIONS } from "@/lib/locations";
 
@@ -23,8 +23,9 @@ const ROUTE_META: Record<
   "/privacy-policy": { changeFrequency: "yearly", priority: 0.3 },
 };
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
+  const posts = await getPublishedSitePosts();
 
   const staticEntries: MetadataRoute.Sitemap = ROUTES.map((path) => ({
     url: `${SITE_URL}${path}`,
@@ -33,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: ROUTE_META[path].priority,
   }));
 
-  const postEntries: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+  const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.dateModified ?? post.datePublished),
     changeFrequency: "monthly" as const,

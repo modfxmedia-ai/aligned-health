@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ClinicJsonLd } from "@/app/_components/ClinicJsonLd";
 import { SitemapView } from "./_components/SitemapView";
+import { getPublishedSitePosts } from "@/lib/ranked/site-posts";
 
 const PATH = "/sitemap";
 
@@ -35,11 +36,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SitemapPage() {
+export default async function SitemapPage() {
+  const posts = await getPublishedSitePosts();
   return (
     <>
       <ClinicJsonLd pagePath={PATH} />
-      <SitemapView />
+      <SitemapView posts={posts} />
     </>
   );
 }

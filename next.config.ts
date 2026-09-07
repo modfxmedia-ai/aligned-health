@@ -7,9 +7,13 @@ const nextConfig: NextConfig = {
       // TODO: self-host under `/public/images/` before decommissioning the
       // legacy site — Squarespace URLs will 404 once the account lapses.
       { protocol: "https", hostname: "images.squarespace-cdn.com" },
-      // Photorealistic placeholders for card slots not yet supplied.
       { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "*.public.blob.vercel-storage.com" },
     ],
+  },
+  outputFileTracingExcludes: {
+    "*": ["./public/images/**", "./public/**/*.mp4", "./public/**/*.webm"],
   },
 };
 

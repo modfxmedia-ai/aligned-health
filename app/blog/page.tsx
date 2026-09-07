@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { ClinicJsonLd } from "@/app/_components/ClinicJsonLd";
 import { BlogIndex } from "./_components/BlogIndex";
-import { getAllPosts } from "@/lib/blog";
+import { getPublishedSitePosts } from "@/lib/ranked/site-posts";
 import { SITE_URL } from "@/lib/site";
+
+export const revalidate = 3600;
 
 const PATH = "/blog";
 
@@ -43,8 +45,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
-  const posts = getAllPosts();
+export default async function BlogPage() {
+  const posts = await getPublishedSitePosts();
 
   // Blog collection JSON-LD for richer SERP presentation.
   const collectionJsonLd = {

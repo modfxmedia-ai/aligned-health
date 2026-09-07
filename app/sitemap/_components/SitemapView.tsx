@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getAllServices } from "@/lib/services";
 import { LOCATIONS, getRegions, getLocationsByRegion } from "@/lib/locations";
-import { getAllPosts } from "@/lib/blog";
+import type { BlogPost } from "@/lib/blog";
 
 const MAIN_PAGES = [
   { label: "Home", href: "/" },
@@ -22,9 +22,8 @@ const MAIN_PAGES = [
  * city x service combo pages), grouped by region/city in accordions so the
  * page stays scannable.
  */
-export function SitemapView() {
+export function SitemapView({ posts }: { posts: readonly BlogPost[] }) {
   const services = getAllServices();
-  const posts = getAllPosts();
   const regions = getRegions();
   const comboCount = LOCATIONS.length * services.length;
   const totalPages =
