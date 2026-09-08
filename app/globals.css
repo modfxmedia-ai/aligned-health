@@ -48,6 +48,11 @@
     text-rendering: optimizeLegibility;
   }
 
+  chat-widget {
+    position: relative;
+    z-index: 90;
+  }
+
   body {
     background-color: var(--color-cream);
     color: var(--color-espresso);

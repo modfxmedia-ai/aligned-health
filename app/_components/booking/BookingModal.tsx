@@ -46,11 +46,12 @@ export function BookingModal() {
  role="dialog"
  aria-modal="true"
  aria-hidden={!isOpen}
+ inert={!isOpen}
  aria-label="Schedule an appointment"
  className={`fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 ${
  isOpen
- ? "pointer-events-auto opacity-100"
- : "pointer-events-none opacity-0"
+ ? "visible pointer-events-auto opacity-100"
+ : "invisible pointer-events-none opacity-0"
  }`}
  >
  <div
