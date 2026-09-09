@@ -18,6 +18,8 @@ import { BookNowLink } from "@/app/_components/BookNowLink";
 const YEAR = new Date().getFullYear();
 const PHONE_TEL = CLINIC.phone.replace(/[^\d+]/g, "");
 const FULL_ADDRESS = `${CLINIC.address.street}, ${CLINIC.address.city}, ${CLINIC.address.region} ${CLINIC.address.postalCode}`;
+const EXISTING_PATIENT_SCHEDULER_URL =
+ "https://alignedhealthoc.janeapp.com/#/existing-patients";
 const MAP_LINK =
  "https://www.google.com/maps/place/Aligned+Health/@33.5748115,-117.6755535,871m/data=!3m2!1e3!5s0x80dceec47cf99773:0x8e0bd7756e6af25c!4m15!1m8!3m7!1s0x80dceec47ef93b1b:0xbdc6a1d087b932bd!2s26071+Merit+Cir+%23114,+Laguna+Hills,+CA+92653,+USA!3b1!8m2!3d33.5748115!4d-117.6755535!16s%2Fg%2F11n09cth33!3m5!1s0x80dcebe3bbff6193:0xa55599af90af8db0!8m2!3d33.5748115!4d-117.6755535!16s%2Fg%2F11fwj32nr9!5m1!1e1?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
 
@@ -137,6 +139,14 @@ export function SiteFooter() {
  Book your New Patient Appointment
  <span aria-hidden="true">→</span>
  </BookNowLink>
+ <a
+ href={EXISTING_PATIENT_SCHEDULER_URL}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="mt-4 inline-flex w-full items-center justify-center gap-1 text-xs uppercase tracking-[0.18em] text-linen/70 underline decoration-tan/60 underline-offset-4 transition-colors hover:text-linen hover:decoration-tan"
+ >
+ Existing patient? Schedule here <span aria-hidden="true">→</span>
+ </a>
  </div>
  </div>
  </div>
