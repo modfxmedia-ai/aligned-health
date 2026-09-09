@@ -33,6 +33,9 @@ export async function generateMetadata({
   const plainDescription = decodeHtmlEntities(post.description);
 
   const url = `/blog/${post.slug}`;
+  // og:image / twitter:image come from ./opengraph-image.tsx, which renders a
+  // 1200x630 PNG card per post. Setting `images` here would override it (and
+  // several social platforms won't unfurl the .webp hero images).
   return {
     title: { absolute: plainTitle },
     description: plainDescription,
@@ -47,13 +50,11 @@ export async function generateMetadata({
       publishedTime: post.datePublished,
       modifiedTime: post.dateModified ?? post.datePublished,
       authors: [post.author.name],
-      images: [{ url: post.hero.src, alt: decodeHtmlEntities(post.hero.alt) }],
     },
     twitter: {
       card: "summary_large_image",
       title: plainTitle,
       description: plainDescription,
-      images: [post.hero.src],
     },
   };
 }

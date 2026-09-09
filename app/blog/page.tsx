@@ -24,25 +24,18 @@ export const metadata: Metadata = {
     "aligned health journal",
   ],
   alternates: { canonical: PATH },
+  // og:image / twitter:image come from ./opengraph-image.tsx. Setting
+  // `images` here would override that generated card, so it's omitted.
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
     url: PATH,
     type: "website",
-    images: [
-      {
-        url: "/images/contact-us/hero-v2.jpg",
-        width: 2400,
-        height: 1018,
-        alt: "Aligned Health chiropractic office in Laguna Hills, CA",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/images/contact-us/hero-v2.jpg"],
   },
 };
 

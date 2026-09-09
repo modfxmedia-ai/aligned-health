@@ -94,7 +94,7 @@ const POSTS: readonly BlogPost[] = [
  },
  {
  type: "p",
- text: "At Aligned Health we lean primarily on the **Diversified technique**, the most widely taught and evidence-supported manual adjusting approach in the profession. It&rsquo;s precise, it&rsquo;s hands-on, and it lets us tailor the direction and depth of each thrust to your specific joint on the specific day you walk in.",
+ text: "At Aligned Health we lean primarily on the **Diversified technique**, the most widely taught and evidence-supported [manual adjusting approach](/services/chiropractic-adjustments) in the profession. It&rsquo;s precise, it&rsquo;s hands-on, and it lets us tailor the direction and depth of each thrust to your specific joint on the specific day you walk in.",
  },
  { type: "h2", text: "The kinds of lower back pain we see most" },
  {
@@ -108,7 +108,7 @@ const POSTS: readonly BlogPost[] = [
  "Sacroiliac joint dysfunction, that one-sided ache above your glute",
  "Facet joint irritation after a workout, weekend project, or long flight",
  "Post-partum pelvic and low-back tension",
- "Mild-to-moderate disc-related pain (when appropriate, often paired with decompression)",
+ "Mild-to-moderate disc-related pain (when appropriate, often paired with [decompression](/services/spinal-decompression))",
  ],
  },
  {
@@ -128,7 +128,7 @@ const POSTS: readonly BlogPost[] = [
  "**Exam**, posture, gait, range of motion, orthopedic and neurological screens.",
  "**Adjustment**, targeted, specific, hands-on. You&rsquo;ll usually feel it as a quick release, sometimes with an audible pop.",
  "**Recovery layer**, most visits pair the adjustment with one or two modalities: percussion, decompression, PEMF, or red light, matched to your case.",
- "**Plan**, a realistic schedule with a clear off-ramp. We want you moving well and out the door, not tethered to a plan you don&rsquo;t need.",
+ "**Plan**, a [realistic schedule](/blog/how-often-chiropractic-adjustments-laguna-hills) with a clear off-ramp. We want you moving well and out the door, not tethered to a plan you don&rsquo;t need.",
  ],
  },
  { type: "h2", text: "Does an adjustment hurt?" },
@@ -144,12 +144,12 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "How adjustments fit into a real recovery plan" },
  {
  type: "p",
- text: "An adjustment on its own is a great tool. An adjustment plus targeted soft-tissue work, spinal decompression when indicated, and a couple of home mobility drills is a *plan*. That&rsquo;s the difference between short-term relief and durable change, and it&rsquo;s the standard we hold every case to.",
+ text: "An adjustment on its own is a great tool. An adjustment plus targeted soft-tissue work, spinal decompression when indicated, and a couple of [home mobility drills](/services/assisted-stretching) is a *plan*. That&rsquo;s the difference between short-term relief and durable change, and it&rsquo;s the standard we hold every case to.",
  },
  { type: "h2", text: "Ready to see if it&rsquo;s the right fit?" },
  {
  type: "p",
- text: "If you&rsquo;re in Laguna Hills, Mission Viejo, Lake Forest, Aliso Viejo, or anywhere in South Orange County, you can schedule now. Come see what a truly *aligned* recovery feels like.",
+ text: "If you&rsquo;re in Laguna Hills, Mission Viejo, Lake Forest, Aliso Viejo, or anywhere in [South Orange County](/areas-we-serve), you can [schedule now](/appointments), or [contact us](/contact-us) if you&rsquo;d rather ask a question first. Come see what a truly *aligned* recovery feels like.",
  },
  ],
  relatedServiceSlugs: [
@@ -193,7 +193,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "What percussion therapy does at the tissue level" },
  {
  type: "p",
- text: "Percussion therapy delivers rapid, targeted mechanical pulses, typically **1,800–3,200 per minute**, into a muscle group. Those pulses drive fluid movement in and out of the tissue, temporarily desensitize local pain receptors, and mechanically break up the low-grade adhesions that build up between fascial layers after hard training.",
+ text: "Percussion therapy delivers [rapid, targeted mechanical pulses](/services/percussion-therapy), typically **1,800–3,200 per minute**, into a muscle group. Those pulses drive fluid movement in and out of the tissue, temporarily desensitize local pain receptors, and mechanically break up the low-grade adhesions that build up between fascial layers after hard training.",
  },
  {
  type: "p",
@@ -205,7 +205,7 @@ const POSTS: readonly BlogPost[] = [
  items: [
  "Athletes coming out of a heavy training block who need to move well tomorrow",
  "Weekend warriors who just did more than their body was ready for",
- "Desk workers with the classic upper-trap / levator scapulae knot",
+ "Desk workers with the classic [upper-trap / levator scapulae knot](/services/myofascial-scraping)",
  "Post-surgical patients (once cleared) rebuilding tissue quality",
  "Anyone who feels tight but isn&rsquo;t *injured*, the sweet spot",
  ],
@@ -219,7 +219,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "How we use it in a session" },
  {
  type: "p",
- text: "Percussion is rarely the whole visit. It&rsquo;s a **prep and finish** tool, we use it before adjusting to relax the tissue surrounding the segment we&rsquo;re about to move, and again at the end to consolidate the change. Most treatments take **5–10 minutes** on the target area, alternating heads and pressures based on how the tissue responds.",
+ text: "Percussion is rarely the whole visit. It&rsquo;s a **prep and finish** tool, we use it [before adjusting](/services/chiropractic-adjustments) to relax the tissue surrounding the segment we&rsquo;re about to move, and again at the end to consolidate the change. Most treatments take **5–10 minutes** on the target area, alternating heads and pressures based on how the tissue responds.",
  },
  {
  type: "ol",
@@ -248,7 +248,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Book a recovery session" },
  {
  type: "p",
- text: "If you&rsquo;re training hard, coming back from an injury, or just tired of feeling wound up, a single well-run recovery session can reset your baseline. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach, and you can schedule now.",
+ text: "If you&rsquo;re training hard, [coming back from an injury](/blog/sports-rehab-vs-rest-a-smarter-return-after-injury), or just tired of feeling wound up, a single well-run recovery session can reset your baseline. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach, and you can [schedule now](/appointments) or [contact us](/contact-us) with questions.",
  },
  ],
  relatedServiceSlugs: [
@@ -292,7 +292,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "What spinal decompression actually is" },
  {
  type: "p",
- text: "Spinal decompression is a form of **motorized traction**, you lie comfortably on a computer-controlled table that applies a gentle, cyclical pulling force to a specific segment of your spine. The pull isn&rsquo;t constant; it eases on and off in a programmed rhythm designed to coax fluid, oxygen, and nutrients back into the disc while relieving pressure on nearby nerves.",
+ text: "Spinal decompression is a form of **motorized traction**, you lie comfortably on a [computer-controlled table](/services/spinal-decompression) that applies a gentle, cyclical pulling force to a specific segment of your spine. The pull isn&rsquo;t constant; it eases on and off in a programmed rhythm designed to coax fluid, oxygen, and nutrients back into the disc while relieving pressure on nearby nerves.",
  },
  {
  type: "p",
@@ -305,7 +305,7 @@ const POSTS: readonly BlogPost[] = [
  "Herniated or bulging lumbar discs with or without leg pain",
  "Classic sciatica, shooting, burning, or numb sensations down the leg",
  "Cervical disc pain with arm symptoms (yes, we decompress the neck too)",
- "Facet joint syndrome that hasn&rsquo;t responded to adjusting alone",
+ "Facet joint syndrome that hasn&rsquo;t responded to [adjusting alone](/services/chiropractic-adjustments)",
  "Degenerative disc disease with stubborn low-back stiffness",
  ],
  },
@@ -322,7 +322,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "How many sessions does it take?" },
  {
  type: "p",
- text: "There&rsquo;s no honest one-size-fits-all answer, but a realistic frame: most patients feel a shift in the first **3–5 sessions** and complete a full protocol in **12–24 visits** over 6–12 weeks. We reassess constantly, if it&rsquo;s not working after the first few sessions, we don&rsquo;t just keep going. We change the plan.",
+ text: "There&rsquo;s [no honest one-size-fits-all answer](/blog/how-often-chiropractic-adjustments-laguna-hills), but a realistic frame: most patients feel a shift in the first **3–5 sessions** and complete a full protocol in **12–24 visits** over 6–12 weeks. We reassess constantly, if it&rsquo;s not working after the first few sessions, we don&rsquo;t just keep going. We change the plan.",
  },
  {
  type: "quote",
@@ -332,7 +332,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Where decompression fits in the bigger picture" },
  {
  type: "p",
- text: "Decompression on its own works. Decompression paired with **targeted adjustments**, **PEMF or red light for the inflamed segment**, and a set of specific rehab drills works better. The best outcomes we see combine passive care (decompression + modalities) with active care (movement + strength) in the same plan.",
+ text: "Decompression on its own works. Decompression paired with **targeted adjustments**, **PEMF or red light for the inflamed segment**, and a set of [specific rehab drills](/services/assisted-stretching) works better. The best outcomes we see combine passive care (decompression + modalities) with active care (movement + strength) in the same plan.",
  },
  { type: "h2", text: "Should you try this before an injection or surgery?" },
  {
@@ -342,7 +342,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Book a decompression consult" },
  {
  type: "p",
- text: "The first visit is a full workup, history, exam, movement screen, and a specific recommendation. If decompression is a fit, we&rsquo;ll build a realistic plan. If it isn&rsquo;t, we&rsquo;ll tell you what we&rsquo;d do instead. We serve patients across South OC, Laguna Hills, Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach, and we can usually get you in within a day or two.",
+ text: "[The first visit](/appointments) is a full workup, history, exam, movement screen, and a specific recommendation. If decompression is a fit, we&rsquo;ll build a realistic plan. If it isn&rsquo;t, we&rsquo;ll tell you what we&rsquo;d do instead, and you can always [contact us](/contact-us) about your case first. We serve patients across South OC, Laguna Hills, Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach, and we can usually get you in within a day or two.",
  },
  ],
  relatedServiceSlugs: [
@@ -389,14 +389,14 @@ const POSTS: readonly BlogPost[] = [
  },
  {
  type: "p",
- text: "A 25-year-old with a two-week-old tweak from the gym and a 55-year-old managing a decade of stiff, degenerative changes in the low back are not the same case, even if they both walk in describing &ldquo;back pain.&rdquo; Anyone who quotes you a fixed number of visits before doing an exam is guessing, or selling. We&rsquo;d rather examine you first and tell you what we actually see.",
+ text: "A 25-year-old with a two-week-old tweak from the gym and a 55-year-old managing [a decade of stiff, degenerative changes in the low back](/services/spinal-decompression) are not the same case, even if they both walk in describing &ldquo;back pain.&rdquo; Anyone who quotes you a fixed number of visits before [doing an exam](/appointments) is guessing, or selling. We&rsquo;d rather examine you first and tell you what we actually see.",
  },
  { type: "h2", text: "The three phases we actually plan around" },
  {
  type: "ol",
  items: [
- "**Relief phase**, frequent visits early (often 2-3 per week) while pain and guarding are highest, focused on calming the area down and restoring basic movement.",
- "**Corrective phase**, visits taper as things stabilize (often weekly), and we start layering in mobility and strengthening work so the improvement holds on its own.",
+ "**Relief phase**, frequent visits early (often 2-3 per week) while pain and guarding are highest, focused on calming the area down and [restoring basic movement](/services/chiropractic-adjustments).",
+ "**Corrective phase**, visits taper as things stabilize (often weekly), and we start layering in [mobility and strengthening work](/services/assisted-stretching) so the improvement holds on its own.",
  "**Maintenance phase**, occasional visits (monthly or as needed) once you&rsquo;re back to normal life, aimed at keeping small issues from becoming big ones.",
  ],
  },
@@ -434,7 +434,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Book your first visit" },
  {
  type: "p",
- text: "If you&rsquo;re trying to figure out what a realistic plan looks like for your specific back, neck, or joint pain, the first visit is the place to start. We serve Laguna Hills, Mission Viejo, Laguna Niguel, Aliso Viejo, and the rest of South Orange County, and can usually get you in within a day or two.",
+ text: "If you&rsquo;re trying to figure out what a realistic plan looks like for your specific back, [neck](/blog/understanding-when-neck-pain-may-need-chiropractic-care), or joint pain, the first visit is the place to start, or [contact us](/contact-us) if you want to ask about your case first. We serve Laguna Hills, Mission Viejo, Laguna Niguel, Aliso Viejo, and the rest of South Orange County, and can usually get you in within a day or two.",
  },
  ],
  relatedServiceSlugs: [
@@ -477,11 +477,11 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "What red light therapy does at the tissue level" },
  {
  type: "p",
- text: "Red light therapy, also called **photobiomodulation**, uses specific wavelengths of red and near-infrared light to reach cells beneath the skin. The light energy is absorbed by structures inside the cell that support energy production, which is thought to help tissue repair itself and may calm local inflammation.",
+ text: "Red light therapy, also called **photobiomodulation**, uses [specific wavelengths of red and near-infrared light](/services/red-light-therapy) to reach cells beneath the skin. The light energy is absorbed by structures inside the cell that support energy production, which is thought to help tissue repair itself and may calm local inflammation.",
  },
  {
  type: "p",
- text: "In practice, that translates to less soreness, a bit more ease of movement, and tissue that responds better to the rest of what we&rsquo;re doing that visit, whether that&rsquo;s an adjustment, percussion work, or decompression.",
+ text: "In practice, that translates to less soreness, a bit more ease of movement, and tissue that responds better to the rest of what we&rsquo;re doing that visit, whether that&rsquo;s an [adjustment](/services/chiropractic-adjustments), percussion work, or [decompression](/services/spinal-decompression).",
  },
  { type: "h2", text: "Who we use it with" },
  {
@@ -507,7 +507,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "How it pairs with the rest of our toolkit" },
  {
  type: "p",
- text: "Red light therapy works especially well paired with **chiropractic adjustments**, **Game Ready ice compression**, and **percussion therapy**. A common flow: adjustment first to restore motion, then red light to support the tissue&rsquo;s response, occasionally paired with PEMF for deeper inflammation.",
+ text: "Red light therapy works especially well paired with **chiropractic adjustments**, **Game Ready ice compression**, and **percussion therapy**. A common flow: adjustment first to restore motion, then red light to support the tissue&rsquo;s response, occasionally paired with [PEMF](/services/pemf-therapy) for deeper inflammation.",
  },
  {
  type: "quote",
@@ -517,7 +517,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Book a session" },
  {
  type: "p",
- text: "If you&rsquo;re dealing with lingering inflammation, a stubborn overuse injury, or just want a low-effort addition to your recovery plan, ask us whether red light therapy fits your case. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach.",
+ text: "If you&rsquo;re dealing with lingering inflammation, [a stubborn overuse injury](/blog/sports-injury-rehab-safer-return-to-activity-laguna-hills), or just want a low-effort addition to your recovery plan, [ask us](/contact-us) whether red light therapy fits your case, or [book a visit](/appointments) and we&rsquo;ll sort it out in person. We&rsquo;re minutes from Laguna Niguel, Mission Viejo, Aliso Viejo, Irvine, and Newport Beach.",
  },
  ],
  relatedServiceSlugs: [
@@ -564,7 +564,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "How Game Ready Ice Compression Supports Recovery" },
  {
  type: "p",
- text: "Game Ready ice compression in Laguna Hills combines controlled cold therapy with pneumatic compression. The cold component may help temporarily reduce pain and swelling, while intermittent compression may help manage fluid buildup around an irritated area.",
+ text: "[Game Ready ice compression in Laguna Hills](/services/game-ready-ice-compressions) combines controlled cold therapy with pneumatic compression. The cold component may help temporarily reduce pain and swelling, while intermittent compression may help manage fluid buildup around an irritated area.",
  },
  {
  type: "p",
@@ -615,11 +615,11 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "When Game Ready Ice Compression in Laguna Hills Fits Care" },
  {
  type: "p",
- text: "Recovery therapy is usually most helpful when it is part of a bigger plan. Depending on what we find during your assessment, Game Ready ice compression may be combined with chiropractic care, sports rehabilitation, mobility work, or guided exercises that match your stage of healing.",
+ text: "Recovery therapy is usually most helpful when it is part of a bigger plan. Depending on what we find during your assessment, Game Ready ice compression may be combined with [chiropractic care](/services/chiropractic-adjustments), [sports rehabilitation](/blog/sports-injury-rehab-safer-return-to-activity-laguna-hills), [mobility work](/services/assisted-stretching), or guided exercises that match your stage of healing.",
  },
  {
  type: "p",
- text: "Timing matters, especially for active people. A new injury can affect work, school, sleep, family responsibilities, and training all at once. Persistent soreness can also slowly change how you move, which may lead you to favor one side or avoid movements you normally enjoy. Timely appointments give us an opportunity to assess what is going on before discomfort becomes a bigger interruption.",
+ text: "Timing matters, especially for active people. A new injury can affect work, school, sleep, family responsibilities, and training all at once. Persistent soreness can also slowly change how you move, which may lead you to favor one side or avoid movements you normally enjoy. [Timely appointments](/appointments) give us an opportunity to assess what is going on before discomfort becomes a bigger interruption.",
  },
  { type: "p", text: "During care, we can help determine:" },
  {
@@ -662,7 +662,7 @@ const POSTS: readonly BlogPost[] = [
  { type: "h2", text: "Support Your Recovery With Targeted Care" },
  {
  type: "p",
- text: "At Aligned Health, we can help you determine whether Game Ready ice compression in Laguna Hills fits your recovery plan. Our team focuses on care that supports comfort, mobility, and a gradual return to movement. If you have questions or would like to schedule an appointment, reach out today.",
+ text: "At Aligned Health, we can help you determine whether Game Ready ice compression in Laguna Hills fits your recovery plan. Our team focuses on care that supports comfort, mobility, and a gradual return to movement. If you have questions or would like to schedule an appointment, [reach out today](/contact-us).",
  },
  ],
  relatedServiceSlugs: [
@@ -704,7 +704,7 @@ const POSTS: readonly BlogPost[] = [
       },
       {
         type: "p",
-        text: "At Aligned Health, we often see people who stay active but still feel like their hips do not move as freely as they should. Assisted stretching in Laguna Hills can be a personalized option for people who want guided support with mobility, flexibility, and recovery. It is not a one-size-fits-all answer, though. Understanding what may be causing your stiffness can help you decide whether guided stretching belongs in your care plan.",
+        text: "At Aligned Health, we often see people who stay active but still feel like their hips do not move as freely as they should. [Assisted stretching in Laguna Hills](/services/assisted-stretching) can be a personalized option for people who want guided support with mobility, flexibility, and recovery. It is not a one-size-fits-all answer, though. Understanding what may be causing your stiffness can help you decide whether guided stretching belongs in your care plan.",
       },
       { type: "h2", text: "Know Why Your Hips May Feel Tight" },
       {
@@ -717,7 +717,7 @@ const POSTS: readonly BlogPost[] = [
       },
       {
         type: "p",
-        text: "The source of hip discomfort is not always the hip joint itself. Limited movement may involve the lower back, pelvis, glutes, hamstrings, or other surrounding soft tissues. We recommend a professional evaluation when stiffness keeps returning, gets worse, or comes with symptoms such as pain, numbness, weakness, or trouble bearing weight.",
+        text: "The source of hip discomfort is not always the hip joint itself. Limited movement may involve the lower back, pelvis, glutes, hamstrings, or other surrounding soft tissues. We recommend [a professional evaluation](/appointments) when stiffness keeps returning, gets worse, or comes with symptoms such as pain, numbness, weakness, or trouble bearing weight.",
       },
       { type: "h2", text: "Decide Whether Assisted Stretching Fits Your Needs" },
       {
@@ -733,7 +733,7 @@ const POSTS: readonly BlogPost[] = [
         items: [
           "Adults who feel stiff after desk work or long commutes",
           "Active people recovering from demanding workouts or sports",
-          "Individuals returning to movement after an injury",
+          "Individuals [returning to movement after an injury](/blog/sports-rehab-vs-rest-a-smarter-return-after-injury)",
           "People who feel limited while walking, bending, sitting, or standing",
           "Anyone who wants help building a more consistent mobility routine",
         ],
@@ -758,7 +758,7 @@ const POSTS: readonly BlogPost[] = [
       },
       {
         type: "p",
-        text: "Assisted stretching can also complement other services we provide, including chiropractic care, rehabilitation, and recovery therapies. When hip stiffness is tied to broader movement concerns, a combined plan may support pain relief, strength, movement quality, and injury recovery in a more complete way.",
+        text: "Assisted stretching can also complement other services we provide, including [chiropractic care](/services/chiropractic-adjustments), rehabilitation, and [recovery therapies](/services/percussion-therapy). When hip stiffness is tied to broader movement concerns, a combined plan may support pain relief, strength, movement quality, and injury recovery in a more complete way.",
       },
       { type: "h2", text: "Build Hip Mobility That Lasts Beyond the Table" },
       {
@@ -800,7 +800,7 @@ const POSTS: readonly BlogPost[] = [
       { type: "h2", text: "Support More Comfortable, Confident Movement" },
       {
         type: "p",
-        text: "At Aligned Health, we tailor care to your mobility goals and daily activity needs. Our assisted stretching in Laguna Hills can help you improve flexibility, move with greater ease, and build a routine that supports lasting progress. Contact us to discuss your needs and schedule a visit.",
+        text: "At Aligned Health, we tailor care to your mobility goals and daily activity needs. Our assisted stretching in Laguna Hills can help you improve flexibility, move with greater ease, and build a routine that supports lasting progress. [Contact us](/contact-us) to discuss your needs and schedule a visit.",
       },
     ],
     relatedServiceSlugs: [
@@ -838,7 +838,7 @@ const POSTS: readonly BlogPost[] = [
     body: [
       {
         type: "lead",
-        text: "Rest has a place after an injury, especially when a movement is painful or a body part feels irritated. Still, athletes and active adults often need more than time off to feel ready for the activities they enjoy. At Aligned Health, we help guide a thoughtful return to movement that considers pain, mobility, strength, and confidence.",
+        text: "[Rest has a place after an injury](/blog/sports-rehab-vs-rest-a-smarter-return-after-injury), especially when a movement is painful or a body part feels irritated. Still, athletes and active adults often need more than time off to feel ready for the activities they enjoy. At Aligned Health, we help guide a thoughtful return to movement that considers pain, mobility, strength, and confidence.",
       },
       {
         type: "p",
@@ -868,7 +868,7 @@ const POSTS: readonly BlogPost[] = [
       { type: "h2", text: "Sports Rehab Rebuilds What Rest Cannot" },
       {
         type: "p",
-        text: "Sports rehab in Laguna Hills is a structured approach to rebuilding the abilities you need for your own goals. We begin by looking at how you move, where limitations may be showing up, and what activities matter most to you. From there, a care plan may include rehabilitation exercises, mobility work, chiropractic care when appropriate, and recovery therapies based on your needs.",
+        text: "[Sports rehab in Laguna Hills](/services) is a structured approach to rebuilding the abilities you need for your own goals. We begin by looking at how you move, where limitations may be showing up, and what activities matter most to you. From there, a care plan may include rehabilitation exercises, [mobility work](/services/assisted-stretching), [chiropractic care](/services/chiropractic-adjustments) when appropriate, and recovery therapies based on your needs.",
       },
       {
         type: "p",
@@ -926,7 +926,7 @@ const POSTS: readonly BlogPost[] = [
       },
       {
         type: "p",
-        text: "Sports rehab in Laguna Hills can be helpful before a concern becomes a larger interruption. For active adults, student athletes, and recreational competitors, an evaluation can identify movement limits that may affect a return to practice, training, or favorite activities. Addressing those limits early can help create a more confident transition into a busy fall season.",
+        text: "Sports rehab in Laguna Hills can be helpful before a concern becomes a larger interruption. For active adults, student athletes, and recreational competitors, [an evaluation](/appointments) can identify movement limits that may affect a return to practice, training, or favorite activities. Addressing those limits early can help create a more confident transition into a busy fall season.",
       },
       { type: "h2", text: "Choose a Return Plan That Fits Your Body" },
       {
@@ -940,7 +940,7 @@ const POSTS: readonly BlogPost[] = [
       { type: "h2", text: "Build Confidence for Your Return to Sport" },
       {
         type: "p",
-        text: "At Aligned Health, we create personalized plans that support your goals, movement demands, and recovery timeline. Explore sports rehab in Laguna Hills to see how we can help you progress with clarity and purpose. When you are ready to discuss your next steps, contact us to schedule an appointment.",
+        text: "At Aligned Health, we create personalized plans that support your goals, movement demands, and recovery timeline. Explore sports rehab in Laguna Hills to see how we can help you progress with clarity and purpose. When you are ready to discuss your next steps, [contact us](/contact-us) to schedule an appointment.",
       },
     ],
     relatedServiceSlugs: [
@@ -1000,11 +1000,11 @@ const POSTS: readonly BlogPost[] = [
       { type: "h2", text: "Sports Rehab Rebuilds What Time Off Cannot" },
       {
         type: "p",
-        text: "Sports rehab in Laguna Hills takes a more active approach. Instead of waiting for an injury to feel completely resolved, we build a plan that restores mobility, strength, and control in a sequence your body can actually handle.",
+        text: "[Sports rehab in Laguna Hills](/services) takes a more active approach. Instead of waiting for an injury to feel completely resolved, we build a plan that restores mobility, strength, and control in a sequence your body can actually handle.",
       },
       {
         type: "p",
-        text: "That usually starts with an assessment of how you move, not just where it hurts. A sore ankle, for example, may trace back to limited hip mobility, weak stabilizing muscles, or a training pattern that overloaded one side of the body. Chiropractic care, guided exercise, and recovery therapies can all play a role, depending on what that assessment turns up.",
+        text: "That usually starts with [an assessment of how you move](/appointments), not just where it hurts. A sore ankle, for example, may trace back to [limited hip mobility](/blog/assisted-stretching-stiff-hips-laguna-hills), weak stabilizing muscles, or a training pattern that overloaded one side of the body. [Chiropractic care](/services/chiropractic-adjustments), [guided exercise](/services/assisted-stretching), and recovery therapies can all play a role, depending on what that assessment turns up.",
       },
       {
         type: "callout",
@@ -1041,7 +1041,7 @@ const POSTS: readonly BlogPost[] = [
       },
       {
         type: "p",
-        text: "At Aligned Health, we build sports rehab plans around your injury, your goals, and the specific movements your sport demands. If an old injury is still holding you back, or a new one has you unsure what comes next, contact us to schedule an evaluation and start moving toward a smarter, more confident return.",
+        text: "At Aligned Health, we build sports rehab plans around your injury, your goals, and the specific movements your sport demands. If an old injury is still holding you back, or a new one has you unsure what comes next, [contact us](/contact-us) to schedule an evaluation and start moving toward a smarter, more confident return.",
       },
     ],
     relatedServiceSlugs: [
@@ -1111,7 +1111,7 @@ const POSTS: readonly BlogPost[] = [
       },
       {
         type: "p",
-        text: "Those symptoms can point to irritation of a nerve root, restricted movement in the small joints of the cervical spine, or muscle imbalances that have built up over time. A professional evaluation helps identify which of these is actually driving your symptoms.",
+        text: "Those symptoms can point to [irritation of a nerve root](/services/spinal-decompression), restricted movement in the small joints of the cervical spine, or muscle imbalances that have built up over time. A professional evaluation helps identify which of these is actually driving your symptoms.",
       },
       { type: "h2", text: "How Chiropractic Care Approaches Neck Pain" },
       {
@@ -1120,7 +1120,7 @@ const POSTS: readonly BlogPost[] = [
       },
       {
         type: "p",
-        text: "From there, care may include gentle chiropractic adjustments to restore joint motion, along with supporting therapies aimed at easing muscle tension and improving flexibility. The goal is not just short-term relief, but a neck that moves and functions better over time.",
+        text: "From there, care may include [gentle chiropractic adjustments](/services/chiropractic-adjustments) to restore joint motion, along with [supporting therapies](/services/myofascial-scraping) aimed at easing muscle tension and [improving flexibility](/services/assisted-stretching). The goal is not just [short-term relief](/blog/how-often-chiropractic-adjustments-laguna-hills), but a neck that moves and functions better over time.",
       },
       {
         type: "quote",
@@ -1134,7 +1134,7 @@ const POSTS: readonly BlogPost[] = [
       },
       {
         type: "p",
-        text: "Aligned Health offers personalized chiropractic care for neck pain in Laguna Hills. Contact us to schedule an appointment and take the first step toward moving more comfortably.",
+        text: "Aligned Health offers personalized chiropractic care for neck pain in Laguna Hills. [Contact us](/contact-us) to [schedule an appointment](/appointments) and take the first step toward moving more comfortably.",
       },
     ],
     relatedServiceSlugs: [

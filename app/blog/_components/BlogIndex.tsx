@@ -5,8 +5,11 @@ import {
  useReducedMotion,
  type Variants,
 } from "motion/react";
+import { useMemo, useState } from "react";
 import { PostCard } from "./PostCard";
-import type { BlogPost } from "@/lib/blog";
+import { decodeHtmlEntities, type BlogPost } from "@/lib/blog";
+
+const ALL_CATEGORIES = "All";
 
 interface Word {
  text: string;
@@ -24,6 +27,24 @@ const HEADING_CONTAINER: Variants = {
 
 export function BlogIndex({ posts }: { posts: readonly BlogPost[] }) {
  const reduce = useReducedMotion();
+ const [activeCategory, setActiveCategory] = useState<string>(ALL_CATEGORIES);
+
+ // Categories in the order posts appear (newest first), deduped.
+ const categories = useMemo(() => {
+ const seen = new Map<string, number>();
+ for (const post of posts) {
+ seen.set(post.category, (seen.get(post.category) ?? 0) + 1);
+ }
+ return [...seen.entries()].map(([category, count]) => ({ category, count }));
+ }, [posts]);
+
+ const visiblePosts = useMemo(
+ () =>
+ activeCategory === ALL_CATEGORIES
+ ? posts
+ : posts.filter((post) => post.category === activeCategory),
+ [posts, activeCategory]
+ );
 
  return (
  <>
@@ -87,8 +108,51 @@ export function BlogIndex({ posts }: { posts: readonly BlogPost[] }) {
  {/* Post grid */}
  <section className="section-linen section relative overflow-hidden">
  <div className="container-shell relative z-10">
- <div className="grid gap-6 md:gap-8 lg:grid-cols-3">
- {posts.map((post, i) => (
+ {/* Category filter */}
+ {categories.length > 1 ? (
+ <motion.div
+ initial={reduce ? false : { opacity: 0, y: 10 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+ transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+ className="mb-10 md:mb-12"
+ >
+ <div
+ role="group"
+ aria-label="Filter articles by category"
+ className="flex flex-wrap items-center justify-center gap-2 md:gap-3"
+ >
+ <CategoryChip
+ label={ALL_CATEGORIES}
+ count={posts.length}
+ isActive={activeCategory === ALL_CATEGORIES}
+ onSelect={() => setActiveCategory(ALL_CATEGORIES)}
+ />
+ {categories.map(({ category, count }) => (
+ <CategoryChip
+ key={category}
+ label={category}
+ count={count}
+ isActive={activeCategory === category}
+ onSelect={() => setActiveCategory(category)}
+ />
+ ))}
+ </div>
+ <p aria-live="polite" className="sr-only">
+ {visiblePosts.length}{" "}
+ {visiblePosts.length === 1 ? "article" : "articles"} shown
+ {activeCategory === ALL_CATEGORIES
+ ? ""
+ : ` in ${decodeHtmlEntities(activeCategory)}`}
+ </p>
+ </motion.div>
+ ) : null}
+
+ <div
+ key={activeCategory}
+ className="grid gap-6 md:gap-8 lg:grid-cols-3"
+ >
+ {visiblePosts.map((post, i) => (
  <PostCard key={post.slug} post={post} index={i} />
  ))}
  </div>
@@ -117,6 +181,39 @@ export function BlogIndex({ posts }: { posts: readonly BlogPost[] }) {
  </div>
  </section>
  </>
+ );
+}
+
+function CategoryChip({
+ label,
+ count,
+ isActive,
+ onSelect,
+}: {
+ label: string;
+ count: number;
+ isActive: boolean;
+ onSelect: () => void;
+}) {
+ return (
+ <button
+ type="button"
+ onClick={onSelect}
+ aria-pressed={isActive}
+ className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[0.62rem] uppercase tracking-[0.22em] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 ${
+ isActive
+ ? "border-espresso bg-espresso text-linen"
+ : "border-tan/40 text-mocha hover:border-tan hover:text-espresso"
+ }`}
+ >
+ <span dangerouslySetInnerHTML={{ __html: label }} />
+ <span
+ aria-hidden="true"
+ className={isActive ? "text-tan" : "text-tan/70"}
+ >
+ {count}
+ </span>
+ </button>
  );
 }
 
