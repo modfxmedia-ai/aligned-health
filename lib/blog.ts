@@ -79,7 +79,7 @@ const POSTS: readonly BlogPost[] = [
  role: "Chiropractor · Aligned Health",
  },
  hero: {
- src: "https://images.squarespace-cdn.com/content/v1/5ee5219c63842071d176def5/3dd5634c-1569-4b59-9138-2caf3eb46524/IMG_8324.jpg",
+ src: "/images/blog/chiropractic-adjustment-diversified-technique.webp",
  alt: "Chiropractor performing a diversified adjustment on a clothed patient at Aligned Health in Laguna Hills",
  },
  body: [
@@ -376,7 +376,7 @@ const POSTS: readonly BlogPost[] = [
  },
  hero: {
  src: "/images/blog/blog-hero__what-to-do-after-a-chiro-adjustment.webp",
- alt: "Chiropractor assessing a patient&rsquo;s spine before an adjustment at Aligned Health in Laguna Hills",
+ alt: "Chiropractor assessing a patient's spine before an adjustment at Aligned Health in Laguna Hills",
  },
  body: [
  {
@@ -949,6 +949,200 @@ const POSTS: readonly BlogPost[] = [
       "game-ready-ice-compressions",
     ],
   },
+  {
+    slug: "sports-rehab-vs-rest-a-smarter-return-after-injury",
+    title: "Sports Rehab Vs Rest: a Smarter Return After Injury",
+    description:
+      "Move beyond rest and return with confidence: learn why guided sports rehab in Laguna Hills often gets you back to activity safer and sooner than rest alone.",
+    keywords: [
+      "sports rehab vs rest",
+      "return to sport after injury",
+      "sports rehab laguna hills",
+      "athletic injury recovery",
+      "sports injury chiropractor",
+      "active recovery orange county",
+      "return to play guidelines",
+    ],
+    category: "Sports Recovery",
+    datePublished: "2026-08-26",
+    readingTime: 5,
+    author: {
+      name: "Dr. Dustin Hack, D.C.",
+      role: "Chiropractor · Aligned Health",
+    },
+    hero: {
+      src: "/images/blog/sports-rehab-vs-rest-a-smarter-return-after-injury.jpg",
+      alt: "Provider wrapping an athlete's ankle during a sports rehab evaluation at Aligned Health in Laguna Hills",
+    },
+    body: [
+      {
+        type: "lead",
+        text: "\u201cJust rest it\u201d is the advice most of us hear the moment an injury happens. Rest has a role, but leaning on it alone can leave strength, mobility, and confidence behind. At Aligned Health, we look at rest and rehab as two different tools, and knowing when to use each one can change how quickly, and how safely, you return to what you love.",
+      },
+      { type: "h2", text: "Rest Protects, but It Does Not Rebuild" },
+      {
+        type: "p",
+        text: "In the first day or two after an injury, rest gives irritated tissue a chance to calm down. That is a real and useful phase of recovery. Problems tend to show up when rest stretches on well past that early window without a plan for what comes next.",
+      },
+      {
+        type: "p",
+        text: "Extended time off can quietly work against you. Muscles lose conditioning, joints stiffen, and the movement patterns you relied on before the injury start to fade. None of that shows up as pain right away, which is part of why it is easy to miss.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Reduced strength and endurance in the affected area",
+          "Stiffness and a smaller comfortable range of motion",
+          "Lower confidence in the movements your sport requires",
+          "A harder, more jarring transition back into full activity",
+        ],
+      },
+      { type: "h2", text: "Sports Rehab Rebuilds What Time Off Cannot" },
+      {
+        type: "p",
+        text: "Sports rehab in Laguna Hills takes a more active approach. Instead of waiting for an injury to feel completely resolved, we build a plan that restores mobility, strength, and control in a sequence your body can actually handle.",
+      },
+      {
+        type: "p",
+        text: "That usually starts with an assessment of how you move, not just where it hurts. A sore ankle, for example, may trace back to limited hip mobility, weak stabilizing muscles, or a training pattern that overloaded one side of the body. Chiropractic care, guided exercise, and recovery therapies can all play a role, depending on what that assessment turns up.",
+      },
+      {
+        type: "callout",
+        title: "Rest alone rarely restores confidence",
+        text: "Even once pain fades, many people hesitate before cutting, sprinting, or jumping the way they used to. Rehab is where that confidence gets rebuilt, one controlled step at a time.",
+      },
+      { type: "h2", text: "A Gradual Return Beats an All-or-Nothing Comeback" },
+      {
+        type: "p",
+        text: "Jumping straight from rest back to full training is one of the more common ways an injury resurfaces. **Progressive loading**, gradually increasing demand as your body proves it is ready, gives tissue time to adapt instead of being asked to handle a full workload overnight.",
+      },
+      {
+        type: "p",
+        text: "We look for markers of real readiness rather than relying on pain alone, including:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Moving through daily activities without compensating",
+          "Comfortable strength and balance on the affected side",
+          "Tolerating light, sport-specific movement without a flare-up",
+          "Confidence completing a full practice or workout",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Rest quiets down an injury. Rehab is what gets you ready to trust your body again.",
+        attribution: "Dr. Dustin Hack, D.C.",
+      },
+      { type: "h2", text: "Know When to Choose Rehab Over Rest" },
+      {
+        type: "p",
+        text: "Rest still has its place, especially in the first day or two after a new injury. Once the initial irritation settles, though, a guided rehab plan is usually what closes the gap between \u201cfeeling better\u201d and \u201cready for full activity.\u201d",
+      },
+      {
+        type: "p",
+        text: "At Aligned Health, we build sports rehab plans around your injury, your goals, and the specific movements your sport demands. If an old injury is still holding you back, or a new one has you unsure what comes next, contact us to schedule an evaluation and start moving toward a smarter, more confident return.",
+      },
+    ],
+    relatedServiceSlugs: [
+      "chiropractic-adjustments",
+      "assisted-stretching",
+      "game-ready-ice-compressions",
+    ],
+  },
+  {
+    slug: "understanding-when-neck-pain-may-need-chiropractic-care",
+    title: "Understanding When Neck Pain May Need Chiropractic Care",
+    description:
+      "Start moving toward relief from neck pain: learn the everyday causes of neck stiffness and soreness, and how to know when chiropractic care can help.",
+    keywords: [
+      "neck pain chiropractor",
+      "neck pain laguna hills",
+      "chiropractic care for neck pain",
+      "stiff neck relief",
+      "tech neck treatment",
+      "neck pain treatment orange county",
+      "chiropractor near me",
+    ],
+    category: "Chiropractic Care",
+    datePublished: "2026-09-01",
+    readingTime: 5,
+    author: {
+      name: "Dr. Dustin Hack, D.C.",
+      role: "Chiropractor · Aligned Health",
+    },
+    hero: {
+      src: "/images/blog/understanding-when-neck-pain-may-need-chiropractic-care.webp",
+      alt: "Chiropractor examining a patient's neck and shoulder at Aligned Health in Laguna Hills",
+    },
+    body: [
+      {
+        type: "lead",
+        text: "A stiff, achy neck is easy to blame on a bad night's sleep or one too many hours at a desk. Sometimes that is exactly what it is. Other times, it is a sign that the joints, muscles, or nerves in your neck need more support than a little stretching can provide. Knowing the difference can help you decide what to do next.",
+      },
+      { type: "h2", text: "Know the Everyday Causes of Neck Pain" },
+      {
+        type: "p",
+        text: "The neck carries the weight of your head, roughly ten to twelve pounds, through a narrow stack of small, mobile joints. That combination makes it sensitive to posture, repetitive strain, and stress in a way that is easy to underestimate.",
+      },
+      {
+        type: "p",
+        text: "Common everyday contributors include:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Long hours looking down at a phone or laptop screen",
+          "A desk setup that pulls the head forward or shoulders up",
+          "Sleeping in an awkward position or on an unsupportive pillow",
+          "Stress-related muscle tension across the neck and shoulders",
+          "A sudden movement, minor fall, or fender-bender",
+        ],
+      },
+      { type: "h2", text: "Watch for Signs That Point to Something More" },
+      {
+        type: "p",
+        text: "Mild, short-lived stiffness that eases with movement and gentle stretching is common and usually not a cause for concern. Some patterns, though, suggest the neck needs a closer look rather than more time.",
+      },
+      {
+        type: "callout",
+        title: "When it is more than a stiff neck",
+        text: "Pain that radiates into the shoulder, arm, or hand, numbness or tingling in the fingers, frequent headaches that start at the base of the skull, or stiffness that lingers for more than a week or two are all reasons to have your neck evaluated.",
+      },
+      {
+        type: "p",
+        text: "Those symptoms can point to irritation of a nerve root, restricted movement in the small joints of the cervical spine, or muscle imbalances that have built up over time. A professional evaluation helps identify which of these is actually driving your symptoms.",
+      },
+      { type: "h2", text: "How Chiropractic Care Approaches Neck Pain" },
+      {
+        type: "p",
+        text: "Chiropractic care starts with understanding how your neck moves, not just where it hurts. At Aligned Health, that typically means assessing posture, joint mobility, and muscle tension in the neck, shoulders, and upper back, since limitations in one area often show up as pain in another.",
+      },
+      {
+        type: "p",
+        text: "From there, care may include gentle chiropractic adjustments to restore joint motion, along with supporting therapies aimed at easing muscle tension and improving flexibility. The goal is not just short-term relief, but a neck that moves and functions better over time.",
+      },
+      {
+        type: "quote",
+        text: "Neck pain rarely comes from just one thing. Looking at posture, movement, and muscle tension together gives us a clearer picture of what your neck actually needs.",
+        attribution: "Dr. Dustin Hack, D.C.",
+      },
+      { type: "h2", text: "Start Moving Toward Relief From Neck Pain" },
+      {
+        type: "p",
+        text: "You do not need to wait until neck pain becomes severe before asking for help. If stiffness keeps returning, if it is starting to limit your day, or if you have noticed any of the warning signs above, an evaluation can help you understand what is going on and what to do about it.",
+      },
+      {
+        type: "p",
+        text: "Aligned Health offers personalized chiropractic care for neck pain in Laguna Hills. Contact us to schedule an appointment and take the first step toward moving more comfortably.",
+      },
+    ],
+    relatedServiceSlugs: [
+      "chiropractic-adjustments",
+      "myofascial-scraping",
+      "spinal-decompression",
+    ],
+  },
 ];
 
 /* ---------------------------------------------------------------------- */
@@ -985,4 +1179,33 @@ export function formatPostDate(iso: string): string {
  year: "numeric",
  timeZone: "UTC",
  });
+}
+
+const NAMED_ENTITIES: Record<string, string> = {
+ "&amp;": "&",
+ "&rsquo;": "\u2019",
+ "&lsquo;": "\u2018",
+ "&rdquo;": "\u201d",
+ "&ldquo;": "\u201c",
+ "&nbsp;": " ",
+ "&mdash;": "\u2014",
+ "&ndash;": "\u2013",
+ "&hellip;": "\u2026",
+ "&lt;": "<",
+ "&gt;": ">",
+ "&quot;": '"',
+};
+
+/**
+ * Decode the small set of HTML entities used in post copy so plain-text
+ * contexts (meta tags, JSON-LD, alt attributes) show real characters
+ * instead of either the raw entity or a stripped-out blank.
+ */
+export function decodeHtmlEntities(text: string): string {
+ return text
+ .replace(
+ /&amp;|&rsquo;|&lsquo;|&rdquo;|&ldquo;|&nbsp;|&mdash;|&ndash;|&hellip;|&lt;|&gt;|&quot;/g,
+ (entity) => NAMED_ENTITIES[entity]
+ )
+ .replace(/&#(\d+);/g, (_, code: string) => String.fromCharCode(Number(code)));
 }

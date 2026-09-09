@@ -156,7 +156,7 @@ export function RichText({ blocks }: { blocks: readonly BlogBlock[] }) {
  className="my-10 rounded-3xl bg-espresso p-6 text-linen md:p-8"
  >
  <p className="text-[0.65rem] uppercase tracking-[0.24em] text-tan">
- {block.title}
+ {renderInline(block.title)}
  </p>
  <p className="mt-3 leading-relaxed text-linen/90">
  {renderInline(block.text)}

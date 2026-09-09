@@ -30,13 +30,27 @@ function isSeoMetaLine(text: string): boolean {
   return /^(meta\s*title|meta\s*description|seo title|focus keyword)\s*:/i.test(text.trim())
 }
 
+/** Google Docs wraps exported links in a `google.com/url?q=...` redirect; unwrap to the real target. */
+function unwrapGoogleRedirect(href: string): string {
+  try {
+    const url = new URL(href)
+    if (/(^|\.)google\.com$/.test(url.hostname) && url.pathname === '/url') {
+      const target = url.searchParams.get('q')
+      if (target) return target
+    }
+  } catch {
+    // not an absolute URL — leave as-is
+  }
+  return href
+}
+
 function htmlChunkToPlain(html: string): string {
   const withLinks = html.replace(
     /<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi,
     (_m, href: string, inner: string) => {
       const label = stripTags(inner)
       if (!label) return ''
-      return `[${label}](${href})`
+      return `[${label}](${unwrapGoogleRedirect(decodeEntities(href))})`
     },
   )
   return stripTags(withLinks)

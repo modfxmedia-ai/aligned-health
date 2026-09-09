@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ClinicJsonLd } from "@/app/_components/ClinicJsonLd";
 import { BlogIndex } from "./_components/BlogIndex";
+import { decodeHtmlEntities } from "@/lib/blog";
 import { getPublishedSitePosts } from "@/lib/ranked/site-posts";
 import { SITE_URL } from "@/lib/site";
 
@@ -61,8 +62,8 @@ export default async function BlogPage() {
       "@type": "BlogPosting",
       "@id": `${SITE_URL}/blog/${post.slug}`,
       url: `${SITE_URL}/blog/${post.slug}`,
-      headline: post.title.replace(/&[a-z]+;/g, ""),
-      description: post.description.replace(/&[a-z]+;/g, ""),
+      headline: decodeHtmlEntities(post.title),
+      description: decodeHtmlEntities(post.description),
       datePublished: post.datePublished,
       dateModified: post.dateModified ?? post.datePublished,
       author: {

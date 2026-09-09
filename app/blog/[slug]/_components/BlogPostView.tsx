@@ -14,6 +14,7 @@ import {
   formatPostDate,
   type BlogPost,
 } from "@/lib/blog";
+import { getServiceBySlug } from "@/lib/services";
 import { PostCard } from "@/app/blog/_components/PostCard";
 import { RichText } from "@/app/blog/_components/RichText";
 import { MagneticLink } from "@/app/_components/motion/MagneticLink";
@@ -35,17 +36,6 @@ const HEADING_WORD: Variants = {
     y: 0,
     transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
   },
-};
-
-const RELATED_SERVICE_NAMES: Record<string, string> = {
-  "chiropractic-adjustments": "Chiropractic Adjustments",
-  "spinal-decompression": "Spinal Decompression",
-  "percussion-therapy": "Percussion Therapy",
-  "pemf-therapy": "PEMF Therapy",
-  cupping: "Cupping",
-  "myofascial-scraping": "Myofascial Scraping",
-  "red-light-therapy": "Red Light Therapy",
-  "assisted-stretching": "Assisted Stretching",
 };
 
 export function BlogPostView({
@@ -231,7 +221,7 @@ export function BlogPostView({
                         href={`/services/${slug}`}
                         className="inline-flex items-center gap-2 rounded-full border border-tan/40 bg-linen px-4 py-2 text-sm text-espresso transition-colors hover:bg-tan/10"
                       >
-                        {RELATED_SERVICE_NAMES[slug] ?? slug}
+                        {getServiceBySlug(slug)?.label ?? slug}
                         <span aria-hidden="true" className="text-tan">
                           →
                         </span>

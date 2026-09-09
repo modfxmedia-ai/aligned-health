@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogPostView } from "./_components/BlogPostView";
-import { formatPostDate } from "@/lib/blog";
+import { decodeHtmlEntities, formatPostDate } from "@/lib/blog";
 import {
   getPublishedSitePost,
   getPublishedSitePosts,
@@ -29,8 +29,8 @@ export async function generateMetadata({
     return { title: "Not Found" };
   }
 
-  const plainTitle = post.title.replace(/&[a-z]+;/g, "");
-  const plainDescription = post.description.replace(/&[a-z]+;/g, "");
+  const plainTitle = decodeHtmlEntities(post.title);
+  const plainDescription = decodeHtmlEntities(post.description);
 
   const url = `/blog/${post.slug}`;
   return {
@@ -47,7 +47,7 @@ export async function generateMetadata({
       publishedTime: post.datePublished,
       modifiedTime: post.dateModified ?? post.datePublished,
       authors: [post.author.name],
-      images: [{ url: post.hero.src, alt: post.hero.alt }],
+      images: [{ url: post.hero.src, alt: decodeHtmlEntities(post.hero.alt) }],
     },
     twitter: {
       card: "summary_large_image",
@@ -67,8 +67,8 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
-  const plainTitle = post.title.replace(/&[a-z]+;/g, "");
-  const plainDescription = post.description.replace(/&[a-z]+;/g, "");
+  const plainTitle = decodeHtmlEntities(post.title);
+  const plainDescription = decodeHtmlEntities(post.description);
   const url = `${SITE_URL}/blog/${post.slug}`;
 
   const jsonLd = {
@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     },
     image: [post.hero.src],
     keywords: post.keywords.join(", "),
-    articleSection: post.category.replace(/&[a-z]+;/g, ""),
+    articleSection: decodeHtmlEntities(post.category),
     wordCount: estimateWordCount(post),
     inLanguage: "en-US",
     datePublishedText: formatPostDate(post.datePublished),

@@ -38,6 +38,37 @@ function readingTimeFrom(post: BlogPostData): number {
   return Math.max(3, Math.round(words / 200))
 }
 
+const BULLET_PREFIX = /^[•\u2022\-*]\s+/
+const NUMBERED_PREFIX = /^\d+[.)]\s+/
+
+/** Group consecutive bullet-/number-prefixed paragraphs into real list blocks, stripping the prefix. */
+function pushParagraphBlocks(body: BlogBlock[], paragraphs: string[]): void {
+  let i = 0
+  while (i < paragraphs.length) {
+    const paragraph = paragraphs[i]
+    if (BULLET_PREFIX.test(paragraph)) {
+      const items: string[] = []
+      while (i < paragraphs.length && BULLET_PREFIX.test(paragraphs[i])) {
+        items.push(paragraphs[i].replace(BULLET_PREFIX, '').trim())
+        i++
+      }
+      body.push({ type: 'ul', items })
+      continue
+    }
+    if (NUMBERED_PREFIX.test(paragraph)) {
+      const items: string[] = []
+      while (i < paragraphs.length && NUMBERED_PREFIX.test(paragraphs[i])) {
+        items.push(paragraphs[i].replace(NUMBERED_PREFIX, '').trim())
+        i++
+      }
+      body.push({ type: 'ol', items })
+      continue
+    }
+    if (paragraph.length > 1) body.push({ type: 'p', text: paragraph })
+    i++
+  }
+}
+
 export function rankedPostToSitePost(post: BlogPostData): BlogPost {
   const body: BlogBlock[] = []
   if (post.intro) body.push({ type: 'lead', text: post.intro })
@@ -47,10 +78,9 @@ export function rankedPostToSitePost(post: BlogPostData): BlogPost {
     if (section.heading && headingNorm !== titleNorm) {
       body.push({ type: 'h2', text: section.heading })
     }
-    for (const paragraph of section.body) {
-      if (paragraph.length > 1) body.push({ type: 'p', text: paragraph })
-    }
+    pushParagraphBlocks(body, section.body)
   }
+
 
   return {
     slug: post.slug,
