@@ -115,7 +115,7 @@ export function SiteFooter() {
  </a>
  <EmailLink
  email={CLINIC.email}
- className="mt-4 w-fit text-sm text-linen/85 underline decoration-tan/60 underline-offset-4 transition-colors hover:text-linen hover:decoration-tan"
+ className="mt-4 w-fit break-words text-sm text-linen/85 underline decoration-tan/60 underline-offset-4 transition-colors hover:text-linen hover:decoration-tan"
  copiedClassName="text-linen/70"
  />
  </address>
@@ -123,9 +123,9 @@ export function SiteFooter() {
 
  {/* --- Book / Hours --- */}
  <div className="md:col-span-12 lg:col-span-3">
- <p className="eyebrow">Book a visit</p>
- <div className="mt-5 rounded-3xl border border-linen/15 bg-linen/[0.05] p-6 backdrop-blur-sm">
- <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.2em] text-tan">
+ <p className="eyebrow text-center">Book a visit</p>
+ <div className="mt-5 flex flex-col items-center rounded-3xl border border-linen/15 bg-linen/[0.05] p-6 text-center backdrop-blur-sm">
+ <div className="flex items-center justify-center gap-2 text-[0.7rem] uppercase tracking-[0.2em] text-tan">
  <span aria-hidden="true" className="relative inline-flex h-2 w-2">
  <span className="absolute inset-0 rounded-full bg-tan opacity-70 blur-[2px]" />
  <span className="relative h-2 w-2 rounded-full bg-tan" />
@@ -143,7 +143,7 @@ export function SiteFooter() {
  href={EXISTING_PATIENT_SCHEDULER_URL}
  target="_blank"
  rel="noopener noreferrer"
- className="mt-4 inline-flex w-full items-center justify-center gap-1 text-xs uppercase tracking-[0.18em] text-linen/70 underline decoration-tan/60 underline-offset-4 transition-colors hover:text-linen hover:decoration-tan"
+ className="btn-outline-invert btn-sm mt-3 inline-flex w-full items-center justify-center gap-2 whitespace-normal text-center leading-snug"
  >
  Existing patient? Schedule here <span aria-hidden="true">→</span>
  </a>
